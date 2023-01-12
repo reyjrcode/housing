@@ -175,7 +175,7 @@ export default {
                                         <v-row>
                                             <v-col offset="2" size="9">
 
-                                                <v-btn color="blue" class="rounded-xl" @click=userlogin>
+                                                <v-btn type="submit" color="blue" class="rounded-xl" @click=userlogin>
                                                     <v-icon left>mdi-account-check</v-icon>
                                                     LOG IN
 
@@ -204,12 +204,51 @@ export default {
                                                     </v-card>
                                                 </v-dialog>
 
+
+
+
+
+                                                <v-dialog v-model="dialog" max-width="290">
+                                                    <v-card>
+                                                        <v-card-title class="text-h5">
+                                                            Fill - up all fields!
+                                                        </v-card-title>
+
+                                                        <v-card-text>
+                                                            <!-- {{ this.inputcheck }} -->
+                                                            .
+                                                        </v-card-text>
+
+                                                        <v-card-actions>
+                                                            <v-spacer></v-spacer>
+
+                                                            <v-btn color="green darken-1" text @click="dialog = false">
+                                                                Disagree
+                                                            </v-btn>
+
+                                                            <v-btn color="green darken-1" text @click="dialog = false">
+                                                                Agree
+                                                            </v-btn>
+                                                        </v-card-actions>
+                                                    </v-card>
+                                                </v-dialog>
+
+
+
+
+
+
+
+
+
+
+
                                             </v-col>
 
 
                                             <v-col offset="" size="9" @click="$router.push({ name: 'SignUp' })">
 
-                                                <v-btn type="submit" color="green" class="rounded-xl">
+                                                <v-btn color="green" class="rounded-xl">
                                                     <v-icon left>mdi-account-check</v-icon>
                                                     SING UP
                                                 </v-btn>
@@ -236,6 +275,7 @@ export default {
     name: "App",
 
     data: () => ({
+        inputcheck: false,
         dialog: false,
         passwordShow: false,
         username: "",
@@ -254,33 +294,41 @@ export default {
 
         },
         userlogin() {
+
+
             let data = new FormData;
-            console.log(this.username);
-            console.log(this.password);
+
             data.append('username', this.username);
             data.append('password', this.password);
+            console.log(this.username);
+            console.log(this.password);
 
 
-            this.Loginuser(data).then(e => {
-                console.log('Hello!')
-                if (e == 0) {
-                    this.loginCorrection = "Incorrect Password!"
-                    this.dialog = true;
-                } else if (e == 2) {
-                    this.loginCorrection = "No user account found!"
-                    this.dialog = true;
-                }
-                else {
+            if (this.username.length == 0) {
+                this.dialog = true;
+            } else {
+                this.Loginuser(data).then(e => {
+                    console.log('Hello!')
+                    if (e == 0) {
+                        this.loginCorrection = "Incorrect Password!"
+                        this.dialog = true;
+                    } else if (e == 2) {
+                        this.loginCorrection = "No user account found!"
+                        this.dialog = true;
+                    }
+                    else {
 
-                    this.$router.push('dashboard');
-                }
-            });
+                        this.$router.push('dashboard');
+                    }
+                });
 
+
+            }
 
         },
 
     },
-    
+
 };
 </script>
 
