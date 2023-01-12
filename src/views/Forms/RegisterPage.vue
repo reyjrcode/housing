@@ -16,7 +16,7 @@
                                                     builiding <br>and editing your onboarding flows</h6> -->
                                                 <v-row align="center" justify="center">
                                                     <v-col cols="12" sm="8">
-                                                        <v-text-field label="Email" v-model="email" outlined dense
+                                                        <v-text-field label="Email" v-model="username" outlined dense
                                                             color="blue" autocomplete="false" class="mt-16" />
                                                         <v-text-field label="Password" v-model="password" outlined dense
                                                             color="blue" autocomplete="false" type="password" />
@@ -32,7 +32,9 @@
                                                         </v-row> -->
                                                         <v-btn color="blue" dark block tile @click=userlogin>Log
                                                             in</v-btn>
-
+                                                        <v-card-text>
+                                                            {{ this.loginCorrection }}
+                                                        </v-card-text>
 
 
 
@@ -115,21 +117,22 @@
                                                     <v-col cols="12" sm="8">
                                                         <v-row>
                                                             <v-col cols="12" sm="6">
-                                                                <v-text-field v-model="firstname" label="First Name"
+                                                                <!-- <v-text-field v-model="firstname" label="First Name"
                                                                     outlined dense color="blue" autocomplete="false"
-                                                                    class="mt-5" />
+                                                                    class="mt-5" /> -->
                                                             </v-col>
                                                             <v-col cols="12" sm="6">
-                                                                <v-text-field v-model="lastname" label="Last Name"
+                                                                <!-- <v-text-field v-model="lastname" label="Last Name"
                                                                     outlined dense color="blue" autocomplete="false"
-                                                                    class="mt-5" />
+                                                                    class="mt-5" /> -->
                                                             </v-col>
-                                                        </v-row> <v-text-field v-model="username" label="User Name"
-                                                            outlined dense color="blue" autocomplete="false" />
+                                                        </v-row>
+                                                        <!-- <v-text-field v-model="username" label="User Name"
+                                                            outlined dense color="blue" autocomplete="false" /> -->
                                                         <!-- <v-text-field label="User Name" outlined dense color="blue"
                                                             autocomplete="false" /> -->
-                                                        <v-text-field v-model="password" label="Password" outlined dense
-                                                            color="blue" autocomplete="false" type="password" />
+                                                        <!-- <v-text-field v-model="password" label="Password" outlined dense
+                                                            color="blue" autocomplete="false" type="password" /> -->
                                                         <!-- <v-row>
                                                             <v-col cols="12" sm="7">
                                                                 <v-checkbox label="I Accept AAE" class="mt-n1"
@@ -141,8 +144,8 @@
                                                                     &Conditions</span>
                                                             </v-col>
                                                         </v-row> -->
-                                                        <v-btn color="blue" dark block tile @click="register">Sign
-                                                            up</v-btn>
+                                                        <!-- <v-btn color="blue" dark block tile @click="register">Sign
+                                                            up</v-btn> -->
                                                         <h6 class="text-center  grey--text mt-4 mb-3">Or Sign up using
                                                         </h6>
                                                         <div
@@ -179,36 +182,88 @@
 
 
 import { mapActions } from 'vuex';
+// export default {
+//     data: () => ({
+//         step: 1,
+//         loading: false,
+//         selection: 1,
+//         firstname: '',
+//         lastname: '',
+//         username: '',
+//         password: ''
+//     }),
+
+//     methods: {
+//         ...mapActions('users', ['Registration']),
+//         register() {
+//             this.loading = true
+//             let data = new FormData;
+//             data.append('firstname', this.firstname);
+//             data.append('lastname', this.lastname);
+//             data.append('username', this.username);
+//             data.append('password', this.password);
+//             this.Registration(data);
+//             setTimeout(() => {
+//                 this.loading = false;
+//                 this.$router.push('/dashboard');
+//             }, 2000)
+//         },
+//     },
+// }
+
+
 export default {
+    name: "App",
     data: () => ({
         step: 1,
+        // dialog: false,
         loading: false,
-        selection: 1,
-        firstname: '',
-        lastname: '',
-        username: '',
-        password: ''
+        snackbar: false,
+        // passwordShow: false,
+        username: "",
+        password: "",
+        // loginCorrection: ''
     }),
-
     methods: {
-        ...mapActions('users', ['Registration']),
-        register() {
-            this.loading = true
+        ...mapActions('users', ['Loginuser']),
+        submitHandler() {
+            if (this.$refs.form.validate()) {
+                this.loading = true;
+                setTimeout(() => {
+                    this.loading = false;
+                    this.snackbar = true;
+                }, 3000);
+            }
+        },
+        userlogin() {
             let data = new FormData;
-            data.append('firstname', this.firstname);
-            data.append('lastname', this.lastname);
+            console.log(this.username);
+            console.log(this.password);
             data.append('username', this.username);
             data.append('password', this.password);
-            this.Registration(data);
-            setTimeout(() => {
-                this.loading = false;
-                this.$router.push('/dashboard');
-            }, 2000)
+
+
+            // this.Login(data).then(e => {
+            //     if (e == 0) {
+
+            //     } else if (e == 2) {
+
+            //     }
+            //     else {
+            //         this.$router.push('dashboard');
+            //     }
+            // });
+            this.signIn(data).then(e => {
+                if (e == 0) {
+                    
+                } else {
+                    this.navigateTo('/dashboard');
+                }
+            }).catch(e => console.log("Error=> ", e.message));
         },
+
     },
-
-}
-
+};
 
 </script>
 

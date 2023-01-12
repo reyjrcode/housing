@@ -44,31 +44,32 @@ const actions = {
 
     },
     async Registration({ commit }, payload) {
-        
+
         let res = await axios.post(`${process.env.VUE_APP_API_URL}/new_user.php`, payload);
         localStorage.setItem('auth', JSON.stringify(res.data.user));
         commit('setAuth', res.data.user[0]);
 
 
     },
-    async Login() {
-        console.log("Registration");
-        // let res = await axios.post(`${process.env.VUE_APP_API_URL}/login.php`, payload);
+    async Loginuser ({ commit }, payload) {
+
+        let res = await axios.post(`${process.env.VUE_APP_API_URL}/login.php`, payload);
 
 
-        // if (res.data['auth'] == 'failed')
-        //     return 0;
-        // else if (res.data['auth'] == 'none')
-        //     return 2;
-        // else if (res.data['auth'] == 'passed') {
-        //     localStorage.setItem('auth', JSON.stringify(res.data['controlno']));
-        //     commit('setAuth', res.data);
+        if (res.data['auth'] == 'failed')
+            return 0;
+        else if (res.data['auth'] == 'none')
+            return 2;
+        else if (res.data['auth'] == 'passed') {
+            localStorage.setItem('auth', JSON.stringify(res.data['username']));
+            commit('setAuth', res.data);
 
-        //     return 1;
-        // }
-        // else
-        //     return 0;
+            return 1;
+        }
+        else
+            return 0;
     },
+    
     async Deleteuser({ commit }, payload) {
         let res = await axios.post(`${process.env.VUE_APP_API_URL}/deleteuser.php`, payload);
         console.log("delete=>", res.data['deleted']);

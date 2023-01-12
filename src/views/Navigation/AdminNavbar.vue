@@ -68,7 +68,7 @@
                     </v-list-item>
                 </v-list>
             </v-menu>
-            <v-btn elevation="2" color="error" text @click="$router.push({ name: 'LogIn' })">
+            <v-btn elevation="2" color="error" @click="logout">
                 <span>LOG OUT</span>
                 <v-icon right></v-icon>
             </v-btn>
@@ -133,8 +133,16 @@ export default {
             },
         ],
     }),
+    methods: {
+        logout() {
+            console.log("Local storage clear")
+            localStorage.clear();
+            this.$router.replace({ name: 'Loginpage' });
+        },
+    }
 };
 </script>
 <style>
+
 
 </style>

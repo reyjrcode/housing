@@ -69,7 +69,7 @@
                     </v-list-item>
                 </v-list>
             </v-menu>
-            <v-btn elevation="2" color="error" text @click="$router.push({ name: 'LogIn' })">
+            <v-btn elevation="2" color="error" text @click="$router.push({ name: 'Dashboard' })">
                 <span>LOG OUT</span>
                 <v-icon right></v-icon>
             </v-btn>
@@ -90,8 +90,6 @@
 
 
 
-
-        
 
         <v-container fluid class="my-5">
             <v-card>
@@ -115,6 +113,7 @@
                         <v-stepper-step step="4" offset-x min-width="auto">
                             Sitwasyon sa Pagpuyo
                         </v-stepper-step>
+                        
                     </v-stepper-header>
                     <v-stepper-items>
                         <v-stepper-content step="1">
@@ -311,7 +310,7 @@
                             </v-btn>
                         </v-stepper-content>
                         <v-stepper-content step="3">
-                            <v-card class="mb-1" color="grey lighten-4" height="380px">
+                            <v-card class="mb-1" color="grey lighten-4" height="400px">
                                 <v-card-text>
                                     <v-container>
                                         <v-row>

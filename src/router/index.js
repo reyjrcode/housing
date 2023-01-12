@@ -1,23 +1,23 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import DashBoard from '../views/DashBoard.vue'
+import Dashboard from '../views/DashBoard.vue'
 import AdminNavbar from '../views/Navigation/AdminNavbar.vue'
 import HomeShit from '../views/HomeView.vue'
 import FormOne from '../views/Forms/FormOne.vue'
-import LogIn from '../views/Forms/LoginPage.vue'
-import Registration from '../views/Forms/Registration.vue'
+import RegistrationPage from '../views/Forms/RegisterPage.vue'
+import Loginpage from '../views/Forms/FinalLogin.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'LogIn',
-    component: LogIn
+    name: 'Loginpage',
+    component: Loginpage
   },
   {
     path: '/dashboard',
-    name: 'dashboard',
-    component: DashBoard
+    name: 'Dashboard',
+    component: Dashboard
   }, {
     path: '/navigation',
     name: 'AdminNavbar',
@@ -32,15 +32,15 @@ const routes = [
     component: FormOne
   },
   {
-    path: '/register',
-    name: 'Registration',
-    component: Registration
+    path: '/log-in',
+    name: 'Loginpage',
+    component: Loginpage
   },
-  //   {
-  //     path: '/log-in',
-  //     name: 'LogIn',
-  //     component: LogIn
-  //   },
+    {
+      path: '/register',
+      name: 'RegistrationPage',
+      component: RegistrationPage
+    },
 ]
 
 
@@ -50,4 +50,16 @@ const router = new VueRouter({
   routes
 })
 
+
+
+router.beforeEach((to, from, next) => {
+
+  if (to.name == 'Dashboard' && localStorage.getItem('auth') == null)
+    next({ name: 'Loginpage' });
+  else if (localStorage.getItem('auth') != null && (to.name == 'RegistrationPage' || to.name == 'Loginpage'))
+    next({ name: 'Dashboard' });
+  else
+    next();
+
+});
 export default router
