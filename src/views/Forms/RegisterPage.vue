@@ -1,277 +1,176 @@
 <template>
-    <v-app>
-        <v-main class="hero">
-            <v-container>
-                <v-row align="center" justify="center">
-                    <v-col cols="12" sm="10">
-                        <v-card class="elevation-6 mt-10">
-                            <v-window v-model="step">
-                                <v-window-item :value="1">
-                                    <v-row>
-                                        <v-col cols="12" md="6">
-                                            <v-card-text class="mt-12">
-                                                <h4 class="text-center">Login in to Your Account</h4>
-                                                <!-- <h6 class="text-center  grey--text ">Log in to your account so you can
-                                                    continue
-                                                    builiding <br>and editing your onboarding flows</h6> -->
-                                                <v-row align="center" justify="center">
-                                                    <v-col cols="12" sm="8">
-                                                        <v-text-field label="Email" v-model="username" outlined dense
-                                                            color="blue" autocomplete="false" class="mt-16" />
-                                                        <v-text-field label="Password" v-model="password" outlined dense
-                                                            color="blue" autocomplete="false" type="password" />
-                                                        <!-- <v-row>
-                                                            <v-col cols="12" sm="7">
-                                                                <v-checkbox label="Remember Me" class="mt-n1"
-                                                                    color="blue">
-                                                                </v-checkbox>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="5">
-                                                                <span class="caption blue--text">Forgot password</span>
-                                                            </v-col>
-                                                        </v-row> -->
-                                                        <v-btn color="blue" dark block tile @click=userlogin>Log
-                                                            in</v-btn>
-                                                        <v-card-text>
-                                                            {{ this.loginCorrection }}
-                                                        </v-card-text>
+    <div>
+        <v-app id="inspire" class="background">
+            <v-main class="d-flex justify-center align-center">
+                <v-col cols="10" lg="5" class="mx-auto">
+                    <v-form>
+                        <v-container>
+                            <v-layout row wrap>
+                                <v-card class="wrapper">
+                                    <div class="text-center">
+                                        <h2>C.H.L.M.O</h2>
+                                    </div>
+                                    <v-row class="text-form">
+                                        <v-col offset="1" md="10">
+                                            <v-text-field class="textbox" v-model="firstname" type="text"
+                                                label="First Name" prepend-inner-icon="mdi mdi-account mdi-green"
+                                                required />
+
+                                            <v-text-field class="textbox" v-model="lastname" type="text"
+                                                label="Last Name" prepend-inner-icon="mdi mdi-account mdi-green"
+                                                required />
 
 
 
+                                            <v-text-field class="textbox" v-model="username" type="text"
+                                                label="Username" prepend-inner-icon="mdi mdi-account mdi-green"
+                                                required />
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                        <h5 class="text-center  grey--text mt-4 mb-3">Or Log in using
-                                                        </h5>
-                                                        <div
-                                                            class="d-flex  justify-space-between align-center mx-10 mb-16">
-                                                            <v-btn depressed outlined color="grey">
-                                                                <v-icon color="red">mdi-google-plus</v-icon>
-                                                            </v-btn>
-                                                            <v-btn depressed outlined color="grey">
-                                                                <v-icon dark color="blue">
-                                                                    mdi-facebook
-                                                                </v-icon>
-                                                            </v-btn>
-                                                            <v-btn depressed outlined color="grey">
-                                                                <v-icon
-                                                                    color="light-blue lighten-3">mdi-twitter</v-icon>
-                                                            </v-btn>
-                                                        </div>
-                                                    </v-col>
-                                                </v-row>
-                                            </v-card-text>
-                                        </v-col>
-                                        <v-col cols="12" md="6" class="green rounded-bl-xl">
-                                            <div style="  text-align: center; padding: 180px 0;">
-                                                <v-card-text class="white--text">
-                                                    <h3 class="text-center ">Don't Have an Account Yet?</h3>
-                                                    <h6 class="text-center">Let's get you all set up so you can start
-                                                        creating
-                                                        your your first<br> onboarding experience</h6>
-                                                </v-card-text>
-                                                <div class="text-center">
-                                                    <v-btn tile outlined dark @click="step++">SIGN UP</v-btn>
-                                                </div>
-                                            </div>
+                                            <v-text-field class="textbox" v-model="password" type="text"
+                                                label="password" prepend-inner-icon="mdi mdi-account mdi-green"
+                                                required />
                                         </v-col>
                                     </v-row>
-                                </v-window-item>
-                                <v-window-item :value="2">
-                                    <v-row>
-                                        <v-col cols="12" md="6" class="green rounded-br-xl">
-                                            <div style="  text-align: center; padding: 180px 0;">
-                                                <v-card-text class="white--text">
-                                                    <h3 class="text-center ">Alredy Signed up?</h3>
-                                                    <h6 class="text-center">Log in to your account so you can continue
-                                                        building
-                                                        and<br> editing your onboarding flows</h6>
-                                                </v-card-text>
-                                                <div class="text-center">
-                                                    <v-btn tile outlined dark @click="step--">Log in</v-btn>
-                                                </div>
-                                            </div>
-                                        </v-col>
-                                        <v-col cols="12" md="6">
-                                            <v-card-text class="mt-12">
-                                                <h6 class="text-center">Sign Up for an Account</h6>
-                                                <!-- <h6 class="text-center  grey--text ">Let's get you all set up so you can
-                                                    start
-                                                    creatin your <br>
-                                                    first onboarding experiance</h6> -->
-                                                <v-row align="center" justify="center">
-                                                    <v-col cols="12" sm="8">
-                                                        <v-row>
-                                                            <v-col cols="12" sm="6">
-                                                                <!-- <v-text-field v-model="firstname" label="First Name"
-                                                                    outlined dense color="blue" autocomplete="false"
-                                                                    class="mt-5" /> -->
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6">
-                                                                <!-- <v-text-field v-model="lastname" label="Last Name"
-                                                                    outlined dense color="blue" autocomplete="false"
-                                                                    class="mt-5" /> -->
-                                                            </v-col>
-                                                        </v-row>
-                                                        <!-- <v-text-field v-model="username" label="User Name"
-                                                            outlined dense color="blue" autocomplete="false" /> -->
-                                                        <!-- <v-text-field label="User Name" outlined dense color="blue"
-                                                            autocomplete="false" /> -->
-                                                        <!-- <v-text-field v-model="password" label="Password" outlined dense
-                                                            color="blue" autocomplete="false" type="password" /> -->
-                                                        <!-- <v-row>
-                                                            <v-col cols="12" sm="7">
-                                                                <v-checkbox label="I Accept AAE" class="mt-n1"
-                                                                    color="blue">
-                                                                </v-checkbox>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="5">
-                                                                <span class="caption blue--text ml-n4">Terms
-                                                                    &Conditions</span>
-                                                            </v-col>
-                                                        </v-row> -->
-                                                        <!-- <v-btn color="blue" dark block tile @click="register">Sign
-                                                            up</v-btn> -->
-                                                        <h6 class="text-center  grey--text mt-4 mb-3">Or Sign up using
-                                                        </h6>
-                                                        <div
-                                                            class="d-flex  justify-space-between align-center mx-10 mb-11">
-                                                            <v-btn depressed outlined color="grey">
-                                                                <v-icon color="red">mdi-google-plus</v-icon>
-                                                            </v-btn>
-                                                            <v-btn depressed outlined color="grey">
-                                                                <v-icon dark color="blue">
-                                                                    mdi-facebook
-                                                                </v-icon>
-                                                            </v-btn>
-                                                            <v-btn depressed outlined color="grey">
-                                                                <v-icon
-                                                                    color="light-blue lighten-3">mdi-twitter</v-icon>
-                                                            </v-btn>
-                                                        </div>
-                                                    </v-col>
-                                                </v-row>
-                                            </v-card-text>
-                                        </v-col>
-                                    </v-row>
-                                </v-window-item>
-                            </v-window>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-container>
-        </v-main>
-    </v-app>
+                                    <v-container>
+                                        <v-row>
+                                            <v-col offset="2" size="9">
+                                                <!-- <v-btn color="blue" class="rounded-xl"
+                                                        @click="$router.push({ name: 'LoginPage' })">
+                                                        <v-icon left>mdi-account-check</v-icon>
+                                                        LOG IN
+                                                    </v-btn> -->
+
+                                            </v-col>
+
+                                            <v-col offset="" size="9">
+                                                <v-btn @click="register" color="green" class="rounded-xl">
+                                                    <v-icon left>mdi-account-check</v-icon>
+                                                    SIGN UP
+                                                </v-btn>
+                                            </v-col>
+                                        </v-row>
+                                    </v-container>
+                                </v-card>
+                            </v-layout>
+                        </v-container>
+                    </v-form>
+                </v-col>
+      
+            </v-main>
+        </v-app>
+    </div>
 </template>
 
-<script>
-
+<script scoped>
 
 import { mapActions } from 'vuex';
-// export default {
-//     data: () => ({
-//         step: 1,
-//         loading: false,
-//         selection: 1,
-//         firstname: '',
-//         lastname: '',
-//         username: '',
-//         password: ''
-//     }),
-
-//     methods: {
-//         ...mapActions('users', ['Registration']),
-//         register() {
-//             this.loading = true
-//             let data = new FormData;
-//             data.append('firstname', this.firstname);
-//             data.append('lastname', this.lastname);
-//             data.append('username', this.username);
-//             data.append('password', this.password);
-//             this.Registration(data);
-//             setTimeout(() => {
-//                 this.loading = false;
-//                 this.$router.push('/dashboard');
-//             }, 2000)
-//         },
-//     },
-// }
-
-
 export default {
-    name: "App",
     data: () => ({
-        step: 1,
-        // dialog: false,
-        loading: false,
-        snackbar: false,
-        // passwordShow: false,
-        username: "",
-        password: "",
-        // loginCorrection: ''
+
+        firstname: '',
+        lastname: '',
+        username: '',
+        password: ''
     }),
+
     methods: {
-        ...mapActions('users', ['Loginuser']),
-        submitHandler() {
-            if (this.$refs.form.validate()) {
-                this.loading = true;
-                setTimeout(() => {
-                    this.loading = false;
-                    this.snackbar = true;
-                }, 3000);
-            }
-        },
-        userlogin() {
+        ...mapActions('users', ['Registration']),
+        register() {
+
             let data = new FormData;
-            console.log(this.username);
-            console.log(this.password);
+            data.append('firstname', this.firstname);
+            data.append('lastname', this.lastname);
             data.append('username', this.username);
             data.append('password', this.password);
+            this.Registration(data);
+            console.log(this.firstname);
+            console.log(this.lastname);
+            console.log(this.username);
+            console.log(this.password);
 
-
-            // this.Login(data).then(e => {
-            //     if (e == 0) {
-
-            //     } else if (e == 2) {
-
-            //     }
-            //     else {
-            //         this.$router.push('dashboard');
-            //     }
-            // });
-            this.signIn(data).then(e => {
-                if (e == 0) {
-                    
-                } else {
-                    this.navigateTo('/dashboard');
-                }
-            }).catch(e => console.log("Error=> ", e.message));
+            setTimeout(() => {
+                console.log("asd");
+                // this.$router.push('/dashboard');
+            }, 2000)
         },
-
     },
-};
+}
+
+
 
 </script>
-
-
+    
+    
 <style scoped>
-.hero {
-    background: url('https://www.bria.com.ph/wp-content/uploads/2021/03/Tagum-economy-1024x576.jpg');
+input[type="sample"] {
+    border-bottom: 1px solid rgb(28, 110, 4);
+    outline: none;
+    color: rgb(28, 110, 4);
+}
+
+input[type="password"] {
+    background: transparent;
+    outline: none;
+    color: rgb(28, 110, 4);
+}
+
+.custom-placeholer-color input::placeholder {
+    color: rgb(28, 110, 4) !important;
+    opacity: 1;
+}
+
+.custom-label-color .v-label {
+    color: rgb(28, 110, 4);
+    opacity: 1;
+}
+
+.custom-placeholer-color input,
+.custom-label-color input {
+    color: rgb(28, 110, 4) !important;
+}
+
+.v-sheet.v-card {
+    border-radius: 25px 25px 25px 25px;
+}
+
+.v-btn {
+    border-radius: 25px 25px 25px 25px;
+}
+
+h2 {
+    color: rgb(28, 110, 4);
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    margin-top: 20px;
+}
+
+.wrapper {
+    position: absolute;
+    left: 50%;
+    top: 250%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 10px 10px 15px rgba(49, 47, 47, 0.15);
+    box-shadow: 0 0 8px rgb(201, 181, 1);
+}
+
+.background {
+    margin: 0;
+    padding: 0;
+    background-image: url("C:\Users\CityOfTagum\Desktop\housing\back-up\housing-dashboard\src\assets\images\cover.jpg") !important;
     background-size: cover;
-    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.text-form {
+    margin-top: 20px;
+    color: rgb(28, 110, 4);
 }
 </style>
+    
+    

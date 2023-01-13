@@ -249,7 +249,7 @@
                                                                     <div class="card-body">
                                                                         <div v-for="item, index in form" :key="item">
                                                                             <!-- <H3>Anak number {{ index }}</H3>
-                                      {{ item }} -->
+{{ item }} -->
                                                                             <div class="row">
                                                                                 <div class="col-sm-2">
                                                                                     <label>Pangalan sa anak:</label>
@@ -475,6 +475,7 @@ export default {
             saveItem
         }
     },
+    
     data() {
         return {
             e1: 1,
