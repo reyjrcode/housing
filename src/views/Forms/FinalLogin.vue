@@ -151,6 +151,7 @@ export default {
             if (this.username.length == 0) {
                 this.inputcheck = true;
                 this.snackbar = true;
+                localStorage.clear();
             } else {
                 this.Loginuser(data).then(e => {
                     console.log('Hello!')

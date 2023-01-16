@@ -1,133 +1,67 @@
+
+
 <template>
-    <div class="div">
-        
-        <v-card>
-            <v-card-title>
-                Nutrition
-                <v-spacer></v-spacer>
-                <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-                    hide-details></v-text-field>
-            </v-card-title>
-            <v-data-table :headers="headers" :items="desserts" :search="search"></v-data-table>
-        </v-card>
-    </div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+            </tr>
+        </thead>
+        <tr v-for="pangalan in users" v-bind:key="pangalan.id">
+            <td>{{ pangalan.id }} </td>
+            <td>{{ pangalan.firstname }}</td>
+            <td>{{ pangalan.lastname }}</td>
+            <td>{{ pangalan.username }}</td>
+            <td>{{ pangalan.password }}</td>
+        </tr>
+
+    </table>
 </template>
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+
 <script>
-// import $ from "jquery";
-
-// $(document).ready(function () {
-//             $('#tbldetails').DataTable({
-//                 dom: 'Bfrtip',
-//                 buttons: [
-//                     'print'
-//                 ]
-//             });           
-//         });
-
+import { mapActions, mapGetters } from 'vuex';
 export default {
-    data() {
-        return {
-            search: '',
-            headers: [
-                {
-                    text: 'Dessert (100g serving)',
-                    align: 'start',
-                    sortable: false,
-                    value: 'name',
-                },
-                { text: 'Calories', value: 'calories' },
-                { text: 'Fat (g)', value: 'fat' },
-                { text: 'Carbs (g)', value: 'carbs' },
-                { text: 'Protein (g)', value: 'protein' },
-                { text: 'Iron (%)', value: 'iron' },
-            ],
-            desserts: [
-                {
-                    name: 'Frozen Yogurt',
-                    calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%',
-                },
-                {
-                    name: 'Ice cream sandwich',
-                    calories: 237,
-                    fat: 9.0,
-                    carbs: 37,
-                    protein: 4.3,
-                    iron: '1%',
-                },
-                {
-                    name: 'Eclair',
-                    calories: 262,
-                    fat: 16.0,
-                    carbs: 23,
-                    protein: 6.0,
-                    iron: '7%',
-                },
-                {
-                    name: 'Cupcake',
-                    calories: 305,
-                    fat: 3.7,
-                    carbs: 67,
-                    protein: 4.3,
-                    iron: '8%',
-                },
-                {
-                    name: 'Gingerbread',
-                    calories: 356,
-                    fat: 16.0,
-                    carbs: 49,
-                    protein: 3.9,
-                    iron: '16%',
-                },
-                {
-                    name: 'Jelly bean',
-                    calories: 375,
-                    fat: 0.0,
-                    carbs: 94,
-                    protein: 0.0,
-                    iron: '0%',
-                },
-                {
-                    name: 'Lollipop',
-                    calories: 392,
-                    fat: 0.2,
-                    carbs: 98,
-                    protein: 0,
-                    iron: '2%',
-                },
-                {
-                    name: 'Honeycomb',
-                    calories: 408,
-                    fat: 3.2,
-                    carbs: 87,
-                    protein: 6.5,
-                    iron: '45%',
-                },
-                {
-                    name: 'Donut',
-                    calories: 452,
-                    fat: 25.0,
-                    carbs: 51,
-                    protein: 4.9,
-                    iron: '22%',
-                },
-                {
-                    name: 'KitKat',
-                    calories: 518,
-                    fat: 26.0,
-                    carbs: 65,
-                    protein: 7,
-                    iron: '6%',
-                },
-            ],
+    data: () => ({
+        loading: false,
+        selection: 1,
+        dialog: false
+
+    }),
+    computed: {
+        ...mapGetters('users', { users: 'getUsers' })
+    },
+    methods: {
+        ...mapActions('users', ['fetchUsers', 'Deleteuser']),
+        NewUser() {
+            this.loading = true
+
+            setTimeout(() => (this.loading = false), 2000)
+            this.$router.push('/NewUserPage')
+        },
+
+        deleteuser(firstname) {
+            let data = new FormData;
+            data.append('firstname', firstname);
+            this.Deleteuser(data).then(e => {
+                if (e == 0)
+                    this.dialog = true;
+                else
+                    this.fetchUsers();
+            });
         }
     },
+    created() {
+        this.fetchUsers();
+
+
+    }
 }
+
+
 </script>
+
+
