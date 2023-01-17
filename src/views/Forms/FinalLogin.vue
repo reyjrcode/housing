@@ -31,7 +31,7 @@
                                     <v-row>
 
                                         <v-col offset="1" md="10">
-                                            <v-text-field class="custom-label-color" v-model="username"
+                                            <v-text-field class="custom-label-color" v-model="id"
                                                 label="User Name" color="white" type="sample"
                                                 prepend-inner-icon="mdi mdi-account mdi-light"></v-text-field>
                                                 
@@ -120,7 +120,7 @@ export default {
         dialog: false,
         snackbar: false,
         passwordShow: false,
-        username: "",
+        id: "",
         password: "",
         loginCorrection: '',
         text: `Input all fields to login!!!!!!`,
@@ -142,13 +142,13 @@ export default {
 
             let data = new FormData;
 
-            data.append('username', this.username);
+            data.append('id', this.id);
             data.append('password', this.password);
-            console.log(this.username);
+            console.log(this.id);
             console.log(this.password);
 
 
-            if (this.username.length == 0) {
+            if (this.id.length == 0) {
                 this.inputcheck = true;
                 this.snackbar = true;
                 localStorage.clear();

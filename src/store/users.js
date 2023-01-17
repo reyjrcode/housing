@@ -38,9 +38,8 @@ const actions = {
     async fetchUsers({ commit }) {
 
         let res = await axios.get(`${process.env.VUE_APP_API_URL}/usersall.php`);
-        console.log("start fetch")
         commit('setUsers', res.data.Users);
-        console.log("end of fetch")
+
     },
     async Registration({ commit }, payload) {
         let res = await axios.post(`${process.env.VUE_APP_API_URL}/new_user.php`, payload);
@@ -61,7 +60,7 @@ const actions = {
             return 2;
 
         else if (res.data['auth'] == 'passed') {
-            localStorage.setItem('auth', JSON.stringify(res.data['username']));
+            localStorage.setItem('auth', JSON.stringify(res.data['id']));
             commit('setAuth', res.data);
 
             return 1;
@@ -85,7 +84,7 @@ const actions = {
         let res = await axios.post(`${process.env.VUE_APP_API_URL}/edituser.php`, payload);
         console.log(res.data);
         if (res.data['output'] == 'success') {
-            commit('setUsers', res.data.Users);
+            commit('setUsers', res.data.users);
             return 1;
         }
         else
