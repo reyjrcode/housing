@@ -1,70 +1,4 @@
-<!-- 
 
-<template>
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Username</th>
-                <th scope="col">Password</th>
-            </tr>
-        </thead>
-        <tr v-for="user in users" v-bind:key="user.id">
-            <td>{{ user.id }} </td>
-            <td>{{ user.firstname }}</td>
-            <td>{{ user.lastname }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.password }}</td>
-        </tr>
-
-    </table>
-</template>
-
-<script>
-import { mapActions, mapGetters } from 'vuex';
-export default {
-    data: () => ({
-        loading: false,
-        selection: 1,
-        dialog: false
-
-    }),
-    computed: {
-        ...mapGetters('users', { users: 'getUsers' })
-    },
-    methods: {
-        ...mapActions('users', ['fetchUsers', 'Deleteuser']),
-        NewUser() {
-            this.loading = true
-
-            setTimeout(() => (this.loading = false), 2000)
-            this.$router.push('/NewUserPage')
-        },
-
-        deleteuser(firstname) {
-            let data = new FormData;
-            data.append('firstname', firstname);
-            this.Deleteuser(data).then(e => {
-                if (e == 0)
-                    this.dialog = true;
-                else
-                    this.fetchUsers();
-            });
-        }
-    },
-    created() {
-        this.fetchUsers();
-
-
-    }
-}
-
-
-</script>
-
- -->
 
 <template>
     <div class="div">
@@ -73,7 +7,7 @@ export default {
         <div class="container">
             <div class="row">
 
-                <div class="input-group rounded">
+                <!-- <div class="input-group rounded">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                         aria-describedby="search-addon" />
                     <span class="input-group-text border-0" id="search-addon">
@@ -84,9 +18,9 @@ export default {
                         </svg>
                     </span>
 
-                </div>
-
-
+                </div> -->
+                
+                .
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -101,41 +35,39 @@ export default {
                         </thead>
                         <tbody>
 
-                            <tr v-for="pangalan in users" v-bind:key="pangalan.id">
+                            <tr v-for="user in users" v-bind:key="user.id">
 
                                 <td>
-                                    <h4 />{{ pangalan.id }}
+                                    <h3 />{{ user.id }}
                                 </td>
                                 <td>
-                                    <h4 />{{ pangalan.firstname }}
+                                    <h3 />{{ user.firstname }}
                                 </td>
                                 <td>
-                                    <h4 />{{ pangalan.lastname }}
+                                    <h3 />{{ user.lastname }}
                                 </td>
                                 <td>
-                                    <h4 />{{ pangalan.username }}
+                                    <h3 />{{ user.username }}
                                 </td>
                                 <td>
-                                    <h4 />{{ pangalan.password }}
+                                    <h3 />{{ user.password }}
                                 </td>
                                 <td>
-                                    <v-btn elevation="2" color="primary" outlined>
+                                    <v-btn elevation="2" color="primary" outlined
+                                        @click="$router.push({ name: 'Views', params: { id: user.id } })">
                                         <v-icon dark left>
                                             mdi-eye
                                         </v-icon>
                                         View
-                                    </v-btn>
+                                    </v-btn>.
                                     <v-btn elevation="2" color="success" outlined
-                                        @click="$router.push({ name: 'UpdateShit', params: { id: pangalan.id } })">
-
+                                        @click="$router.push({ name: 'UpdateShit', params: { id: user.id } })">
                                         <v-icon dark left>
                                             mdi-pencil
                                         </v-icon>
                                         Update
-                                    </v-btn>
-
-
-                                    <v-btn elevation="2" color="red" outlined>
+                                    </v-btn>.
+                                    <v-btn elevation="2" color="red" outlined @click="deleteuser(user.firstname)">
                                         <v-icon dark left>
                                             mdi-delete-forever
                                         </v-icon>
@@ -148,18 +80,25 @@ export default {
                 </div>
             </div>
         </div>
-
     </div>
 </template>
  
 <script>
 import { mapActions, mapGetters } from 'vuex';
 export default {
+
+
+
+
+
     data: () => ({
         loading: false,
-            
+
         dialog: false
+
     }),
+
+
     computed: {
         ...mapGetters('users', { users: 'getUsers' })
     },

@@ -123,7 +123,7 @@
                                         <v-row>
                                             <v-col cols="12" sm="6" md="3">
                                                 <v-text-field label="Apelyido" clearable required
-                                                    outlined></v-text-field>
+                                                    outlined autofocus></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="3">
                                                 <v-text-field label="Pangalan" clearable required
@@ -354,7 +354,7 @@
                                                 <h2>Atop</h2>
                                                 <v-checkbox v-model="ex4" label="Kawayan/Sawali/Cogon/Nipa"
                                                     color="secondary" value="Kawayan/Sawali/Cogon/Nipa"
-                                                    hide-details></v-checkbox>
+                                                    hide-details autofocus></v-checkbox>
                                                 <v-checkbox v-model="ex4" label="Asbestos/Sin" color="secondary"
                                                     value="Asbestos/Sin" hide-details></v-checkbox>
                                                 <v-checkbox v-model="ex4" label="Improvised Materials" color="secondary"

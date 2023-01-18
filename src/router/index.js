@@ -7,6 +7,7 @@ import FormOne from '../views/Forms/FormOne.vue'
 import RegistrationPage from '../views/Forms/RegisterPage.vue'
 import Loginpage from '../views/Forms/FinalLogin.vue'
 import UpdateShit from '../views/crud/Update.vue'
+import Views from '../views/crud/View.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -42,6 +43,11 @@ const routes = [
       path: '/update/:id?',
       name: 'UpdateShit',
       component: UpdateShit
+    },
+    {
+      path: '/view/:id?',
+      name: 'Views',
+      component: Views
     },
 ]
 

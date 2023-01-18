@@ -14,6 +14,8 @@
                 </div>
             </div>
             <div class="col">
+
+                
                 <div class="card">
                     <div class="card-details">
                         <p class="text-title">Card title</p>

@@ -36,11 +36,7 @@
                                     <v-container>
                                         <v-row>
                                             <v-col offset="2" size="9">
-                                                <!-- <v-btn color="blue" class="rounded-xl"
-                                                        @click="$router.push({ name: 'LoginPage' })">
-                                                        <v-icon left>mdi-account-check</v-icon>
-                                                        LOG IN
-                                                    </v-btn> -->
+
 
                                                 <v-dialog v-model="dialog" max-width="290">
                                                     <v-card>
@@ -114,7 +110,7 @@ export default {
 
 
 
-            if (this.firstname.length == 0 || this.lastname.length  == 0 || this.username.length == 0 || this.password.length == 0 ) {
+            if (this.firstname.length == 0 || this.lastname.length == 0 || this.username.length == 0 || this.password.length == 0) {
                 this.dialog = true;
             } else {
                 this.Registration(data);
@@ -124,7 +120,7 @@ export default {
                 console.log(this.password);
 
                 setTimeout(() => {
-                    console.log("asd");
+                    console.log("register form");
                     this.$router.push('/dashboard');
                 }, 2000)
             }

@@ -1,23 +1,26 @@
 <template>
-
     <div class="div">
-
-
         <v-card class="mx-auto" max-width="344">
             <v-card-text>
 
                 <p class="text-h4 text--primary">
-                    Update user
+                    View user
                 </p>
             </v-card-text>
 
-            <v-text-field label="First Name" placeholder="First Name" v-model="firstname" outlined></v-text-field>
-            <v-text-field label="Last Name" placeholder="Last Name" v-model="lastname" outlined></v-text-field>
-            <v-text-field label="User Name" placeholder="User Name" v-model="username" outlined></v-text-field>
-            <v-text-field label="Password" placeholder="Password" v-model="password" outlined></v-text-field>
+            <v-text-field class="text-h3" label="First Name" disabled placeholder="First Name" v-model="firstname"
+                outlined></v-text-field>
+            <v-text-field class="text-h3" label="Last Name" disabled placeholder="Last Name" v-model="lastname"
+                outlined></v-text-field>
+            <v-text-field class="text-h3" label="User Name" disabled placeholder="User Name" v-model="username"
+                outlined></v-text-field>
+            <v-text-field class="text-h3" label="Password" disabled placeholder="Password" v-model="password"
+                outlined></v-text-field>
+
+
             <v-card-actions>
                 <v-btn text color="deep-purple accent-4" @click="register">
-                    Update
+                    Back
                 </v-btn>
             </v-card-actions>
         </v-card>
@@ -27,7 +30,7 @@
 import { mapActions, mapGetters } from 'vuex';
 export default {
     data: () => ({
-        dialog: false,
+
         selection: 1,
         firstname: '',
         lastname: '',
@@ -69,18 +72,12 @@ export default {
     },
     created() {
 
-        // if (this.firstname.length == 0 || this.lastname.length == 0 || this.username.length == 0 || this.password.length == 0) {
-
-        // } else {
-
-        // }
         this.pangalan = this.users.find(pangalan => pangalan.id == this.$route.params.id);
         console.log("id=>", this.pangalan.id);
         this.firstname = this.pangalan.firstname;
         this.lastname = this.pangalan.lastname;
         this.username = this.pangalan.username;
         this.password = this.pangalan.password;
-
     }
 }
 </script>
