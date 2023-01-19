@@ -60,7 +60,9 @@ export default {
             this.Updateuser(data);
             setTimeout(() => {
                 // this.loading = false;
+
                 this.$router.push('/dashboard');
+                window.location = window.location
             }, 2000)
         },
     },

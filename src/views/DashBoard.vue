@@ -15,7 +15,7 @@
             </div>
             <div class="col">
 
-                
+
                 <div class="card">
                     <div class="card-details">
                         <p class="text-title">Card title</p>
@@ -129,7 +129,9 @@ import AdminNavbar from "../views/Navigation/AdminNavbar.vue"
 import PieChart from "@/components/ChartComponent.vue";
 import BarChart from "@/components/BarChart.vue"
 import DataTable from "@/components/DataTable.vue";
+
 export default {
+
     components: {
         AdminNavbar,
         PieChart,

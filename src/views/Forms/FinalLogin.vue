@@ -48,7 +48,7 @@
                                             <v-col offset="2" size="9">
 
                                                 <v-btn type="submit" color="blue" class="rounded-xl" @click=userlogin>
-                                                    <v-icon left>mdi-account-check</v-icon>
+                                                    <v-icon left>mdi-login-variant</v-icon>
                                                     LOG IN
 
                                                 </v-btn>
@@ -87,7 +87,7 @@
                                             <v-col offset="" size="9" @click="$router.push({ name: 'RegistrationPage' })">
 
                                                 <v-btn color="green" class="rounded-xl">
-                                                    <v-icon left>mdi-account-check</v-icon>
+                                                    <v-icon left>mdi-lead-pencil</v-icon>
                                                     SING UP
                                                 </v-btn>
                                             </v-col>

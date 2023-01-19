@@ -8,6 +8,7 @@ import RegistrationPage from '../views/Forms/RegisterPage.vue'
 import Loginpage from '../views/Forms/FinalLogin.vue'
 import UpdateShit from '../views/crud/Update.vue'
 import Views from '../views/crud/View.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -33,22 +34,23 @@ const routes = [
     name: 'FormOne',
     component: FormOne
   },
-  
-    {
-      path: '/register',
-      name: 'RegistrationPage',
-      component: RegistrationPage
-    },
-    {
-      path: '/update/:id?',
-      name: 'UpdateShit',
-      component: UpdateShit
-    },
-    {
-      path: '/view/:id?',
-      name: 'Views',
-      component: Views
-    },
+
+  {
+    path: '/register',
+    name: 'RegistrationPage',
+    component: RegistrationPage
+  },
+  {
+    path: '/update/:id?',
+    name: 'UpdateShit',
+    component: UpdateShit
+  },
+  {
+    path: '/view/:id?',
+    name: 'Views',
+    component: Views
+  },
+
 ]
 
 
