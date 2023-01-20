@@ -7,7 +7,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-details">
-                        <p class="text-title">Card title</p>
+                        <p class="text-title">Total award</p>
                         <p class="text-body">Here are the details of the card</p>
                     </div>
                     <button class="card-button">More info</button>
@@ -18,7 +18,7 @@
 
                 <div class="card">
                     <div class="card-details">
-                        <p class="text-title">Card title</p>
+                        <p class="text-title">Total approved</p>
                         <p class="text-body">Here are the details of the card</p>
                     </div>
                     <button class="card-button">More info</button>
@@ -27,7 +27,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-details">
-                        <p class="text-title">Card title</p>
+                        <p class="text-title">Total blocklisted</p>
                         <p class="text-body">Here are the details of the card</p>
                     </div>
                     <button class="card-button">More info</button>
@@ -36,10 +36,10 @@
             <div class="col">
                 <div class="card">
                     <div class="card-details">
-                        <p class="text-title">Card title</p>
+                        <p class="text-title">Total project</p>
                         <p class="text-body">Here are the details of the card</p>
                     </div>
-                    <button class="card-button">More info</button>
+                    <button class="card-button" >More info</button>
                 </div>
             </div>
         </div>

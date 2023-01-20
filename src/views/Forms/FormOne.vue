@@ -113,7 +113,7 @@
                         <v-stepper-step step="4" offset-x min-width="auto">
                             Sitwasyon sa Pagpuyo
                         </v-stepper-step>
-                        
+
                     </v-stepper-header>
                     <v-stepper-items>
                         <v-stepper-content step="1">
@@ -122,8 +122,8 @@
                                     <v-container>
                                         <v-row>
                                             <v-col cols="12" sm="6" md="3">
-                                                <v-text-field label="Apelyido" clearable required
-                                                    outlined autofocus></v-text-field>
+                                                <v-text-field label="Apelyido" clearable required outlined
+                                                    autofocus></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="3">
                                                 <v-text-field label="Pangalan" clearable required
@@ -213,11 +213,11 @@
                                     <h2 class="red--text">*indicates required field</h2>
                                 </v-card-text>
                             </v-card>
-                            <v-btn class="ma-4" color="#F7A4A4"  @click="$router.push('/dashboard')">
+                            <v-btn class="ma-4" color="#F7A4A4" @click="$router.push('/dashboard')">
                                 <v-icon large color="green darken-2">
                                     mdi-cancel
                                 </v-icon>
-                                
+
                                 Cancel
                             </v-btn>
 
@@ -236,7 +236,7 @@
                                             <v-responsive class="overflow-y-auto" max-height="400">
 
 
-                                                
+
                                                 <v-lazy v-model="isActive" :options="{
                                                     threshold: .5
                                                 }" min-height="200" transition="fade-transition">
@@ -353,8 +353,8 @@
                                             <v-card class="pa-2" outlined tile>
                                                 <h2>Atop</h2>
                                                 <v-checkbox v-model="ex4" label="Kawayan/Sawali/Cogon/Nipa"
-                                                    color="secondary" value="Kawayan/Sawali/Cogon/Nipa"
-                                                    hide-details autofocus></v-checkbox>
+                                                    color="secondary" value="Kawayan/Sawali/Cogon/Nipa" hide-details
+                                                    autofocus></v-checkbox>
                                                 <v-checkbox v-model="ex4" label="Asbestos/Sin" color="secondary"
                                                     value="Asbestos/Sin" hide-details></v-checkbox>
                                                 <v-checkbox v-model="ex4" label="Improvised Materials" color="secondary"
@@ -475,7 +475,7 @@ export default {
             saveItem
         }
     },
-    
+
     data() {
         return {
             e1: 1,
@@ -515,7 +515,7 @@ export default {
                             text: "For Processing",
                             route: "/YouTherecord",
                         },
-                        
+
                     ],
                 },
                 {
@@ -529,6 +529,11 @@ export default {
                             icon: "mdi-information-outline",
                             text: "User Info",
                             route: "/YouTherecord",
+                        },
+                        {
+                            icon: "mdi-printer",
+                            text: "Print",
+                            route: "/viewshit",
                         },
                         {
                             icon: "mdi-logout-variant",

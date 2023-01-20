@@ -8,6 +8,12 @@ import RegistrationPage from '../views/Forms/RegisterPage.vue'
 import Loginpage from '../views/Forms/FinalLogin.vue'
 import UpdateShit from '../views/crud/Update.vue'
 import Views from '../views/crud/View.vue'
+import ViewerShit from '../views/ViewerShit.vue'
+
+
+
+
+
 
 Vue.use(VueRouter)
 
@@ -50,6 +56,11 @@ const routes = [
     name: 'Views',
     component: Views
   },
+  {
+    path: '/viewshit',
+    name: 'ViewerShit',
+    component: ViewerShit
+  }
 
 ]
 

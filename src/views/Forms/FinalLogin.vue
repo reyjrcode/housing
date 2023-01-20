@@ -14,7 +14,7 @@
 
                                 <v-card class="wrapper">
 
-                                    <v-snackbar v-model="snackbar" :timeout="timeout" >
+                                    <v-snackbar v-model="snackbar" :timeout="timeout">
                                         <h3> {{ text }}</h3>
 
                                         <template v-slot:action="{ attrs }">
@@ -31,10 +31,10 @@
                                     <v-row>
 
                                         <v-col offset="1" md="10">
-                                            <v-text-field class="custom-label-color" v-model="id"
-                                                label="User Name" color="white" type="sample"
+                                            <v-text-field class="custom-label-color" v-model="id" label="User Name"
+                                                color="white" type="sample"
                                                 prepend-inner-icon="mdi mdi-account mdi-light"></v-text-field>
-                                                
+
                                             <v-text-field v-model="password" class="custom-label-color" label="Password"
                                                 color="white" type="password"
                                                 prepend-inner-icon="mdi-key mdi-light"></v-text-field>
@@ -43,7 +43,7 @@
                                     </v-row>
 
                                     <v-container>
-                                    
+
                                         <v-row>
                                             <v-col offset="2" size="9">
 
@@ -52,10 +52,10 @@
                                                     LOG IN
 
                                                 </v-btn>
-                                                <v-dialog v-model="dialog"  max-width="290">
+                                                <v-dialog v-model="dialog" max-width="290">
                                                     <v-card>
-                                                        <v-card-title class="text-h5">
-                                                            EEEHHH!!!!
+                                                        <v-card-title class="text-h6">
+                                                            No user account found!
                                                         </v-card-title>
 
                                                         <v-card-text>
@@ -65,9 +65,9 @@
                                                         <v-card-actions>
                                                             <v-spacer></v-spacer>
 
-                                                            <v-btn color="green darken-1" text @click="dialog = false">
+                                                            <!-- <v-btn color="green darken-1" text @click="dialog = false">
                                                                 Disagree
-                                                            </v-btn>
+                                                            </v-btn> -->
 
                                                             <v-btn color="green darken-1" text @click="dialog = false">
                                                                 Agree
@@ -84,7 +84,8 @@
 
 
 
-                                            <v-col offset="" size="9" @click="$router.push({ name: 'RegistrationPage' })">
+                                            <v-col offset="" size="9"
+                                                @click="$router.push({ name: 'RegistrationPage' })">
 
                                                 <v-btn color="green" class="rounded-xl">
                                                     <v-icon left>mdi-lead-pencil</v-icon>
@@ -124,7 +125,7 @@ export default {
         password: "",
         loginCorrection: '',
         text: `Input all fields to login!!!!!!`,
-        timeout: 2000,
+        timeout: 3000,
     }),
 
     methods: {
@@ -156,7 +157,7 @@ export default {
                 this.Loginuser(data).then(e => {
                     console.log('Hello!')
                     if (e == 0) {
-                        this.loginCorrection = "Incorrect Password!"
+                        this.loginCorrection = "Check user name and password first before log-in."
                         this.dialog = true;
                     } else if (e == 2) {
                         this.loginCorrection = "No user account found!"

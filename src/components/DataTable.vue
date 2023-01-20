@@ -68,7 +68,7 @@
                                         </v-icon>
                                         Update
                                     </v-btn>
-                                    <v-btn elevation="2" color="red" outlined @click="deleteuser(user.firstname)">
+                                    <v-btn elevation="2" color="red" outlined @click="deleteuser(user.id)">
                                         <v-icon dark left>
                                             mdi-delete-forever
                                         </v-icon>
@@ -102,8 +102,7 @@ export default {
 
     data: () => ({
         search: '',
-        loading: false,
-
+        // loading: false,
         dialog: false
 
     }),
@@ -130,9 +129,9 @@ export default {
             setTimeout(() => (this.loading = false), 2000)
             this.$router.push('/NewUserPage')
         },
-        deleteuser(username) {
+        deleteuser(id) {
             let data = new FormData;
-            data.append('username', username);
+            data.append('id', id);
             this.Deleteuser(data).then(e => {
                 if (e == 0)
                     this.dialog = true;

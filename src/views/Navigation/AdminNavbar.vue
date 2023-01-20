@@ -116,13 +116,18 @@ export default {
                 icon: "mdi-chevron-up",
                 "icon-alt": "mdi-chevron-down",
                 "icon-ctr": "mdi-account-box",
-                text: "Profile",
+                text: "Actions",
                 model: false,
                 children: [
                     {
                         icon: "mdi-information-outline",
                         text: "User Info",
                         route: "/dashboards",
+                    },
+                    {
+                        icon: "mdi-printer",
+                        text: "Print",
+                        route: "/viewshit",
                     },
                     {
                         icon: "mdi-logout-variant",
