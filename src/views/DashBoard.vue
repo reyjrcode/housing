@@ -1,130 +1,156 @@
 <template>
+
+    
     <div class="div">
-
         <AdminNavbar />
-
         <div class="row">
             <div class="col">
+                <div data-aos="zoom-out-left">
+                    <div class="card">
+                        <div class="card-details">
+                            <p class="text-title"> <v-icon dark right color="black">
+                                    mdi-trophy
+                                </v-icon>
+                                Total award</p>
+                            <p class="text-body">Here are the details of the card</p>
+                        </div>
+                        <button class="card-button">More info</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
                 <div class="card">
                     <div class="card-details">
-                        <p class="text-title">Total award</p>
+                        <p class="text-title">
+                            <v-icon dark right color="black">
+                                mdi-thumb-up
+                            </v-icon>
+                            Total approved
+                        </p>
                         <p class="text-body">Here are the details of the card</p>
                     </div>
                     <button class="card-button">More info</button>
                 </div>
             </div>
             <div class="col">
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">
+                            <v-icon dark right color="black">
+                                mdi-block-helper
+                            </v-icon>
+                            Total blocklisted
+                        </p>
+                        <p class="text-body">Here are the details of the card</p>
+                    </div>
+                    <button class="card-button">More info</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">
+                            <v-icon dark right color="black">
+                                mdi-home-variant
+                            </v-icon>
+                            Total projects
+                        </p>
+                        <p class="text-body">Here are the details of the card</p>
+                    </div>
+                    <button class="card-button">More info</button>
+                </div>
+            </div>
 
-
-                <div class="card">
-                    <div class="card-details">
-                        <p class="text-title">Total approved</p>
-                        <p class="text-body">Here are the details of the card</p>
-                    </div>
-                    <button class="card-button">More info</button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-details">
-                        <p class="text-title">Total blocklisted</p>
-                        <p class="text-body">Here are the details of the card</p>
-                    </div>
-                    <button class="card-button">More info</button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-details">
-                        <p class="text-title">Total project</p>
-                        <p class="text-body">Here are the details of the card</p>
-                    </div>
-                    <button class="card-button" >More info</button>
-                </div>
-            </div>
         </div>
         <div class="row">
-            <div class="col">
+            <center>
                 <PieChart></PieChart>
-            </div>
-            <div class="col">
-                <BarChart></BarChart>
-            </div>
+            </center>
         </div>
-        <v-card>
-            <v-toolbar flat color="primary" dark>
-                <v-toolbar-title>Danger Zone</v-toolbar-title>
-            </v-toolbar>
-            <v-tabs vertical>
-                <v-tab>
-                    <!-- <v-icon left>
+        <div class="di">
+            <center>
+                <BarChart></BarChart>
+            </center>
+
+        </div>
+        <center>
+            <v-card elevation="2">
+                <v-toolbar flat color="primary" dark>
+                    <v-toolbar-title>Danger Zone</v-toolbar-title>
+                </v-toolbar>
+                <v-tabs vertical>
+                    <v-tab>
+                        <!-- <v-icon left>
                         mdi-account
                     </v-icon> -->
-                    (123) Kilid sapa
-                </v-tab>
-                <v-tab>
-                    <!-- <v-icon left>
+                        (123) Kilid sapa
+                    </v-tab>
+                    <v-tab>
+                        <!-- <v-icon left>
                         mdi-account
                     </v-icon> -->
-                    (456) Walay balay
-                </v-tab>
-                <v-tab>
-                    <!-- <v-icon left>
+                        (456) Walay balay
+                    </v-tab>
+                    <v-tab>
+                        <!-- <v-icon left>
                         mdi-lock
                     </v-icon> -->
-                    (789)
-                    Kilid imburnal
-                </v-tab>
-                <v-tab>
-                    <!-- <v-icon left>
+                        (789)
+                        Kilid imburnal
+                    </v-tab>
+                    <v-tab>
+                        <!-- <v-icon left>
                         mdi-access-point
                     </v-icon> -->
-                    Option 3
-                </v-tab>
-                <v-tab>
-                    <!-- <v-icon left>
+                        Option 3
+                    </v-tab>
+                    <v-tab>
+                        <!-- <v-icon left>
                         mdi-access-point
                     </v-icon> -->
-                    Option 3
-                </v-tab>
+                        Option 3
+                    </v-tab>
 
-                <v-tab-item>
+                    <v-tab-item>
 
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
+                        <v-card flat>
+                            <DataTable />
+                        </v-card>
 
 
-                </v-tab-item>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-                </v-tab-item>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-                </v-tab-item>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-                </v-tab-item>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-                </v-tab-item>
-            </v-tabs>
-        </v-card>
+                    </v-tab-item>
+                    <v-tab-item>
+                        <v-card flat>
+                            <DataTable />
+                        </v-card>
+                    </v-tab-item>
+                    <v-tab-item>
+                        <v-card flat>
+                            <DataTable />
+                        </v-card>
+                    </v-tab-item>
+                    <v-tab-item>
+                        <v-card flat>
+                            <DataTable />
+                        </v-card>
+                    </v-tab-item>
+                    <v-tab-item>
+                        <v-card flat>
+                            <DataTable />
+                        </v-card>
+                    </v-tab-item>
+                </v-tabs>
+            </v-card>
+        </center>
         <v-card flat>
         </v-card>
     </div>
 </template>
-
+ 
 <script>
+
 /* eslint-disable */
+
 import AdminNavbar from "../views/Navigation/AdminNavbar.vue"
 import PieChart from "@/components/ChartComponent.vue";
 import BarChart from "@/components/BarChart.vue"
@@ -143,6 +169,7 @@ export default {
 
 
     }),
+
 };
 </script>
 <style scoped>

@@ -1,21 +1,19 @@
 
 
 <template>
-
-
-
-
     <div class="container">
         <div class="row">
             <div class="table-responsive">
                 <!-- <input type="text" v-model="search"> -->
                 <nav class="navbar navbar-light bg-light">
                     <form class="form-inline">
-                        <input class="form-control mr-sm-2" v-model="search" type="search"
-                            placeholder="Search First Name" aria-label="Search">
-                        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                        <!-- <input class="form-control mr-sm-2" v-model="search" type="search"
+                            placeholder="Search Full name" aria-label="Search"> -->
+                        <input placeholder="Search full name.." v-model="search" type="text" name="text"
+                            class="input" />
                     </form>
                 </nav>
+
 
                 <!-- <v-text-field label="Search here" v-model="search" placeholder="Search here" outlined></v-text-field> -->
                 <!-- <table class="table table-hover"  style="width:100%"> -->
@@ -53,6 +51,9 @@
                                 <td height="30">
                                     {{ user.password }}
                                 </td>
+                                <!-- <td height="30">
+                                    {{ user.fullname }}
+                                </td> -->
                                 <td>
                                     <v-btn elevation="2" color="primary" outlined
                                         @click="$router.push({ name: 'Views', params: { id: user.id } })">
@@ -113,7 +114,7 @@ export default {
         ...mapGetters('users', { users: 'getUsers' }),
         filteredItems() {
             return this.users.filter(user => {
-                return user.id.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+                return user.fullname.toLowerCase().indexOf(this.search.toLowerCase()) > -1
             })
         },
         // end of filter search 
@@ -163,7 +164,7 @@ export default {
 
 #customers tr:nth-child(even) {
     background-color: #f2f2f2;
-    
+
 }
 
 #customers tr:hover {
@@ -176,6 +177,62 @@ export default {
     text-align: center;
     background-color: #04AA6D;
     color: rgb(0, 0, 0);
-    
+
 }
+
+/* text search */
+.input {
+    width: 100%;
+    max-width: 220px;
+    height: 45px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1.5px solid lightgrey;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+}
+
+.input:hover {
+    border: 2px solid lightgrey;
+    box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active {
+    transform: scale(0.95);
+}
+
+.input:focus {
+    border: 2px solid grey;
+}
+
+/* buttons */
+
+
+button {
+    background-color: white;
+    color: black;
+    border-radius: 10em;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+}
+
+button:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+}
+
+;
+
+button:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+;
 </style>

@@ -33,7 +33,7 @@
                                         <v-col offset="1" md="10">
                                             <v-text-field class="custom-label-color" v-model="id" label="User Name"
                                                 color="white" type="sample"
-                                                prepend-inner-icon="mdi mdi-account mdi-light"></v-text-field>
+                                                prepend-inner-icon="mdi mdi-account mdi-light" autofocus></v-text-field>
 
                                             <v-text-field v-model="password" class="custom-label-color" label="Password"
                                                 color="white" type="password"
@@ -157,6 +157,8 @@ export default {
                 this.Loginuser(data).then(e => {
                     console.log('Hello!')
                     if (e == 0) {
+                        this.id="";
+                        this.password="";
                         this.loginCorrection = "Check user name and password first before log-in."
                         this.dialog = true;
                     } else if (e == 2) {

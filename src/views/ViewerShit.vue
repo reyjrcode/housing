@@ -3,10 +3,11 @@
         <div @click="generatePDF()" class="np-btn">Generate PDF</div>
 
         <vue-html2pdf :show-layout="false" :float-layout="true" :enable-download="true" :preview-modal="true"
-            :paginate-elements-by-height="100" filename="hek hek Shit!" :pdf-quality="2"
-            :manual-pagination="false" pdf-format="a4" :pdf-margin="10" pdf-orientation="landscape"
-            pdf-content-width="800px" @progress="onProgress($event)" ref="html2Pdf">
+            :paginate-elements-by-height="100" filename="C.H.L.M.O report" :pdf-quality="2" :manual-pagination="false"
+            pdf-format="a4" :pdf-margin="10" pdf-orientation="landscape" pdf-content-width="800px"
+            @progress="onProgress($event)" ref="html2Pdf">
             <section slot="pdf-content">
+
                 <ContentToPrint />
             </section>
         </vue-html2pdf>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+
 import VueHtml2pdf from "vue-html2pdf";
 import ContentToPrint from "@/components/ContentToPrint.vue";
 

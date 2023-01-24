@@ -1,10 +1,38 @@
 <template>
     <div style="margin: 12px 12px">
-        <img src="https://picsum.photos/500/300" />
-        <p>this is print</p>
+
+        <!-- <img src="https://picsum.photos/500/300" /> -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    Column
+                </div>
+                <div class="col">
+                    <img src="https://scontent.fmnl4-3.fna.fbcdn.net/v/t1.15752-9/278877078_1441048096313034_8836127387058102283_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeG0EjIpK-3yjjUrHoKdiJhvO9CjLz0SWbg70KMvPRJZuOWSsrIhjBLuMRIJM06sQrBHzk3QuKhFUQQ-7HpTtyUo&_nc_ohc=zhVeicLauFgAX8GevXV&_nc_ht=scontent.fmnl4-3.fna&oh=03_AdQS02_aY4wGTMJJEAdJ9PmuUhWOuzIJNeBFjzzjgwlOJA&oe=63F54455"
+                        alt="Girl in a jacket" width="200" height="200">
+                </div>
+                <div class="col">
+                    Column
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <PieChart />
+                </div>
+                <div class="col">
+                    <BarChart />
+                </div>
+
+            </div>
+        </div>
+
+        <h1> To print</h1>
         <div class="table-responsive">
-
-
             <table class="table table-hover" cellspacing="0" width="50" id="customers">
 
                 <thead>
@@ -17,9 +45,7 @@
                         <!-- <th scope="col">Actions</th> -->
                     </tr>
                 </thead>
-
                 <tbody>
-
                     <tr v-for="(user) in filteredItems" v-bind:key="user.id">
 
                         <td>
@@ -37,31 +63,28 @@
                         <td height="30">
                             {{ user.password }}
                         </td>
-
                     </tr>
                 </tbody>
             </table>
-
-
         </div>
     </div>
 </template>
-
-
-
- 
 
 <script>
 
 
 import { mapActions, mapGetters } from 'vuex';
-
+import PieChart from "@/components/ChartComponent.vue";
+import BarChart from "@/components/BarChart.vue"
 
 
 export default {
 
 
-
+    components: {
+        PieChart,
+        BarChart,
+    },
 
 
     data: () => ({

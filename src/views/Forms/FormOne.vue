@@ -69,9 +69,9 @@
                     </v-list-item>
                 </v-list>
             </v-menu>
-            <v-btn elevation="2" color="error" text @click="$router.push({ name: 'Dashboard' })">
+            <v-btn elevation="4" color="error" @click="logout">
                 <span>LOG OUT</span>
-                <v-icon right></v-icon>
+                <v-icon right> mdi-exit-to-app</v-icon>
             </v-btn>
         </v-app-bar>
 
@@ -496,26 +496,20 @@ export default {
                     model: false,
                     children: [
                         {
-                            icon: "mdi-note-plus-outline",
-                            text: "Form number 1",
+                            icon: "mdi-note-plus",
+                            text: "Relocation",
                             route: "/form-one",
                         },
                         {
-                            icon: "mdi-note-plus-outline",
+                            icon: "mdi-note-plus",
                             text: "For Recommendation",
-                            route: "/YouTherecord",
+                            route: "/form-one",
                         },
                         {
-                            icon: "mdi-note-plus-outline",
+                            icon: "mdi-note-plus",
                             text: "For Processing",
-                            route: "/YouTherecord",
+                            route: "/form-one",
                         },
-                        {
-                            icon: "mdi-note-plus-outline",
-                            text: "For Processing",
-                            route: "/YouTherecord",
-                        },
-
                     ],
                 },
                 {

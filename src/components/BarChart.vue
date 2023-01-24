@@ -1,6 +1,9 @@
 <template>
+
     <div class="example">
-        <apexcharts width="500" height="290" :options="chartOptions" :series="series"></apexcharts>
+        <v-card elevation="4">
+            <apexcharts width="1100" height="400" :options="chartOptions" :series="series"></apexcharts>
+        </v-card>
     </div>
 </template>
 
@@ -21,7 +24,7 @@ export default {
                     type: 'bar'
                 },
                 xaxis: {
-                    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+                    categories: ["Kilid sa sapa", "Kilid sa creek", "Kilid sa emburnal", "Walay balay", 1995, 1996, 1997, 1998]
                 }
             },
             series: [{

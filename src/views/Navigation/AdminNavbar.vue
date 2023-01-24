@@ -57,7 +57,7 @@
         <v-app-bar color="#388E3C" dark app>
             <v-app-bar-nav-icon color="#000000" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title class="text-uppercase">
-                <span class="font-weight-light">Blah Blah</span>
+                <span class="font-weight-light">City Housing and Land Management Office</span>
                 <span></span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
@@ -68,9 +68,9 @@
                     </v-list-item>
                 </v-list>
             </v-menu>
-            <v-btn elevation="2" color="error" @click="logout">
+            <v-btn elevation="4" color="error" @click="logout">
                 <span>LOG OUT</span>
-                <v-icon right></v-icon>
+                <v-icon right> mdi-exit-to-app</v-icon>
             </v-btn>
         </v-app-bar>
     </div>
@@ -96,19 +96,19 @@ export default {
                 model: false,
                 children: [
                     {
-                        icon: "mdi-note-plus-outline",
-                        text: "Form number 1",
+                        icon: "mdi-note-plus",
+                        text: "Relocation",
                         route: "/form-one",
                     },
                     {
-                        icon: "mdi-note-plus-outline",
+                        icon: "mdi-note-plus",
                         text: "For Recommendation",
-                        route: "/YouTherecord",
+                        route: "/form-one",
                     },
                     {
-                        icon: "mdi-note-plus-outline",
+                        icon: "mdi-note-plus",
                         text: "For Processing",
-                        route: "/YouTherecord",
+                        route: "/form-one",
                     },
                 ],
             },
@@ -148,6 +148,5 @@ export default {
 };
 </script>
 <style>
-
 
 </style>

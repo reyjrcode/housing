@@ -1,7 +1,7 @@
 
 <template>
 
-    <apexchart :width="450" :height="450" :options="options" :series="data">
+    <apexchart :width="650" :height="650" :options="options" :series="data">
     </apexchart>
 
 </template>
@@ -54,7 +54,7 @@ export default {
                                 total: {
                                     show: true,
                                     label: "Total",
-                                    fontSize: "22px",
+                                    fontSize: "40px",
                                     fontWeight: "bold",
                                     color: "black",
                                 },
@@ -73,12 +73,13 @@ export default {
                     text: this.loading ? "Loading..." : "No Data",
                 },
                 labels: [
-                    "Label 1",
-                    "Label 2",
-                    "Label 3",
-                    "Label 4",
+                    "Kilid sa sapa",
+                    "Kilid sa creek",
+                    "kilid sa emburnal",
+                    "Walay balay",
 
                 ],
+                
             };
         },
     },
