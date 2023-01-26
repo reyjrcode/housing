@@ -4,30 +4,33 @@
     <div class="container">
         <div class="row">
             <div class="table-responsive">
-                <!-- <input type="text" v-model="search"> -->
                 <nav class="navbar navbar-light bg-light">
                     <form class="form-inline">
-                        <!-- <input class="form-control mr-sm-2" v-model="search" type="search"
-                            placeholder="Search Full name" aria-label="Search"> -->
                         <input placeholder="Search full name.." v-model="search" type="text" name="text"
                             class="input" />
                     </form>
                 </nav>
-
-
+                
                 <!-- <v-text-field label="Search here" v-model="search" placeholder="Search here" outlined></v-text-field> -->
                 <!-- <table class="table table-hover"  style="width:100%"> -->
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
-
-                    <table class="table table-hover" cellspacing="0" style='height:500px;display:block;overflow:scroll'
-                        width="50" id="customers">
+                    <table class="table table-hover" cellspacing="0" style='height:500px;display:block;overflow:scroll;width:max-content'
+                        id="customers">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
+                                <!-- <th scope="col">ID</th>
                                 <th scope="col">First Name</th>
                                 <th scope="col">Last Name</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">Password</th>
+                                <th scope="col">Actions</th> -->
+                                <th scope="col">ID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">User Name</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Department</th>
+                                <th scope="col">Rate</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -50,6 +53,12 @@
                                 </td>
                                 <td height="30">
                                     {{ user.password }}
+                                </td>
+                                <td height="30">
+                                    {{ user.department_name }}
+                                </td>
+                                <td height="30">
+                                    {{ user.rate }}
                                 </td>
                                 <!-- <td height="30">
                                     {{ user.fullname }}
@@ -105,6 +114,7 @@ export default {
         search: '',
         // loading: false,
         dialog: false
+        
 
     }),
 
@@ -114,7 +124,7 @@ export default {
         ...mapGetters('users', { users: 'getUsers' }),
         filteredItems() {
             return this.users.filter(user => {
-                return user.fullname.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+                return user.firstname.toLowerCase().indexOf(this.search.toLowerCase()) > -1
             })
         },
         // end of filter search 

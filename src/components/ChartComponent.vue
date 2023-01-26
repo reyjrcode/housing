@@ -1,8 +1,10 @@
 
 <template>
 
-    <apexchart :width="650" :height="650" :options="options" :series="data">
+
+    <apexchart :width="600" :height="600" :options="options" :series="data">
     </apexchart>
+
 
 </template>
 <script>
@@ -79,7 +81,7 @@ export default {
                     "Walay balay",
 
                 ],
-                
+
             };
         },
     },

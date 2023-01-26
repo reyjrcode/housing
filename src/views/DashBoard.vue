@@ -1,6 +1,6 @@
 <template>
 
-    
+
     <div class="div">
         <AdminNavbar />
         <div class="row">
@@ -63,87 +63,76 @@
 
         </div>
         <div class="row">
-            <center>
+            
+            <div class="container-fluid">
                 <PieChart></PieChart>
-            </center>
+            </div>
+            <br/>
         </div>
         <div class="di">
             <center>
-                <BarChart></BarChart>
+                <div class="container-fluid">
+                    <BarChart></BarChart>
+                </div>
             </center>
-
         </div>
-        <center>
-            <v-card elevation="2">
-                <v-toolbar flat color="primary" dark>
-                    <v-toolbar-title>Danger Zone</v-toolbar-title>
-                </v-toolbar>
-                <v-tabs vertical>
-                    <v-tab>
-                        <!-- <v-icon left>
-                        mdi-account
-                    </v-icon> -->
-                        (123) Kilid sapa
-                    </v-tab>
-                    <v-tab>
-                        <!-- <v-icon left>
-                        mdi-account
-                    </v-icon> -->
-                        (456) Walay balay
-                    </v-tab>
-                    <v-tab>
-                        <!-- <v-icon left>
-                        mdi-lock
-                    </v-icon> -->
-                        (789)
-                        Kilid imburnal
-                    </v-tab>
-                    <v-tab>
-                        <!-- <v-icon left>
-                        mdi-access-point
-                    </v-icon> -->
-                        Option 3
-                    </v-tab>
-                    <v-tab>
-                        <!-- <v-icon left>
-                        mdi-access-point
-                    </v-icon> -->
-                        Option 3
-                    </v-tab>
 
-                    <v-tab-item>
+        <v-card elevation="2">
+            <v-toolbar flat color="primary" dark>
+                <v-toolbar-title>Danger Zone</v-toolbar-title>
+            </v-toolbar>
+            <v-tabs vertical>
+                <v-tab>
+                
+                    (123) Kilid sapa
+                </v-tab>
+                <v-tab>
 
-                        <v-card flat>
-                            <DataTable />
-                        </v-card>
+                    (456) Walay balay
+                </v-tab>
+                <v-tab>
+
+                    (789)
+                    Kilid imburnal
+                </v-tab>
+                <v-tab>
+
+                    Option 3
+                </v-tab>
+                <v-tab>
+                    Option 3
+                </v-tab>
+                <v-tab-item>
+                    <v-card flat>
+                        <DataTable />
+                    </v-card>
 
 
-                    </v-tab-item>
-                    <v-tab-item>
-                        <v-card flat>
-                            <DataTable />
-                        </v-card>
-                    </v-tab-item>
-                    <v-tab-item>
-                        <v-card flat>
-                            <DataTable />
-                        </v-card>
-                    </v-tab-item>
-                    <v-tab-item>
-                        <v-card flat>
-                            <DataTable />
-                        </v-card>
-                    </v-tab-item>
-                    <v-tab-item>
-                        <v-card flat>
-                            <DataTable />
-                        </v-card>
-                    </v-tab-item>
-                </v-tabs>
-            </v-card>
-        </center>
-        <v-card flat>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card flat>
+                        <DataTable />
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card flat>
+                        <DataTable />
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card flat>
+                        <DataTable />
+                    </v-card>
+                </v-tab-item>
+                <v-tab-item>
+                    <v-card flat>
+                        <DataTable />
+                    </v-card>
+                </v-tab-item>
+            </v-tabs>
         </v-card>
+
+
     </div>
 </template>
  

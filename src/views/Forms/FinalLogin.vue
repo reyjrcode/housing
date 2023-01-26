@@ -104,7 +104,7 @@
     </div>
 
 </template>
-  
+
 <script>
 
 /* eslint-disable */
@@ -147,8 +147,7 @@ export default {
             data.append('password', this.password);
             console.log(this.id);
             console.log(this.password);
-
-
+            
             if (this.id.length == 0) {
                 this.inputcheck = true;
                 this.snackbar = true;
@@ -157,8 +156,8 @@ export default {
                 this.Loginuser(data).then(e => {
                     console.log('Hello!')
                     if (e == 0) {
-                        this.id="";
-                        this.password="";
+                        this.id = "";
+                        this.password = "";
                         this.loginCorrection = "Check user name and password first before log-in."
                         this.dialog = true;
                     } else if (e == 2) {

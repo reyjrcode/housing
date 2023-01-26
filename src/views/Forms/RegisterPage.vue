@@ -9,7 +9,7 @@
                                 <v-card class="wrapper">
                                     <div class="text-center">
                                         <h2>C.H.L.M.O</h2>
-                                    </div>
+                                    </div> 
                                     <v-row class="text-form">
                                         <v-col offset="1" md="10">
                                             <v-text-field class="textbox" v-model="firstname" type="text"
@@ -37,7 +37,6 @@
                                         <v-row>
                                             <v-col offset="2" size="9">
 
-
                                                 <v-dialog v-model="dialog" max-width="290">
                                                     <v-card>
                                                         <v-card-title class="text-h5">
@@ -45,16 +44,12 @@
                                                         </v-card-title>
 
                                                         <v-card-text>
-
                                                         </v-card-text>
-
                                                         <v-card-actions>
                                                             <v-spacer></v-spacer>
-
                                                             <v-btn color="green darken-1" text @click="dialog = false">
                                                                 Disagree
                                                             </v-btn>
-
                                                             <v-btn color="green darken-1" text @click="dialog = false">
                                                                 Agree
                                                             </v-btn>
@@ -103,12 +98,10 @@ export default {
 
             let data = new FormData;
             data.append('firstname', this.firstname);
+
             data.append('lastname', this.lastname);
             data.append('username', this.username);
             data.append('password', this.password);
-
-
-
 
             if (this.firstname.length == 0 || this.lastname.length == 0 || this.username.length == 0 || this.password.length == 0) {
                 this.dialog = true;
@@ -118,7 +111,7 @@ export default {
                 console.log(this.lastname);
                 console.log(this.username);
                 console.log(this.password);
-
+                
                 setTimeout(() => {
                     console.log("register form");
                     this.$router.push('/dashboard');

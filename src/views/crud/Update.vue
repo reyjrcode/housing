@@ -15,6 +15,16 @@
             <v-text-field label="Last Name" placeholder="Last Name" v-model="lastname" outlined></v-text-field>
             <v-text-field label="User Name" placeholder="User Name" v-model="username" outlined></v-text-field>
             <v-text-field label="Password" placeholder="Password" v-model="password" outlined></v-text-field>
+
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                v-model="department_id">
+                
+                <option value="1">Human Resource</option>
+                <option value="2">Department Head</option>
+                <option value="3">Team Leader</option>
+                <option value="4">Aid</option>
+            </select>
+
             <v-card-actions>
                 <v-btn text color="deep-purple accent-4" @click="register">
                     Update
@@ -33,12 +43,15 @@ export default {
         lastname: '',
         username: '',
         password: '',
+        department_id 
+        ,
         pangalan: {
             id: '',
             firstname: '',
             lastname: '',
             username: '',
-            password: ''
+            password: '',
+            department_id
         }
     }),
 
@@ -51,17 +64,19 @@ export default {
             console.log("this.lastname", this.lastname);
             console.log("this.username", this.username);
             console.log("this.password", this.password);
+            console.log("this.department_id", this.department_id);
             let data = new FormData;
             data.append('id', this.pangalan.id);
             data.append('firstname', this.firstname);
             data.append('lastname', this.lastname);
             data.append('username', this.username);
             data.append('password', this.password);
+            data.append('department_id', this.department_id);
             this.Updateuser(data);
             setTimeout(() => {
                 // this.loading = false;
 
-                this.$router.push('/dashboard');
+                this.$router.push('/dashboard')
                 window.location = window.location
             }, 2000)
         },
@@ -82,6 +97,8 @@ export default {
         this.lastname = this.pangalan.lastname;
         this.username = this.pangalan.username;
         this.password = this.pangalan.password;
+        this.department_id = this.pangalan.department_id;
+
 
     }
 }
