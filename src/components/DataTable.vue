@@ -10,12 +10,12 @@
                             class="input" />
                     </form>
                 </nav>
-                
+
                 <!-- <v-text-field label="Search here" v-model="search" placeholder="Search here" outlined></v-text-field> -->
                 <!-- <table class="table table-hover"  style="width:100%"> -->
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                    <table class="table table-hover" cellspacing="0" style='height:500px;display:block;overflow:scroll;width:max-content'
-                        id="customers">
+                    <table class="table table-hover" cellspacing="0"
+                        style='height:700px;display:block;overflow:scroll;width:max-content' id="customers">
                         <thead>
                             <tr>
                                 <!-- <th scope="col">ID</th>
@@ -70,14 +70,14 @@
                                             mdi-eye
                                         </v-icon>
                                         View
-                                    </v-btn>
+                                    </v-btn>.
                                     <v-btn elevation="2" color="success" outlined
                                         @click="$router.push({ name: 'UpdateShit', params: { id: user.id } })">
                                         <v-icon dark left>
                                             mdi-pencil
                                         </v-icon>
                                         Update
-                                    </v-btn>
+                                    </v-btn>.
                                     <v-btn elevation="2" color="red" outlined @click="deleteuser(user.id)">
                                         <v-icon dark left>
                                             mdi-delete-forever
@@ -98,7 +98,7 @@
 
 
 <script>
-
+/* eslint-disable */
 
 import { mapActions, mapGetters } from 'vuex';
 
@@ -114,7 +114,7 @@ export default {
         search: '',
         // loading: false,
         dialog: false
-        
+
 
     }),
 

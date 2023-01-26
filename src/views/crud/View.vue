@@ -12,9 +12,9 @@
                 outlined></v-text-field>
             <v-text-field class="text-h3" label="Last Name" disabled placeholder="Last Name" v-model="lastname"
                 outlined></v-text-field>
-            <v-text-field class="text-h3" label="User Name" disabled placeholder="User Name" v-model="department_name"
+            <v-text-field class="text-h3" label="User Name" disabled placeholder="User Name" v-model="username"
                 outlined></v-text-field>
-            <v-text-field class="text-h3" label="Password" disabled placeholder="Password" v-model="rate"
+            <v-text-field class="text-h3" label="department" disabled placeholder="Password" v-model="department_name"
                 outlined></v-text-field>
 
 
@@ -27,6 +27,7 @@
     </div>
 </template>
 <script>
+/* eslint-disable */
 import { mapActions, mapGetters } from 'vuex';
 export default {
     data: () => ({
@@ -34,12 +35,14 @@ export default {
         selection: 1,
         firstname: '',
         lastname: '',
+        username:'',
         department_name: '',
         rate: '',
         pangalan: {
             id: '',
             firstname: '',
             lastname: '',
+            username:'',
             department_name: '',
             rate: ''
         }
@@ -58,6 +61,7 @@ export default {
             data.append('id', this.pangalan.id);
             data.append('firstname', this.firstname);
             data.append('lastname', this.lastname);
+            data.append('username', this.username);
             data.append('department_name', this.department_name);
             data.append('rate', this.rate);
             this.Updateuser(data);
@@ -77,6 +81,7 @@ export default {
         console.log("id=>", this.pangalan.id);
         this.firstname = this.pangalan.firstname;
         this.lastname = this.pangalan.lastname;
+        this.username = this.pangalan.username;
         this.department_name = this.pangalan.department_name;
         this.rate = this.pangalan.rate;
     }

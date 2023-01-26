@@ -17,8 +17,7 @@
     </div>
 </template>
 
-<script>
-
+<script>/* eslint-disable */
 import VueHtml2pdf from "vue-html2pdf";
 import ContentToPrint from "@/components/ContentToPrint.vue";
 

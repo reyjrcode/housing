@@ -18,7 +18,7 @@
 
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
                 v-model="department_id">
-                
+
                 <option value="1">Human Resource</option>
                 <option value="2">Department Head</option>
                 <option value="3">Team Leader</option>
@@ -34,6 +34,7 @@
     </div>
 </template>
 <script>
+/* eslint-disable */
 import { mapActions, mapGetters } from 'vuex';
 export default {
     data: () => ({
@@ -43,7 +44,7 @@ export default {
         lastname: '',
         username: '',
         password: '',
-        department_id 
+        department_id
         ,
         pangalan: {
             id: '',

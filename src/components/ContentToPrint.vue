@@ -71,7 +71,7 @@
 </template>
 
 <script>
-
+/* eslint-disable */
 
 import { mapActions, mapGetters } from 'vuex';
 import PieChart from "@/components/ChartComponent.vue";

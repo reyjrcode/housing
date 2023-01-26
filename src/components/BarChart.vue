@@ -2,7 +2,7 @@
 
     <div class="example">
         <v-card elevation="4">
-            <apexcharts width="1050" height="350" :options="chartOptions" :series="series"></apexcharts>
+            <apexcharts width="80%" height="350" :options="chartOptions" :series="series"></apexcharts>
         </v-card>
     </div>
 </template>

@@ -3,9 +3,10 @@
 
     <div class="div">
         <AdminNavbar />
-        <div class="row">
-            <div class="col">
-                <div data-aos="zoom-out-left">
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
                     <div class="card">
                         <div class="card-details">
                             <p class="text-title"> <v-icon dark right color="black">
@@ -14,60 +15,58 @@
                                 Total award</p>
                             <p class="text-body">Here are the details of the card</p>
                         </div>
-                        <button class="card-button">More info</button>
+                        <button class="card-button" @click="$router.push({ name: 'TotalAwards' })">More info</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-details">
+                            <p class="text-title"> <v-icon dark right color="black">
+                                    mdi-thumb-up
+                                </v-icon>
+                                Total approved</p>
+                            <p class="text-body">Here are the details of the card</p>
+                        </div>
+                        <button class="card-button" @click="$router.push({ name: 'TotalApproved' })">More info</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-details">
+                            <p class="text-title"> <v-icon dark right color="black">
+                                    mdi-home-variant
+                                </v-icon>
+                                Total Project</p>
+                            <p class="text-body">Here are the details of the card</p>
+                        </div>
+                        <button class="card-button" @click="$router.push({ name: 'TotalProject' })">More info</button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-details">
+                            <p class="text-title"> <v-icon dark right color="black">
+                                    mdi-block-helper
+                                </v-icon>
+                                Total blocklisted</p>
+                            <p class="text-body">Here are the details of the card</p>
+                        </div>
+                        <button class="card-button" @click="$router.push({ name: 'TotalBlocklisted' })">More
+                            info</button>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-details">
-                        <p class="text-title">
-                            <v-icon dark right color="black">
-                                mdi-thumb-up
-                            </v-icon>
-                            Total approved
-                        </p>
-                        <p class="text-body">Here are the details of the card</p>
-                    </div>
-                    <button class="card-button">More info</button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-details">
-                        <p class="text-title">
-                            <v-icon dark right color="black">
-                                mdi-block-helper
-                            </v-icon>
-                            Total blocklisted
-                        </p>
-                        <p class="text-body">Here are the details of the card</p>
-                    </div>
-                    <button class="card-button">More info</button>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-details">
-                        <p class="text-title">
-                            <v-icon dark right color="black">
-                                mdi-home-variant
-                            </v-icon>
-                            Total projects
-                        </p>
-                        <p class="text-body">Here are the details of the card</p>
-                    </div>
-                    <button class="card-button">More info</button>
-                </div>
-            </div>
-
         </div>
+
         <div class="row">
-            
-            <div class="container-fluid">
-                <PieChart></PieChart>
-            </div>
-            <br/>
+            <center>
+                <div class="container p-5 my-5 border">
+
+                    <div class="container-fluid">
+                        <PieChart></PieChart>
+                    </div>
+                </div>
+            </center>
         </div>
         <div class="di">
             <center>
@@ -77,13 +76,103 @@
             </center>
         </div>
 
-        <v-card elevation="2">
+        <div class="container">
+            <div class="row row-cols-2">
+                <div class="col">
+                    <div class="container">
+
+
+                        <div class="card" max-width="100%">
+                            <div class="card-header">
+                                Featured
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title">Kilid sa sapa</h1>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'KilidsaSapa' })">
+                                    Learn More
+                                </v-btn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container">
+
+
+                        <div class="card" max-width="100%">
+                            <div class="card-header">
+                                Featured
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title">Kilid sa creek</h1>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <v-btn text color="deep-purple accent-4"
+                                    @click="$router.push({ name: 'KilidsaCreek' })">
+                                    Learn More
+                                </v-btn>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container">
+
+
+                        <div class="card" max-width="100%">
+                            <div class="card-header">
+                                Featured
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title">Kilid sa emburnal</h1>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <v-btn text color="deep-purple accent-4"
+                                    @click="$router.push({ name: 'KilidsaEmburnal' })">
+                                    Learn More
+                                </v-btn>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container">
+
+
+
+                        <div class="card" max-width="100%">
+                            <div class="card-header">
+                                Featured
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title">Walay balay</h1>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'WalayBalay' })">
+                                    Learn More
+                                </v-btn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <v-card elevation="2" width="100%">
             <v-toolbar flat color="primary" dark>
                 <v-toolbar-title>Danger Zone</v-toolbar-title>
             </v-toolbar>
             <v-tabs vertical>
                 <v-tab>
-                
+
                     (123) Kilid sapa
                 </v-tab>
                 <v-tab>
@@ -130,7 +219,7 @@
                     </v-card>
                 </v-tab-item>
             </v-tabs>
-        </v-card>
+        </v-card> -->
 
 
     </div>
@@ -169,7 +258,7 @@ body {
 }
 
 .card {
-    width: 255px;
+    width: 100%;
     height: 170px;
     border-radius: 20px;
     background: #f5f5f5;

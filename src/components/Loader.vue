@@ -5,6 +5,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
     // Vuetify components provide
     // a theme variable that is

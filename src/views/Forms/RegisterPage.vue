@@ -15,19 +15,12 @@
                                             <v-text-field class="textbox" v-model="firstname" type="text"
                                                 label="First Name" prepend-inner-icon="mdi mdi-account mdi-green"
                                                 required />
-
                                             <v-text-field class="textbox" v-model="lastname" type="text"
                                                 label="Last Name" prepend-inner-icon="mdi mdi-account mdi-green"
                                                 required />
-
-
-
                                             <v-text-field class="textbox" v-model="username" type="text"
                                                 label="Username" prepend-inner-icon="mdi mdi-account mdi-green"
                                                 required />
-
-
-
                                             <v-text-field class="textbox" v-model="password" type="text"
                                                 label="password" prepend-inner-icon="mdi mdi-account mdi-green"
                                                 required />
@@ -36,13 +29,11 @@
                                     <v-container>
                                         <v-row>
                                             <v-col offset="2" size="9">
-
                                                 <v-dialog v-model="dialog" max-width="290">
                                                     <v-card>
                                                         <v-card-title class="text-h5">
                                                             EEEHHH!!!!
                                                         </v-card-title>
-
                                                         <v-card-text>
                                                         </v-card-text>
                                                         <v-card-actions>
@@ -56,11 +47,6 @@
                                                         </v-card-actions>
                                                     </v-card>
                                                 </v-dialog>
-
-
-
-
-
                                             </v-col>
                                             <v-col offset="" size="9">
                                                 <v-btn @click="register" color="green" class="rounded-xl">
@@ -81,7 +67,7 @@
 </template>
 
 <script scoped>
-
+/* eslint-disable */
 import { mapActions } from 'vuex';
 export default {
     data: () => ({

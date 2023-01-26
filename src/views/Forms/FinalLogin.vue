@@ -76,17 +76,9 @@
                                                     </v-card>
                                                 </v-dialog>
                                             </v-col>
-
-
-
-
-
-
-
-
                                             <v-col offset="" size="9"
                                                 @click="$router.push({ name: 'RegistrationPage' })">
-
+                                                
                                                 <v-btn color="green" class="rounded-xl">
                                                     <v-icon left>mdi-lead-pencil</v-icon>
                                                     SING UP

@@ -2,12 +2,13 @@
 <template>
 
 
-    <apexchart :width="600" :height="600" :options="options" :series="data">
+    <apexchart idth="100%" :height="500" :options="options" :series="data">
     </apexchart>
 
 
 </template>
 <script>
+/* eslint-disable */
 import VueApexCharts from "vue-apexcharts";
 export default {
     name: "ChartShit",
@@ -56,7 +57,7 @@ export default {
                                 total: {
                                     show: true,
                                     label: "Total",
-                                    fontSize: "40px",
+                                    fontSize: "30px",
                                     fontWeight: "bold",
                                     color: "black",
                                 },
