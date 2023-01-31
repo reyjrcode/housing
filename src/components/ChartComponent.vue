@@ -2,7 +2,7 @@
 <template>
 
 
-    <apexchart idth="100%" :height="500" :options="options" :series="data">
+    <apexchart width="100%" :height="600" :options="options" :series="data">
     </apexchart>
 
 
@@ -32,7 +32,7 @@ export default {
     },
     data: function () {
         return {
-            data: [30, 40, 45, 50,],
+            data: [30, 45, 50, 80, 36],
         };
     },
     computed: {
@@ -67,20 +67,33 @@ export default {
                 },
                 colors: [
                     "#40E0D0",
-                    "#008000",
+
                     "#FFD700",
                     "#FF4500",
+                    "#DDA0DD",
+                    "#FD20DD",
 
                 ],
+
+                // colors: [
+                //     "#F3C1C6",
+
+                //     "#F0F69F",
+                //     "#B0E0A8",
+                //     "#E2C275",
+                //     "#FAAB78",
+
+                // ],
                 noData: {
                     text: this.loading ? "Loading..." : "No Data",
                 },
                 labels: [
-                    "Kilid sa sapa",
-                    "Kilid sa creek",
-                    "kilid sa emburnal",
-                    "Walay balay",
+                    "Kilid sa Creek",
 
+                    "NPC line",
+                    "Landslide prone area",
+                    "Flood prone area",
+                    "Others"
                 ],
 
             };

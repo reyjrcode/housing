@@ -1,7 +1,7 @@
 <template>
 
     <div class="form-one">
-<AdminNavbar/>
+        <AdminNavbar />
 
 
         <v-container fluid class="my-5">
@@ -18,12 +18,12 @@
                         <v-stepper-step :complete="e1 > 2" step="2" offset-y min-width="auto">
                             Ngalan sa anak nga nakig-ipon
                         </v-stepper-step>
-                        <v-divider></v-divider>
+                        <!-- <v-divider></v-divider>
                         <v-stepper-step :complete="e1 > 3" step="3" offset-y min-width="auto">
                             Istado sa Pagpuyo
-                        </v-stepper-step>
+                        </v-stepper-step> -->
                         <v-divider></v-divider>
-                        <v-stepper-step step="4" offset-x min-width="auto">
+                        <v-stepper-step step="3" offset-x min-width="auto">
                             Sitwasyon sa Pagpuyo
                         </v-stepper-step>
 
@@ -222,130 +222,12 @@
                                 Back
                             </v-btn>
                         </v-stepper-content>
+                        
                         <v-stepper-content step="3">
-                            <v-card class="mb-1" color="grey lighten-4" height="400px">
-                                <v-card-text>
-                                    <v-container>
-                                        <v-row>
-                                            <v-col cols="12" sm="6">
-                                                <v-select
-                                                    :items="['Kwarto', 'Balay', 'Kaugalingon nga balay pero ga arkila sa yuta']"
-                                                    label="Nag Arkila ug" required outlined></v-select>
-                                            </v-col>
-                                            <v-col cols="12" sm="6">
-                                                <v-select
-                                                    :items="['500 to 1,000', '1,100 to 1,500', '1,600 to 2,00', '2,100, to 2,500', '2,600, to 3,000', '3,000 pa taas and arkila']"
-                                                    label="Pila ang pag Arkila" outlined required></v-select>
-                                            </v-col>
-                                            <v-col cols="12">
-                                                <v-select
-                                                    :items="['Kaugalingon ang balay pero wala ga arkila sa yuta, nasayod ang tag-iya sa yuta', 'Kaugalingon nga balay pero wala ga arkila sa yuta, walay pag tugot sa tag-iya', 'Libre nga pagpuyo sa balay nga adunay pagtugot sa tag-iya', 'Libre nga pagpuyo sa balay ug yuta nga walay pagtugot sa tag-iya', 'Nakipuyo Lang']"
-                                                    label="Istado sa Pagpuyo" outlined required></v-select>
-                                            </v-col>
-                                            <v-col cols="12" sm="6" md="6">
-                                                <v-text-field label="Pangalan sa gipuy-an " outlined
-                                                    clearable></v-text-field>
-                                            </v-col>
-                                        </v-row>
-                                    </v-container>
-                                    <h2 class="red--text">Please indicates required field</h2>
-                                </v-card-text>
-                            </v-card>
-                            <v-btn color="secondary" @click="e1 = 4">
-                                Continue
-                            </v-btn>
-                            <v-btn @click="e1 = 2" class="ma-2">
-                                Back
-                            </v-btn>
-                        </v-stepper-content>
-                        <v-stepper-content step="4">
-                            <v-card class="mb-12">
-                                <v-container class="grey lighten-5" offset-x min-width="auto">
-                                    <v-row class="mb-6" no-gutters>
-                                        <v-col sm="5" md="6">
-                                            <v-card class="pa-2" outlined tile>
-                                                <h2>Atop</h2>
-                                                <v-checkbox v-model="ex4" label="Kawayan/Sawali/Cogon/Nipa"
-                                                    color="secondary" value="Kawayan/Sawali/Cogon/Nipa" hide-details
-                                                    autofocus></v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Asbestos/Sin" color="secondary"
-                                                    value="Asbestos/Sin" hide-details></v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Improvised Materials" color="secondary"
-                                                    value="Improvised Materials" hide-details></v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Trapal" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                            </v-card>
-                                        </v-col>
-                                        <v-col sm="5" offset-sm="2" md="6" offset-md="0">
-                                            <v-card class="pa-2" outlined tile>
-                                                <h2>Bong bong</h2>
-                                                <v-checkbox v-model="ex4" label="Amakan" color="secondary"
-                                                    value="Amakan" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Semento" color="secondary"
-                                                    value="Semento" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Trapal" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                            </v-card>
-                                        </v-col>
-                                    </v-row>
-                                    <v-row no-gutters>
-                                        <v-col sm="6" md="5" lg="6">
-                                            <v-card class="pa-2" outlined tile>
-                                                <h2>Sitwasyon sa pagpuyo</h2>
-                                                <v-checkbox v-model="ex4" label="With notice to evacuate"
-                                                    color="secondary" value="WithNoticeToEvacuate" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4"
-                                                    label="With court order for demolition and eviction"
-                                                    color="secondary" value="Semento" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4"
-                                                    label="Affected by government infrastructure project"
-                                                    color="secondary" value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4"
-                                                    label="Affected by private construction project" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Accretion Area" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <br>
-                                                <h2 class="red--text">Please indicates required field</h2>
-                                            </v-card>
-                                        </v-col>
-                                        <v-col sm="6" md="5" offset-md="2" lg="6" offset-lg="0">
-                                            <v-card class="pa-2" outlined tile>
-                                                <h2>Danger zone</h2>
-                                                <v-checkbox v-model="ex4" label="Kilid sa creek" color="secondary"
-                                                    value="WithNoticeToEvacuate" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Kilid sa sapa" color="secondary"
-                                                    value="Semento" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="NPC line" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Landslide prone area" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Identified flood prone area"
-                                                    color="secondary" value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-col cols="12" sm="6" md="12">
-                                                    <v-text-field label="Others:" clearable required
-                                                        outlined></v-text-field>
-                                                </v-col>
-                                            </v-card>
-                                        </v-col>
-                                    </v-row>
-                                </v-container>
-                            </v-card>
-                            <v-btn @click="e1 = 3" class="ma-3">
+
+                            <LocationShelter />
+
+                            <v-btn @click="e1 = 2" class="ma-3">
                                 Back
                             </v-btn>
                             <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
@@ -362,12 +244,15 @@
 
 <script>
 /* eslint-disable */
+// import PieChart from "@/components/ChartComponent.vue";
+import LocationShelter from "@/components/ShelterLocation.vue";
 import AdminNavbar from '../Navigation/AdminNavbar.vue';
 import { reactive } from 'vue'
 export default {
 
     components: {
         AdminNavbar,
+        LocationShelter
 
     },
     setup() {

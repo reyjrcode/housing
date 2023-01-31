@@ -1,5 +1,5 @@
 <template>
-    <div style="margin: 12px 12px">
+    <div>
 
         <!-- <img src="https://picsum.photos/500/300" /> -->
 
@@ -33,16 +33,30 @@
 
         <h1> To print</h1>
         <div class="table-responsive">
+
+            <nav class="navbar navbar-light bg-light">
+                <form class="form-inline">
+                    <input placeholder="Search full name.." v-model="search" type="text" name="text" class="input" />
+                </form>
+            </nav>
             <table class="table table-hover" cellspacing="0" width="50" id="customers">
 
                 <thead>
                     <tr>
+                        <!-- <th scope="col">ID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Actions</th> -->
                         <th scope="col">ID</th>
                         <th scope="col">First Name</th>
                         <th scope="col">Last Name</th>
-                        <th scope="col">Username</th>
+                        <th scope="col">User Name</th>
                         <th scope="col">Password</th>
-                        <!-- <th scope="col">Actions</th> -->
+                        <th scope="col">Department</th>
+                        <th scope="col">Rate</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -63,6 +77,16 @@
                         <td height="30">
                             {{ user.password }}
                         </td>
+                        <td height="30">
+                            {{ user.department_name }}
+                        </td>
+                        <td height="30">
+                            {{ user.rate }}
+                        </td>
+                        <!-- <td height="30">
+                                    {{ user.fullname }}
+                                </td> -->
+
                     </tr>
                 </tbody>
             </table>

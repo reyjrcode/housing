@@ -13,10 +13,16 @@ import TotalAwards from '../views/reports/TotalAwards.vue'
 import TotalApproved from '../views/reports/TotalApproved.vue'
 import TotalProject from '../views/reports/TotalProject.vue'
 import TotalBlocklisted from '../views/reports/TotalBlocklisted.vue'
-import KilidsaSapa from '../views/dangerzone/KilidsaSapa.vue'
+import KilidsaSapa from '../views/dangerzone/FloodProne.vue'
 import KilidsaCreek from '../views/dangerzone/KilidsaCreek.vue'
-import KilidsaEmburnal from '../views/dangerzone/KilidsaEmburnal.vue'
-import WalayBalay from '../views/dangerzone/WalayBalay.vue'
+import OtherDanger from '../views/dangerzone/OtherDanger.vue'
+import NPCline from '../views/dangerzone/NPCline.vue'
+import Inventory from '../views/InventoryPage.vue'
+import AddMaterials from '../views/Forms/AddMaterials.vue'
+import ShelterAssistance from '../views/Forms/ShelterAssistance.vue'
+import LocationShelterForm from '../views/Forms/LocationShelterForm.vue'
+import LandSlide from '../views/dangerzone/LandSlide.vue'
+
 
 Vue.use(VueRouter)
 
@@ -68,22 +74,22 @@ const routes = [
     path: '/total-awards',
     name: 'TotalAwards',
     component: TotalAwards
-  },{
+  }, {
     path: '/total-approved',
     name: 'TotalApproved',
     component: TotalApproved
-  },{
+  }, {
     path: '/total-project',
     name: 'TotalProject',
     component: TotalProject
-  },{
+  }, {
     path: '/total-blocklisted',
     name: 'TotalBlocklisted',
     component: TotalBlocklisted
   },
   {
-    path: '/kilidsasapa',
-    name: 'KilidsaSapa',
+    path: '/floodprone',
+    name: 'FloodProne',
     component: KilidsaSapa
   },
   {
@@ -92,18 +98,42 @@ const routes = [
     component: KilidsaCreek
   },
   {
-    path: '/kilidsaemburnal',
-    name: 'KilidsaEmburnal',
-    component: KilidsaEmburnal
+    path: '/other-danger',
+    name: 'OtherDanger',
+    component: OtherDanger
   },
   {
-    path: '/walaybalay',
-    name: 'WalayBalay',
-    component: WalayBalay
+    path: '/npc-line',
+    name: 'NPCline',
+    component: NPCline
+  }, {
+    path: '/inventory',
+    name: 'Inventory',
+    component: Inventory
+  }, {
+    path: '/add-materials',
+    name: 'AddMaterials',
+    component: AddMaterials
+  },
+  {
+    path: '/shelter-assistance',
+    name: 'ShelterAssistance',
+    component: ShelterAssistance
+  },
+  {
+    path: '/shelterlocation',
+    name: 'LocationShelterForm',
+    component: LocationShelterForm
+  },
+  {
+    path: '/landslide-prone',
+    name: 'LandSlide',
+    component: LandSlide
   },
 
+  
 
-
+  
 ]
 
 

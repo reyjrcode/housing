@@ -4,137 +4,179 @@
     <div class="div">
         <AdminNavbar />
 
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-details">
-                            <p class="text-title"> <v-icon dark right color="black">
+        <div class="container" >
+            <div class="row" >
+                <div class="col" >
+
+                    <div class="card text-black bg-success rounded-4" max-width="100%" >
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body" >
+                            <h3 class="card-title"> <v-icon dark right color="black">
                                     mdi-trophy
-                                </v-icon>
-                                Total award</p>
-                            <p class="text-body">Here are the details of the card</p>
+                                </v-icon> Total awarded</h3>
+                            <p class="card-text">12,345 total awarded</p>
+                            <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'TotalProject' })">
+                                More info
+                            </v-btn>
                         </div>
-                        <button class="card-button" @click="$router.push({ name: 'TotalAwards' })">More info</button>
                     </div>
+
                 </div>
                 <div class="col">
-                    <div class="card">
-                        <div class="card-details">
-                            <p class="text-title"> <v-icon dark right color="black">
+
+                    <div class="card text-black bg-success rounded-4" max-width="100%">
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h4 class="card-title"> <v-icon dark right color="black">
                                     mdi-thumb-up
-                                </v-icon>
-                                Total approved</p>
-                            <p class="text-body">Here are the details of the card</p>
+                                </v-icon> Total approved</h4>
+                            <p class="card-text">67,891 total approved</p>
+                            <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'TotalProject' })">
+                                More info
+                            </v-btn>
                         </div>
-                        <button class="card-button" @click="$router.push({ name: 'TotalApproved' })">More info</button>
                     </div>
+
                 </div>
                 <div class="col">
-                    <div class="card">
-                        <div class="card-details">
-                            <p class="text-title"> <v-icon dark right color="black">
+
+                    <div class="card text-black bg-success rounded-4" max-width="100%">
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h3 class="card-title"> <v-icon dark right color="black">
                                     mdi-home-variant
-                                </v-icon>
-                                Total Project</p>
-                            <p class="text-body">Here are the details of the card</p>
+                                </v-icon> Total project</h3>
+                            <p class="card-text">11,123 total project</p>
+                            <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'TotalProject' })">
+                                More info
+                            </v-btn>
                         </div>
-                        <button class="card-button" @click="$router.push({ name: 'TotalProject' })">More info</button>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card">
-                        <div class="card-details">
-                            <p class="text-title"> <v-icon dark right color="black">
+
+
+                    <div class="card text-black bg-success rounded-4" max-width="100%">
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h4 class="card-title"> <v-icon dark right color="black">
                                     mdi-block-helper
-                                </v-icon>
-                                Total blocklisted</p>
-                            <p class="text-body">Here are the details of the card</p>
+                                </v-icon> Total blocklisted</h4>
+                            <p class="card-text">100 total blocklisted</p>
+                            <v-btn text color="deep-purple accent-4"
+                                @click="$router.push({ name: 'TotalBlocklisted' })">
+                                More info
+                            </v-btn>
                         </div>
-                        <button class="card-button" @click="$router.push({ name: 'TotalBlocklisted' })">More
-                            info</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <center>
-                <div class="container p-5 my-5 border">
-
-                    <div class="container-fluid">
-                        <PieChart></PieChart>
-                    </div>
-                </div>
-            </center>
-        </div>
-        <div class="di">
-            <center>
-                <div class="container-fluid">
-                    <BarChart></BarChart>
-                </div>
-            </center>
-        </div>
-
         <div class="container">
-            <div class="row row-cols-2">
-                <div class="col">
+            <div class="row">
+                <div class="col-sm">
+                    <PieChart></PieChart>
+                </div>
+                <div class="col-sm">
+
                     <div class="container">
+                        <div class="row row-cols-2">
+                            <div class="col">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Kilid sa creek</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        Adunay 30 kabook
+                                    </div>
+                                </div>
 
-
-                        <div class="card" max-width="100%">
-                            <div class="card-header">
-                                Featured
                             </div>
-                            <div class="card-body">
-                                <h1 class="card-title">Kilid sa sapa</h1>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional
-                                    content.</p>
-                                <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'KilidsaSapa' })">
-                                    Learn More
-                                </v-btn>
+
+                            <div class="col">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">NPC line</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        Adunay 45 kabook
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Landslide prone area</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        Adunay 50 kabook
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Flood prone area</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        Adunay 80 kabook
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Others</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        Adunay 36 kabook
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
+
+
                 </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="row row-cols-2">
+
                 <div class="col">
                     <div class="container">
 
 
                         <div class="card" max-width="100%">
-                            <div class="card-header">
-                                Featured
-                            </div>
                             <div class="card-body">
                                 <h1 class="card-title">Kilid sa creek</h1>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.</p>
                                 <v-btn text color="deep-purple accent-4"
                                     @click="$router.push({ name: 'KilidsaCreek' })">
-                                    Learn More
+                                    More info
                                 </v-btn>
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
                 <div class="col">
                     <div class="container">
-
-
                         <div class="card" max-width="100%">
-                            <div class="card-header">
-                                Featured
-                            </div>
                             <div class="card-body">
-                                <h1 class="card-title">Kilid sa emburnal</h1>
+                                <h1 class="card-title">Others</h1>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.</p>
                                 <v-btn text color="deep-purple accent-4"
-                                    @click="$router.push({ name: 'KilidsaEmburnal' })">
-                                    Learn More
+                                    @click="$router.push({ name: 'OtherDanger' })">
+                                    More info
                                 </v-btn>
                             </div>
                         </div>
@@ -147,15 +189,43 @@
 
 
                         <div class="card" max-width="100%">
-                            <div class="card-header">
-                                Featured
-                            </div>
                             <div class="card-body">
-                                <h1 class="card-title">Walay balay</h1>
+                                <h1 class="card-title">NPC line</h1>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.</p>
-                                <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'WalayBalay' })">
-                                    Learn More
+                                <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'NPCline' })">
+                                    More info
+                                </v-btn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container">
+
+
+
+                        <div class="card" max-width="100%">
+                            <div class="card-body">
+                                <h1 class="card-title">Landslide prone area</h1>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'LandSlide' })">
+                                    More info
+                                </v-btn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container">
+                        <div class="card" max-width="100%">
+                            <div class="card-body">
+                                <h1 class="card-title">Flood prone area</h1>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.</p>
+                                <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'FloodProne' })">
+                                    More info
                                 </v-btn>
                             </div>
                         </div>
@@ -164,67 +234,9 @@
             </div>
         </div>
 
-
-
-        <!-- <v-card elevation="2" width="100%">
-            <v-toolbar flat color="primary" dark>
-                <v-toolbar-title>Danger Zone</v-toolbar-title>
-            </v-toolbar>
-            <v-tabs vertical>
-                <v-tab>
-
-                    (123) Kilid sapa
-                </v-tab>
-                <v-tab>
-
-                    (456) Walay balay
-                </v-tab>
-                <v-tab>
-
-                    (789)
-                    Kilid imburnal
-                </v-tab>
-                <v-tab>
-
-                    Option 3
-                </v-tab>
-                <v-tab>
-                    Option 3
-                </v-tab>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-
-
-                </v-tab-item>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-                </v-tab-item>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-                </v-tab-item>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-                </v-tab-item>
-                <v-tab-item>
-                    <v-card flat>
-                        <DataTable />
-                    </v-card>
-                </v-tab-item>
-            </v-tabs>
-        </v-card> -->
-
-
     </div>
 </template>
- 
+
 <script>
 
 /* eslint-disable */
@@ -250,7 +262,7 @@ export default {
 
 };
 </script>
-<style scoped>
+<!-- <style >
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
@@ -313,4 +325,6 @@ body {
     transform: translate(-50%, 50%);
     opacity: 1;
 }
-</style>
+
+
+</style> -->

@@ -31,7 +31,7 @@
                                     <v-row>
 
                                         <v-col offset="1" md="10">
-                                            <v-text-field class="custom-label-color" v-model="id" label="User Name"
+                                            <v-text-field class="custom-label-color" v-model="id" label="I.D number"
                                                 color="white" type="sample"
                                                 prepend-inner-icon="mdi mdi-account mdi-light" autofocus></v-text-field>
 

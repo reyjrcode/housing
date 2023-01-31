@@ -1,11 +1,29 @@
 <template>
     <div class="div">
+        <AdminNavbar/>
         <h1>Total awards page</h1>
     </div>
 </template>
 
+
 <script>
-export default{
-    
-}
+
+/* eslint-disable */
+
+import AdminNavbar from '../Navigation/AdminNavbar.vue';
+
+
+export default {
+
+    components: {
+        AdminNavbar,
+
+    },
+
+    data: () => ({
+
+
+    }),
+
+};
 </script>

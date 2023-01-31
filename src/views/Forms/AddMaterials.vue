@@ -1,10 +1,10 @@
 <template>
-    <div class="div">
-        <AdminNavbar/>
-        <h1>Total blocklisted page</h1>
+
+    <div class="addmaterial">
+        <AdminNavbar />
+        add materials
     </div>
 </template>
-
 
 <script>
 

@@ -49,6 +49,12 @@
                                                 </v-dialog>
                                             </v-col>
                                             <v-col offset="" size="9">
+                                                <v-btn @click="$router.push({ name: 'Loginpage' })">
+                                                    <v-icon left>mdi-account-check</v-icon>
+                                                    Log in
+                                                </v-btn>
+                                            </v-col>
+                                            <v-col offset="" size="9">
                                                 <v-btn @click="register" color="green" class="rounded-xl">
                                                     <v-icon left>mdi-account-check</v-icon>
                                                     SIGN UP

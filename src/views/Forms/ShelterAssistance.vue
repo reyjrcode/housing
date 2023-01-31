@@ -1,13 +1,14 @@
+
 <template>
 
     <div class="form-one">
-<AdminNavbar/>
+        <AdminNavbar />
 
 
         <v-container fluid class="my-5">
             <v-card>
                 <v-card-title>
-                    <span class="text-h7">Information Sheet for Relocation Lot Applicants</span>
+                    <span class="text-h7">Shelter Applicants</span>
                 </v-card-title>
                 <v-stepper v-model="e1">
                     <v-stepper-header>
@@ -23,8 +24,15 @@
                             Istado sa Pagpuyo
                         </v-stepper-step>
                         <v-divider></v-divider>
-                        <v-stepper-step step="4" offset-x min-width="auto">
+                        <!-- <v-stepper-step step="4" offset-x min-width="auto">
                             Sitwasyon sa Pagpuyo
+                        </v-stepper-step> -->
+                        <v-stepper-step :complete="e1 > 4" step="4" offset-y min-width="auto">
+                            Istado sa Pagpuyo
+                        </v-stepper-step>
+                        <v-divider></v-divider>
+                        <v-stepper-step step="5" offset-x min-width="auto">
+                            Materials
                         </v-stepper-step>
 
                     </v-stepper-header>
@@ -251,6 +259,9 @@
                                     <h2 class="red--text">Please indicates required field</h2>
                                 </v-card-text>
                             </v-card>
+                            <!-- <v-btn color="secondary" @click="e1 = 4">
+                                Continue
+                            </v-btn> -->
                             <v-btn color="secondary" @click="e1 = 4">
                                 Continue
                             </v-btn>
@@ -345,7 +356,121 @@
                                     </v-row>
                                 </v-container>
                             </v-card>
-                            <v-btn @click="e1 = 3" class="ma-3">
+                            <v-btn color="#B6E2A1" @click="e1 = 5">
+                                <v-icon large color="green darken-2">
+                                    mdi-arrow-right-circle
+                                </v-icon>
+                                Continue
+                            </v-btn>
+                            <v-btn @click="e1 = 4" class="ma-2">
+                                Back
+                            </v-btn>
+                        </v-stepper-content>
+                        <v-stepper-content step="5">
+
+                            <v-card>
+
+
+                                <div class="card-body">
+                                    <h3 class="card-title">Replacement:</h3>
+                                    <div class="card-body">
+                                        <v-checkbox v-model="ex4" label="Self help" color="secondary" value="Self help"
+                                            hide-details>
+                                        </v-checkbox>
+                                        <v-checkbox v-model="ex4" label="Bayanihan" color="secondary" value="Bayanihan"
+                                            hide-details>
+                                        </v-checkbox>
+
+                                        <br /><br />
+                                        <select class="form-select form-select-lg mb-3"
+                                            aria-label=".form-select-lg example">
+                                            <option selected>Natural Calamity</option>
+                                            <option value="Baha">Baha</option>
+                                            <option value="Sunog">Sunog</option>
+                                            <option value="Linog">Linog</option>
+                                        </select>
+                                        <br />
+                                    </div>
+
+                                </div>
+                            </v-card>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="div">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Areas for repair</h5>
+                                                    <v-checkbox v-model="ex4" label="Roofing" color="secondary"
+                                                        value="Roofing" hide-details autofocus></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Walling" color="secondary"
+                                                        value="Walling" hide-details></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Septic tank" color="secondary"
+                                                        value="Septic tank" hide-details></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Drainage" color="secondary"
+                                                        value="Drainage" hide-details>
+                                                    </v-checkbox>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Materials needed</h5>
+                                                    <v-checkbox v-model="ex4" label="Good mixed" color="secondary"
+                                                        value="Good mixed" hide-details autofocus></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Cement" color="secondary"
+                                                        value="Cement" hide-details></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Corrugated sheet" color="secondary"
+                                                        value="Corrugated sheet" hide-details></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Concrete Hollowblock"
+                                                        color="secondary" value="Concrete Hollowblock" hide-details>
+                                                    </v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Coco lumber" color="secondary"
+                                                        value="Coco lumber" hide-details>
+                                                    </v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Amakan" color="secondary"
+                                                        value="Amakan" hide-details>
+                                                    </v-checkbox>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Materials needed</h5>
+                                                    <v-checkbox v-model="ex4" label="Nails" color="secondary"
+                                                        value="Nails" hide-details autofocus></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="Umbrella nails" color="secondary"
+                                                        value="Umbrella nails" hide-details></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="10 MM DRB" color="secondary"
+                                                        value="Corrugated sheet" hide-details></v-checkbox>
+                                                    <v-checkbox v-model="ex4" label="8 MM DRB" color="secondary"
+                                                        value="Concrete Hollowblock" hide-details>
+                                                    </v-checkbox>
+                                                    <br />
+                                                    <br />
+                                                    <v-text-field label="Others" placeholder="Others:"
+                                                        outlined></v-text-field>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <v-btn @click="e1 = 4" class="ma-3">
                                 Back
                             </v-btn>
                             <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
@@ -403,11 +528,7 @@ export default {
             drawer: null,
             items: [
                 { icon: "mdi-view-dashboard", text: "Dashboard", route: "/dashboard" },
-                // {
-                //     icon: "mdi mdi-account",
-                //     text: "Forms",
-                //     route: "/ScholarshipApplication",
-                // },
+
                 {
                     icon: "mdi-chevron-up",
                     "icon-alt": "mdi-chevron-down",
@@ -478,4 +599,3 @@ export default {
 <style scoped>
 
 </style>
-
