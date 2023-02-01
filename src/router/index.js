@@ -17,12 +17,12 @@ import KilidsaSapa from '../views/dangerzone/FloodProne.vue'
 import KilidsaCreek from '../views/dangerzone/KilidsaCreek.vue'
 import OtherDanger from '../views/dangerzone/OtherDanger.vue'
 import NPCline from '../views/dangerzone/NPCline.vue'
-import Inventory from '../views/InventoryPage.vue'
+import Inventory from '../views/actions/InventoryPage.vue'
 import AddMaterials from '../views/Forms/AddMaterials.vue'
 import ShelterAssistance from '../views/Forms/ShelterAssistance.vue'
 import LocationShelterForm from '../views/Forms/LocationShelterForm.vue'
 import LandSlide from '../views/dangerzone/LandSlide.vue'
-
+import ToApproved from '../views/actions/ToApproved.vue'
 
 Vue.use(VueRouter)
 
@@ -131,7 +131,11 @@ const routes = [
     component: LandSlide
   },
 
-  
+  {
+    path: '/to-aproved',
+    name: 'ToApproved',
+    component: ToApproved
+  },
 
   
 ]

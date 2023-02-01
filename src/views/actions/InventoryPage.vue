@@ -1,10 +1,10 @@
 <template>
     <div class="d">
-        <AdminNavbar/>
-        <p> inventory page</p>
+        <AdminNavbar />
+
         <v-card>
             <v-card-title>
-                Nutrition
+                Inventory
                 <v-spacer></v-spacer>
                 <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                     hide-details></v-text-field>
@@ -14,7 +14,7 @@
     </div>
 </template>
 <script>
-import AdminNavbar from "../views/Navigation/AdminNavbar.vue"
+import AdminNavbar from "../Navigation/AdminNavbar.vue"
 export default {
     components: {
         AdminNavbar,

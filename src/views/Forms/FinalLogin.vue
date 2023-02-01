@@ -1,11 +1,9 @@
-
 <template>
 
     <div>
         <v-app id="inspire" class="background">
             <v-main class="d-flex justify-center align-center">
                 <v-col cols="10" lg="5" class="mx-auto">
-
 
                     <v-form @submit.prevent="submitHandler" ref="form">
                         <v-container>

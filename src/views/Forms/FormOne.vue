@@ -1,7 +1,7 @@
 <template>
 
     <div class="form-one">
-<AdminNavbar/>
+        <AdminNavbar />
 
 
         <v-container fluid class="my-5">
@@ -19,13 +19,16 @@
                             Ngalan sa anak nga nakig-ipon
                         </v-stepper-step>
                         <v-divider></v-divider>
-                        <v-stepper-step :complete="e1 > 3" step="3" offset-y min-width="auto">
+                        <!-- <v-stepper-step :complete="e1 > 3" step="3" offset-y min-width="auto">
+                            Istado sa Pagpuyo
+                        </v-stepper-step> -->
+                        <v-stepper-step step="3" offset-x min-width="auto">
                             Istado sa Pagpuyo
                         </v-stepper-step>
                         <v-divider></v-divider>
-                        <v-stepper-step step="4" offset-x min-width="auto">
+                        <!-- <v-stepper-step step="4" offset-x min-width="auto">
                             Sitwasyon sa Pagpuyo
-                        </v-stepper-step>
+                        </v-stepper-step> -->
 
                     </v-stepper-header>
                     <v-stepper-items>
@@ -251,14 +254,14 @@
                                     <h2 class="red--text">Please indicates required field</h2>
                                 </v-card-text>
                             </v-card>
-                            <v-btn color="secondary" @click="e1 = 4">
-                                Continue
-                            </v-btn>
-                            <v-btn @click="e1 = 2" class="ma-2">
+                            <v-btn @click="e1 = 2" class="ma-3">
                                 Back
                             </v-btn>
+                            <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
+                                Save
+                            </v-btn>
                         </v-stepper-content>
-                        <v-stepper-content step="4">
+                        <!-- <v-stepper-content step="4">
                             <v-card class="mb-12">
                                 <v-container class="grey lighten-5" offset-x min-width="auto">
                                     <v-row class="mb-6" no-gutters>
@@ -351,7 +354,7 @@
                             <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
                                 Save
                             </v-btn>
-                        </v-stepper-content>
+                        </v-stepper-content> -->
                     </v-stepper-items>
                 </v-stepper>
             </v-card>

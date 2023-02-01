@@ -55,6 +55,20 @@
                             </v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
+
+                    <v-list-item v-else :key="item.text" active-class="orange--text" route :to="item.route">
+                        <v-list-item-action>
+                            <v-icon>{{ item.icon }}</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>
+                                {{ item.text }}
+                            </v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+
+
+
                 </template>
             </v-list>
         </v-navigation-drawer>
@@ -97,7 +111,7 @@ export default {
                 icon: "mdi-chevron-up",
                 "icon-alt": "mdi-chevron-down",
                 "icon-ctr": "mdi-note-multiple",
-                text: "Fill-up forms    ",
+                text: "Relocation",
                 model: false,
                 children: [
                     {
@@ -106,14 +120,29 @@ export default {
                         route: "/form-one",
                     },
                     {
+                        icon: "mdi-playlist-check",
+                        text: "Relocation list",
+                        route: "/form-one",
+                    },
+
+                ],
+            },
+            {
+                icon: "mdi-chevron-up",
+                "icon-alt": "mdi-chevron-down",
+                "icon-ctr": "mdi-note-multiple",
+                text: "Shelter",
+                model: false,
+                children: [
+                    {
                         icon: "mdi-note-plus",
                         text: "Shelter Assistance",
                         route: "/shelter-assistance",
                     },
                     {
-                        icon: "mdi-note-plus",
-                        text: "Other",
-                        route: "/shelterlocation",
+                        icon: "mdi-playlist-check",
+                        text: "Shelter assistance list",
+                        route: "/shelter-assistance",
                     },
                 ],
             },
@@ -135,10 +164,17 @@ export default {
                         route: "/add-materials",
                     },
                     {
+                        icon: "mdi-thumb-up",
+                        text: "List of applicants",
+                        route: "/to-aproved",
+                    },
+                    {
                         icon: "mdi-printer",
                         text: "Print",
                         route: "/viewshit",
                     },
+
+
                     {
                         icon: "mdi-logout-variant",
                         text: "Log Out",
