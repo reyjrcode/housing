@@ -9,36 +9,22 @@
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Total awards <v-icon>
-                            mdi-trophy
+                    <v-toolbar-title>Total approved <v-icon>
+                            mdi-thumb-up-outline
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
-
-
                     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                         hide-details></v-text-field>
-                    <v-dialog v-model="dialog" max-width="1000px">
+                    <v-dialog v-model="dialog" max-width="500px">
 
-                        
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                                <v-icon>
-                                    mdi-account-plus
-                                </v-icon>
-                                New Item
-                            </v-btn>
-                        </template>
 
-                        <!--  <template v-slot:activator="{ on, attrs }">
-                            <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                                <v-icon>
-                                    mdi-account-plus
-                                </v-icon>
-                                New Item
-                            </v-btn>
-                        </template> -->
+                        <!-- <template v-slot:activator="{ on, attrs }">
+                        <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
+                            New Item
+                        </v-btn>
+                    </template> -->
 
 
                         <v-card>
@@ -50,55 +36,27 @@
                                 <v-container style="max-width: 100%;">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.firstname"
+                                            <v-text-field disabled v-model="editedItem.firstname"
                                                 label="First name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.middlename"
+                                            <v-text-field disabled v-model="editedItem.middlename"
                                                 label="Middle name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.lastname"
+                                            <v-text-field disabled v-model="editedItem.lastname"
                                                 label="Last name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.address"
+                                            <v-text-field disabled v-model="editedItem.address"
                                                 label="Address"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.contact"
+                                            <v-text-field disabled v-model="editedItem.contact"
                                                 label="Contact number"></v-text-field>
                                         </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.relocation"
-                                                label="Relocation site"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.blocklot"
-                                                label="Block/Lot"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.area"
-                                                label="Area SQM"></v-text-field>
-                                        </v-col>
-                                        <!-- <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.note"
-                                                label="Notes"></v-text-field>
-                                        </v-col> -->
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined label="Relocation site name"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined label="Block and Lot"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="numberValue" hide-details single-line
-                                                type="number" label="Area SQM" />
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.note"
-                                                label="Notes"></v-text-field>
-                                        </v-col>
+
+
                                     </v-row>
                                 </v-container>
 
@@ -106,12 +64,12 @@
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer></v-spacer>
-                                <v-btn color="warning" text @click="close">
+                                <v-btn color="blue darken-1" text @click="close">
                                     Close
                                 </v-btn>
-                                <v-btn color="blue darken-1" text @click="save">
+                                <!-- <v-btn color="blue darken-1" text @click="save">
                                     Save
-                                </v-btn>
+                                </v-btn> -->
                             </v-card-actions>
                         </v-card>
 
@@ -144,9 +102,9 @@
                     mdi-pencil
                 </v-icon> -->
 
-                <v-tooltip top color="green">
+                <v-tooltip top color="blue">
                     <template v-slot:activator="{ on, }">
-                        <v-btn class="ma-2" outlined color="green" @click="editItem(item)" v-on="on">
+                        <v-btn class="ma-2" outlined color="blue" @click="editItem(item)" v-on="on">
                             <v-icon>
                                 mdi-eye-outline
                             </v-icon>
@@ -222,10 +180,6 @@ export default {
             { text: 'Last name', value: 'lastname' },
             { text: 'Address', value: 'address' },
             { text: 'Contact', value: 'contact' },
-            { text: 'Relocation site', value: 'relocation' },
-            { text: 'Block / Lot ', value: 'blocklot' },
-            { text: 'Area SQM', value: 'area' },
-            { text: 'Notes', value: 'note' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -248,7 +202,7 @@ export default {
 
     computed: {
         formTitle() {
-            return this.editedIndex === -1 ? 'New Item' : 'Applicant details'
+            return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
         },
     },
 
@@ -273,11 +227,7 @@ export default {
                     middlename: 159,
                     lastname: 6.0,
                     address: 'Mankilam',
-                    contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
+                    contact: '09123456789'
                 },
                 {
                     firstname: 'Ice cream sandwich',
@@ -285,10 +235,6 @@ export default {
                     lastname: 9.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
                 {
                     firstname: 'Eclair',
@@ -296,10 +242,6 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
                 {
                     firstname: 'Cupcake',
@@ -307,10 +249,6 @@ export default {
                     lastname: 3.7,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
                 {
                     firstname: 'Gingerbread',
@@ -318,10 +256,6 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
                 {
                     firstname: 'Jelly bean',
@@ -329,10 +263,6 @@ export default {
                     lastname: 0.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
                 {
                     firstname: 'Lollipop',
@@ -340,10 +270,6 @@ export default {
                     lastname: 0.2,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
                 {
                     firstname: 'Honeycomb',
@@ -351,10 +277,6 @@ export default {
                     lastname: 3.2,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
                 {
                     firstname: 'Donut',
@@ -362,10 +284,6 @@ export default {
                     lastname: 25.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
                 {
                     firstname: 'KitKat',
@@ -373,10 +291,6 @@ export default {
                     lastname: 26.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    relocation: 'sample relocation',
-                    blocklot: 'sample block / lot',
-                    area: '123',
-                    note: 'sample note'
                 },
             ]
         },

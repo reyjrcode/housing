@@ -22,7 +22,17 @@ import AddMaterials from '../views/Forms/AddMaterials.vue'
 import ShelterAssistance from '../views/Forms/ShelterAssistance.vue'
 import LocationShelterForm from '../views/Forms/LocationShelterForm.vue'
 import LandSlide from '../views/dangerzone/LandSlide.vue'
-import ToApproved from '../views/actions/ToApproved.vue'
+import ToApproved from '../views/listing/ToApproved.vue'
+
+
+
+
+
+
+
+
+
+
 
 Vue.use(VueRouter)
 
@@ -132,12 +142,15 @@ const routes = [
   },
 
   {
-    path: '/to-aproved',
+    path: '/listing-list',
     name: 'ToApproved',
     component: ToApproved
   },
 
-  
+
+
+
+
 ]
 
 

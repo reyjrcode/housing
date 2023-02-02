@@ -9,15 +9,15 @@
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title>To Approved <v-icon>
-                            mdi-thumb-up-outline
+                    <v-toolbar-title>List of applicants <v-icon>
+                            mdi-note-text
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
                     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                         hide-details></v-text-field>
-                    <v-dialog v-model="dialog" max-width="500px">
+                    <v-dialog v-model="dialog" max-width="900px">
 
 
                         <!-- <template v-slot:activator="{ on, attrs }">
@@ -27,7 +27,7 @@
                     </template> -->
 
 
-                        <v-card>
+                        <div class="card" style="width: 100%;">
                             <v-card-title>
                                 <span class="text-h5">{{ formTitle }}</span>
                             </v-card-title>
@@ -118,7 +118,7 @@
                                     Save
                                 </v-btn>
                             </v-card-actions>
-                        </v-card>
+                        </div>
 
 
 
@@ -222,7 +222,7 @@ export default {
             { text: 'First name', value: 'firstname' },
             { text: 'Middle name', value: 'middlename' },
             { text: 'Last name', value: 'lastname' },
-            { text: 'Address', value: 'address' },
+            { text: 'Baranggay', value: 'address' },
             { text: 'Contact', value: 'contact' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
@@ -268,71 +268,71 @@ export default {
             this.desserts = [
                 {
                     firstname: 'Frozen Yogurt',
-                    middlename: 159,
-                    lastname: 6.0,
+                    middlename: 'Frozen Yogurt',
+                    lastname: 'Frozen Yogurt',
                     address: 'Mankilam',
                     contact: '09123456789'
                 },
                 {
                     firstname: 'Ice cream sandwich',
-                    middlename: 237,
-                    lastname: 9.0,
+                    middlename: 'Ice cream sandwich',
+                    lastname: 'Ice cream sandwich',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
                 {
                     firstname: 'Eclair',
-                    middlename: 262,
-                    lastname: 16.0,
+                    middlename: 'Eclair',
+                    lastname: 'Eclair',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
                 {
                     firstname: 'Cupcake',
-                    middlename: 305,
-                    lastname: 3.7,
+                    middlename: 'Cupcake',
+                    lastname: 'Cupcake',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
                 {
                     firstname: 'Gingerbread',
-                    middlename: 356,
-                    lastname: 16.0,
+                    middlename: 'Gingerbread',
+                    lastname: 'Gingerbread',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
                 {
                     firstname: 'Jelly bean',
-                    middlename: 375,
-                    lastname: 0.0,
+                    middlename: 'Gingerbread',
+                    lastname: 'Gingerbread',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
                 {
                     firstname: 'Lollipop',
-                    middlename: 392,
-                    lastname: 0.2,
+                    middlename: 'Lollipop',
+                    lastname: 'Lollipop',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
                 {
                     firstname: 'Honeycomb',
-                    middlename: 408,
-                    lastname: 3.2,
+                    middlename: 'Honeycomb',
+                    lastname: 'Honeycomb',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
                 {
                     firstname: 'Donut',
-                    middlename: 452,
-                    lastname: 25.0,
+                    middlename: 'Donut',
+                    lastname: 'Donut',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
                 {
                     firstname: 'KitKat',
-                    middlename: 518,
-                    lastname: 26.0,
+                    middlename: 'KitKat',
+                    lastname: 'KitKat',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },

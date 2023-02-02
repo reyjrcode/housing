@@ -116,13 +116,13 @@ export default {
                 children: [
                     {
                         icon: "mdi-note-plus",
-                        text: "Relocation",
+                        text: "Relocation Form",
                         route: "/form-one",
                     },
                     {
                         icon: "mdi-playlist-check",
-                        text: "Relocation list",
-                        route: "/form-one",
+                        text: "List of applicants",
+                        route: "/listing-list",
                     },
 
                 ],
@@ -136,13 +136,13 @@ export default {
                 children: [
                     {
                         icon: "mdi-note-plus",
-                        text: "Shelter Assistance",
+                        text: "Shelter Assistance Form",
                         route: "/shelter-assistance",
                     },
                     {
                         icon: "mdi-playlist-check",
-                        text: "Shelter assistance list",
-                        route: "/shelter-assistance",
+                        text: "List of applicants",
+                        route: "/listing-list",
                     },
                 ],
             },
@@ -176,6 +176,7 @@ export default {
 
 
                     {
+
                         icon: "mdi-logout-variant",
                         text: "Log Out",
                         route: "/log-in",

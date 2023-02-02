@@ -4,18 +4,18 @@
     <div class="div">
         <AdminNavbar />
 
-        <div class="container" >
-            <div class="row" >
-                <div class="col" >
+        <div class="container">
+            <div class="row">
+                <div class="col">
 
-                    <div class="card text-black bg-success rounded-4" max-width="100%" >
+                    <div class="card text-black bg-success rounded-4" max-width="100%">
                         <!-- <img src="..." class="card-img-top" alt="..."> -->
-                        <div class="card-body" >
+                        <div class="card-body">
                             <h3 class="card-title"> <v-icon dark right color="black">
                                     mdi-trophy
                                 </v-icon> Total awarded</h3>
                             <p class="card-text">12,345 total awarded</p>
-                            <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'TotalProject' })">
+                            <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'TotalAwards' })">
                                 More info
                             </v-btn>
                         </div>
@@ -31,7 +31,7 @@
                                     mdi-thumb-up
                                 </v-icon> Total approved</h4>
                             <p class="card-text">67,891 total approved</p>
-                            <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'TotalProject' })">
+                            <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'TotalApproved' })">
                                 More info
                             </v-btn>
                         </div>
@@ -174,8 +174,7 @@
                                 <h1 class="card-title">Others</h1>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional
                                     content.</p>
-                                <v-btn text color="deep-purple accent-4"
-                                    @click="$router.push({ name: 'OtherDanger' })">
+                                <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'OtherDanger' })">
                                     More info
                                 </v-btn>
                             </div>
@@ -217,6 +216,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col">
                     <div class="container">
                         <div class="card" max-width="100%">
