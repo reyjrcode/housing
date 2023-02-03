@@ -3,21 +3,43 @@
     <div class="to-approved">
         <AdminNavbar />
 
+        <div>
 
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <a class="navbar-brand">.</a>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" v-model="search" type="search" placeholder="Search"
+                        aria-label="Search">
+
+                </form>
+            </nav>
+        </div>
 
 
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Total approved <v-icon>
+                    <v-toolbar-title> Taged and validated <v-icon>
                             mdi-thumb-up-outline
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
-                    <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-                        hide-details></v-text-field>
-                    <v-dialog v-model="dialog" max-width="500px">
+                    <!-- <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
+                        hide-details></v-text-field> -->
+                    <v-dialog v-model="dialog" max-width="1000px">
+
+
+                        <template v-slot:activator="{ on, attrs }">
+
+
+                            <button class="btn btn-outline-success" type="button" v-bind="attrs" v-on="on"> <v-icon>
+                                    mdi-account-plus
+                                </v-icon>
+                                New Item</button>
+                        </template>
+
+
 
 
                         <!-- <template v-slot:activator="{ on, attrs }">
@@ -36,26 +58,52 @@
                                 <v-container style="max-width: 100%;">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.firstname"
+                                            <v-text-field outlined v-model="editedItem.firstname"
                                                 label="First name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.middlename"
+                                            <v-text-field outlined v-model="editedItem.middlename"
                                                 label="Middle name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.lastname"
+                                            <v-text-field outlined v-model="editedItem.lastname"
                                                 label="Last name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.address" label="Address"></v-text-field>
+                                            <v-text-field outlined v-model="editedItem.address"
+                                                label="Address"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.contact"
+                                            <v-text-field outlined v-model="editedItem.contact"
                                                 label="Contact number"></v-text-field>
                                         </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="editedItem.relocation"
+                                                label="Relocation site"></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="editedItem.blocklot"
+                                                label="Block/Lot"></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="editedItem.area"
+                                                label="Area SQM"></v-text-field>
+                                        </v-col>
 
-
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined label="Relocation site name"></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined label="Block and Lot"></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="numberValue" hide-details single-line
+                                                type="number" label="Area SQM" />
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="editedItem.note"
+                                                label="Notes"></v-text-field>
+                                        </v-col>
                                     </v-row>
                                 </v-container>
 
@@ -63,14 +111,15 @@
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer></v-spacer>
-                                <v-btn color="blue darken-1" text @click="close">
+                                <v-btn color="warning" text @click="close">
                                     Close
                                 </v-btn>
-                                <!-- <v-btn color="blue darken-1" text @click="save">
+                                <v-btn color="blue darken-1" text @click="save">
                                     Save
-                                </v-btn> -->
+                                </v-btn>
                             </v-card-actions>
                         </v-card>
+
 
 
 

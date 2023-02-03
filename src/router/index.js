@@ -23,6 +23,7 @@ import ShelterAssistance from '../views/Forms/ShelterAssistance.vue'
 import LocationShelterForm from '../views/Forms/LocationShelterForm.vue'
 import LandSlide from '../views/dangerzone/LandSlide.vue'
 import ToApproved from '../views/listing/ToApproved.vue'
+// import MappingPage from '../views/map/MappingPage.vue'
 
 
 
@@ -146,10 +147,15 @@ const routes = [
     name: 'ToApproved',
     component: ToApproved
   },
+  // {
+  //   path: '/mapping',
+  //   name: 'MappingPage',
+  //   component: MappingPage
+  // },
 
 
 
-
+  
 
 ]
 

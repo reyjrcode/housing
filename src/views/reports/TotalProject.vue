@@ -3,29 +3,18 @@
     <div class="to-approved">
         <AdminNavbar />
 
-
-
-
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Total approved <v-icon>
-                        mdi-home
+                    <v-toolbar-title>Total project <v-icon>
+                            mdi-home
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
                     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                         hide-details></v-text-field>
-                    <v-dialog v-model="dialog" max-width="500px">
-
-
-                        <!-- <template v-slot:activator="{ on, attrs }">
-                        <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                            New Item
-                        </v-btn>
-                    </template> -->
-
+                    <v-dialog v-model="dialog" max-width="800px">
 
                         <v-card>
                             <v-card-title>
@@ -36,27 +25,19 @@
                                 <v-container style="max-width: 100%;">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.firstname"
-                                                label="First name"></v-text-field>
+                                            <v-text-field disabled v-model="editedItem.location"
+                                                label="Location"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.middlename"
-                                                label="Middle name"></v-text-field>
+                                            <v-text-field disabled v-model="editedItem.vacant"
+                                                label="Vacant"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.lastname"
-                                                label="Last name"></v-text-field>
+                                            <v-text-field disabled v-model="editedItem.occupied"
+                                                label="Occupied"></v-text-field>
                                         </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.address" label="Address"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field  disabled v-model="editedItem.contact"
-                                                label="Contact number"></v-text-field>
-                                        </v-col>
-
-
                                     </v-row>
+                                    <DataTable />
                                 </v-container>
 
 
@@ -113,26 +94,6 @@
                 </v-tooltip>
 
 
-
-                <!-- <v-icon small @click="deleteItem(item)">
-                    mdi-delete
-                </v-icon> -->
-
-
-
-                <!-- <v-tooltip top color="red">
-                    <template v-slot:activator="{ on, }">
-                        <v-btn class="ma-2" outlined color="red" @click="deleteItem(item)" v-on="on">
-                            <v-icon>
-                                mdi-delete
-                            </v-icon>
-                        </v-btn>
-                    </template>
-                    <span>Click to add to blocklisted</span>
-                </v-tooltip> -->
-
-
-
             </template>
 
 
@@ -152,13 +113,14 @@
 /* eslint-disable */
 
 import AdminNavbar from '../Navigation/AdminNavbar.vue';
+import DataTable from "@/components/ListingTable.vue"
 
 
 export default {
 
     components: {
         AdminNavbar,
-
+        DataTable
 
     },
 
@@ -174,11 +136,10 @@ export default {
             //     sortable: false,
             //     value: 'name',
             // },
-            { text: 'First name', value: 'firstname' },
-            { text: 'Middle name', value: 'middlename' },
-            { text: 'Last name', value: 'lastname' },
-            { text: 'Address', value: 'address' },
-            { text: 'Contact', value: 'contact' },
+            { text: 'Location', value: 'location' },
+            { text: 'Vacant', value: 'vacant' },
+            { text: 'Occupied', value: 'occupied' },
+
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -222,74 +183,64 @@ export default {
         initialize() {
             this.desserts = [
                 {
-                    firstname: 'Frozen Yogurt',
-                    middlename: 159,
-                    lastname: 6.0,
-                    address: 'Mankilam',
-                    contact: '09123456789'
+                    location: 'Frozen Yogurt',
+                    vacant: 159,
+                    occupied: 6.0,
+
                 },
                 {
-                    firstname: 'Ice cream sandwich',
-                    middlename: 237,
-                    lastname: 9.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'Ice cream sandwich',
+                    vacant: 237,
+                    occupied: 9.0,
+
                 },
                 {
-                    firstname: 'Eclair',
-                    middlename: 262,
-                    lastname: 16.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'Eclair',
+                    vacant: 262,
+                    occupied: 16.0,
+
                 },
                 {
-                    firstname: 'Cupcake',
-                    middlename: 305,
-                    lastname: 3.7,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'Cupcake',
+                    vacant: 305,
+                    occupied: 3.7,
+
                 },
                 {
-                    firstname: 'Gingerbread',
-                    middlename: 356,
-                    lastname: 16.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'Gingerbread',
+                    vacant: 356,
+                    occupied: 16.0,
+
                 },
                 {
-                    firstname: 'Jelly bean',
-                    middlename: 375,
-                    lastname: 0.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'Jelly bean',
+                    vacant: 375,
+                    occupied: 0.0,
+
                 },
                 {
-                    firstname: 'Lollipop',
-                    middlename: 392,
-                    lastname: 0.2,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'Lollipop',
+                    vacant: 392,
+                    occupied: 0.2,
+
                 },
                 {
-                    firstname: 'Honeycomb',
-                    middlename: 408,
-                    lastname: 3.2,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'Honeycomb',
+                    vacant: 408,
+                    occupied: 3.2,
+
                 },
                 {
-                    firstname: 'Donut',
-                    middlename: 452,
-                    lastname: 25.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'Donut',
+                    vacant: 452,
+                    occupied: 25.0,
+
                 },
                 {
-                    firstname: 'KitKat',
-                    middlename: 518,
-                    lastname: 26.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+                    location: 'KitKat',
+                    vacant: 518,
+                    occupied: 26.0,
+
                 },
             ]
         },

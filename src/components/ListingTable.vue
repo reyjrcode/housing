@@ -1,7 +1,7 @@
 <template>
 
     <div class="to-approved">
-        <AdminNavbar />
+
 
 
 
@@ -9,15 +9,15 @@
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Total approved <v-icon>
-                            mdi-thumb-up-outline
+                    <v-toolbar-title> <v-icon>
+
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
                     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                         hide-details></v-text-field>
-                    <v-dialog v-model="dialog" max-width="500px">
+                    <v-dialog v-model="dialog" max-width="700px">
 
 
                         <!-- <template v-slot:activator="{ on, attrs }">
@@ -51,10 +51,7 @@
                                             <v-text-field disabled v-model="editedItem.address"
                                                 label="Address"></v-text-field>
                                         </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.contact"
-                                                label="Contact number"></v-text-field>
-                                        </v-col>
+
 
 
                                     </v-row>
@@ -115,25 +112,6 @@
 
 
 
-                <!-- <v-icon small @click="deleteItem(item)">
-                    mdi-delete
-                </v-icon> -->
-
-
-
-                <!-- <v-tooltip top color="red">
-                    <template v-slot:activator="{ on, }">
-                        <v-btn class="ma-2" outlined color="red" @click="deleteItem(item)" v-on="on">
-                            <v-icon>
-                                mdi-delete
-                            </v-icon>
-                        </v-btn>
-                    </template>
-                    <span>Click to add to blocklisted</span>
-                </v-tooltip> -->
-
-
-
             </template>
 
 
@@ -152,13 +130,13 @@
 
 /* eslint-disable */
 
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+
 
 
 export default {
 
     components: {
-        AdminNavbar,
+
 
 
     },
@@ -175,11 +153,11 @@ export default {
             //     sortable: false,
             //     value: 'name',
             // },
-            { text: 'First name', value: 'firstname' },
-            { text: 'Middle name', value: 'middlename' },
-            { text: 'Last name', value: 'lastname' },
-            { text: 'Address', value: 'address' },
-            { text: 'Contact', value: 'contact' },
+            { text: 'Block', value: 'firstname' },
+            { text: 'Lot', value: 'middlename' },
+            { text: 'Status', value: 'lastname' },
+            { text: 'Award', value: 'address' },
+
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -227,70 +205,70 @@ export default {
                     middlename: 159,
                     lastname: 6.0,
                     address: 'Mankilam',
-                    contact: '09123456789'
+
                 },
                 {
                     firstname: 'Ice cream sandwich',
                     middlename: 237,
                     lastname: 9.0,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
                 {
                     firstname: 'Eclair',
                     middlename: 262,
                     lastname: 16.0,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
                 {
                     firstname: 'Cupcake',
                     middlename: 305,
                     lastname: 3.7,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
                 {
                     firstname: 'Gingerbread',
                     middlename: 356,
                     lastname: 16.0,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
                 {
                     firstname: 'Jelly bean',
                     middlename: 375,
                     lastname: 0.0,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
                 {
                     firstname: 'Lollipop',
                     middlename: 392,
                     lastname: 0.2,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
                 {
                     firstname: 'Honeycomb',
                     middlename: 408,
                     lastname: 3.2,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
                 {
                     firstname: 'Donut',
                     middlename: 452,
                     lastname: 25.0,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
                 {
                     firstname: 'KitKat',
                     middlename: 518,
                     lastname: 26.0,
                     address: 'Mankilam',
-                    contact: '09123456789',
+
                 },
             ]
         },

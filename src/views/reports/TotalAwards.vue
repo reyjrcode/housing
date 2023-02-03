@@ -3,8 +3,20 @@
     <div class="to-approved">
         <AdminNavbar />
 
+        <!--     
+    <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
+                        hide-details></v-text-field> -->
+        <div>
 
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <a class="navbar-brand">.</a>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" v-model="search" type="search" placeholder="Search"
+                        aria-label="Search">
 
+                </form>
+            </nav>
+        </div>
 
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
@@ -15,21 +27,33 @@
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
-
-
+                    <!-- 
                     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-                        hide-details></v-text-field>
+                        hide-details></v-text-field> -->
+
                     <v-dialog v-model="dialog" max-width="1000px">
 
-                        
+                        <!-- 
                         <template v-slot:activator="{ on, attrs }">
-                            <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                                <v-icon>
+
+
+                            <button class="btn btn-outline-success" type="button" v-bind="attrs" v-on="on"> <v-icon>
                                     mdi-account-plus
                                 </v-icon>
-                                New Item
-                            </v-btn>
-                        </template>
+                                New Item</button>
+                        </template> -->
+
+
+
+
+
+
+
+
+
+
+
+
 
                         <!--  <template v-slot:activator="{ on, attrs }">
                             <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
@@ -50,53 +74,32 @@
                                 <v-container style="max-width: 100%;">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.firstname"
+                                            <v-text-field outlined v-model="editedItem.firstname" disabled
                                                 label="First name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.middlename"
+                                            <v-text-field outlined v-model="editedItem.middlename" disabled
                                                 label="Middle name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.lastname"
+                                            <v-text-field outlined v-model="editedItem.lastname" disabled
                                                 label="Last name"></v-text-field>
                                         </v-col>
+
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.address"
-                                                label="Address"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.contact"
-                                                label="Contact number"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.relocation"
+                                            <v-text-field outlined v-model="editedItem.relocation" disabled
                                                 label="Relocation site"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.blocklot"
+                                            <v-text-field outlined v-model="editedItem.blocklot" disabled
                                                 label="Block/Lot"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.area"
+                                            <v-text-field outlined v-model="editedItem.area" disabled
                                                 label="Area SQM"></v-text-field>
                                         </v-col>
-                                        <!-- <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.note"
-                                                label="Notes"></v-text-field>
-                                        </v-col> -->
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined label="Relocation site name"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined label="Block and Lot"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="numberValue" hide-details single-line
-                                                type="number" label="Area SQM" />
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.note"
+                                            <v-text-field outlined v-model="editedItem.note" disabled
                                                 label="Notes"></v-text-field>
                                         </v-col>
                                     </v-row>
@@ -220,8 +223,7 @@ export default {
             { text: 'First name', value: 'firstname' },
             { text: 'Middle name', value: 'middlename' },
             { text: 'Last name', value: 'lastname' },
-            { text: 'Address', value: 'address' },
-            { text: 'Contact', value: 'contact' },
+
             { text: 'Relocation site', value: 'relocation' },
             { text: 'Block / Lot ', value: 'blocklot' },
             { text: 'Area SQM', value: 'area' },
@@ -272,8 +274,7 @@ export default {
                     firstname: 'Frozen Yogurt',
                     middlename: 159,
                     lastname: 6.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -283,8 +284,7 @@ export default {
                     firstname: 'Ice cream sandwich',
                     middlename: 237,
                     lastname: 9.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -294,8 +294,7 @@ export default {
                     firstname: 'Eclair',
                     middlename: 262,
                     lastname: 16.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -305,8 +304,7 @@ export default {
                     firstname: 'Cupcake',
                     middlename: 305,
                     lastname: 3.7,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -316,8 +314,7 @@ export default {
                     firstname: 'Gingerbread',
                     middlename: 356,
                     lastname: 16.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -327,8 +324,7 @@ export default {
                     firstname: 'Jelly bean',
                     middlename: 375,
                     lastname: 0.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -349,8 +345,7 @@ export default {
                     firstname: 'Honeycomb',
                     middlename: 408,
                     lastname: 3.2,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -360,8 +355,7 @@ export default {
                     firstname: 'Donut',
                     middlename: 452,
                     lastname: 25.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -371,8 +365,7 @@ export default {
                     firstname: 'KitKat',
                     middlename: 518,
                     lastname: 26.0,
-                    address: 'Mankilam',
-                    contact: '09123456789',
+
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
