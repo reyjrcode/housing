@@ -3,7 +3,7 @@
         <v-navigation-drawer v-model="drawer" color="#1B5E20" dark app>
             <v-layout column align-center>
                 <v-flex class="mt-5">
-                    <v-btn class="mx-2" fab dark large color="purple" outlined>
+                    <v-btn class="mx-2" fab dark large color="purple"  @click="$router.push({ name: 'EditProfile' })" outlined>
                         <v-avatar size="90">
                             <img src="https://i.pinimg.com/originals/72/cd/96/72cd969f8e21be3476277d12d44c791c.png"
                                 alt="123" />
@@ -121,8 +121,8 @@ export default {
                     },
                     {
                         icon: "mdi-playlist-check",
-                        text: "List of applicants",
-                        route: "/listing-list",
+                        text: "Relocation applicants",
+                        route: "/relocation-list",
                     },
 
                 ],
@@ -142,7 +142,7 @@ export default {
                     {
                         icon: "mdi-playlist-check",
                         text: "List of applicants",
-                        route: "/listing-list",
+                        route: "/shelter-assistance-dialog",
                     },
                 ],
             },
@@ -163,11 +163,11 @@ export default {
                         text: "Add material",
                         route: "/add-materials",
                     },
-                    {
-                        icon: "mdi-thumb-up",
-                        text: "List of applicants",
-                        route: "/to-aproved",
-                    },
+                    // {
+                    //     icon: "mdi-thumb-up",
+                    //     text: "List of applicants",
+                    //     route: "/to-aproved",
+                    // },
                     {
                         icon: "mdi-printer",
                         text: "Print",

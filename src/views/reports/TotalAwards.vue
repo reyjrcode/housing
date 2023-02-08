@@ -272,8 +272,8 @@ export default {
             this.desserts = [
                 {
                     firstname: 'Frozen Yogurt',
-                    middlename: 159,
-                    lastname: 6.0,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
 
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
@@ -282,8 +282,8 @@ export default {
                 },
                 {
                     firstname: 'Ice cream sandwich',
-                    middlename: 237,
-                    lastname: 9.0,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
 
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
@@ -292,8 +292,8 @@ export default {
                 },
                 {
                     firstname: 'Eclair',
-                    middlename: 262,
-                    lastname: 16.0,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
 
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
@@ -302,8 +302,8 @@ export default {
                 },
                 {
                     firstname: 'Cupcake',
-                    middlename: 305,
-                    lastname: 3.7,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
 
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
@@ -312,8 +312,8 @@ export default {
                 },
                 {
                     firstname: 'Gingerbread',
-                    middlename: 356,
-                    lastname: 16.0,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
 
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
@@ -322,8 +322,8 @@ export default {
                 },
                 {
                     firstname: 'Jelly bean',
-                    middlename: 375,
-                    lastname: 0.0,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
 
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
@@ -332,8 +332,8 @@ export default {
                 },
                 {
                     firstname: 'Lollipop',
-                    middlename: 392,
-                    lastname: 0.2,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
                     address: 'Mankilam',
                     contact: '09123456789',
                     relocation: 'sample relocation',
@@ -343,8 +343,8 @@ export default {
                 },
                 {
                     firstname: 'Honeycomb',
-                    middlename: 408,
-                    lastname: 3.2,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
 
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
@@ -353,9 +353,8 @@ export default {
                 },
                 {
                     firstname: 'Donut',
-                    middlename: 452,
-                    lastname: 25.0,
-
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',
                     area: '123',
@@ -363,8 +362,8 @@ export default {
                 },
                 {
                     firstname: 'KitKat',
-                    middlename: 518,
-                    lastname: 26.0,
+                    middlename: 'sample middle name',
+                    lastname: 'sample last name',
 
                     relocation: 'sample relocation',
                     blocklot: 'sample block / lot',

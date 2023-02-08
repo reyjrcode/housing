@@ -22,11 +22,9 @@ import AddMaterials from '../views/Forms/AddMaterials.vue'
 import ShelterAssistance from '../views/Forms/ShelterAssistance.vue'
 import LocationShelterForm from '../views/Forms/LocationShelterForm.vue'
 import LandSlide from '../views/dangerzone/LandSlide.vue'
-import ToApproved from '../views/listing/ToApproved.vue'
-// import MappingPage from '../views/map/MappingPage.vue'
-
-
-
+import ToApproved from '../views/listing/RelocationDialog.vue'
+import EditProfile from '../views/Forms/EditProfile.vue'
+import ShelterAssistanceDialog from '../views/listing/ShelterAssistanceDialog.vue'
 
 
 
@@ -47,15 +45,18 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard
-  }, {
+  }, 
+  {
     path: '/navigation',
     name: 'AdminNavbar',
     component: AdminNavbar
-  }, {
+  }, 
+  {
     path: '/home',
     name: 'HomeShit',
     component: HomeShit
-  }, {
+  }, 
+  {
     path: '/form-one',
     name: 'FormOne',
     component: FormOne
@@ -85,15 +86,18 @@ const routes = [
     path: '/total-awards',
     name: 'TotalAwards',
     component: TotalAwards
-  }, {
+  }, 
+  {
     path: '/total-approved',
     name: 'TotalApproved',
     component: TotalApproved
-  }, {
+  }, 
+  {
     path: '/total-project',
     name: 'TotalProject',
     component: TotalProject
-  }, {
+  }, 
+  {
     path: '/total-blocklisted',
     name: 'TotalBlocklisted',
     component: TotalBlocklisted
@@ -117,11 +121,13 @@ const routes = [
     path: '/npc-line',
     name: 'NPCline',
     component: NPCline
-  }, {
+  }, 
+  {
     path: '/inventory',
     name: 'Inventory',
     component: Inventory
-  }, {
+  },
+  {
     path: '/add-materials',
     name: 'AddMaterials',
     component: AddMaterials
@@ -141,22 +147,24 @@ const routes = [
     name: 'LandSlide',
     component: LandSlide
   },
-
   {
-    path: '/listing-list',
+    path: '/relocation-list',
     name: 'ToApproved',
     component: ToApproved
   },
-  // {
-  //   path: '/mapping',
-  //   name: 'MappingPage',
-  //   component: MappingPage
-  // },
-
+  {
+    path: '/edit-profile',
+    name: 'EditProfile',
+    component: EditProfile
+  },
+  {
+    path: '/shelter-assistance-dialog',
+    name: 'ShelterAssistanceDialog',
+    component: ShelterAssistanceDialog
+  },
 
 
   
-
 ]
 
 

@@ -404,62 +404,7 @@ export default {
             e1: 1,
             dialog: false,
             drawer: null,
-            items: [
-                { icon: "mdi-view-dashboard", text: "Dashboard", route: "/dashboard" },
-                // {
-                //     icon: "mdi mdi-account",
-                //     text: "Forms",
-                //     route: "/ScholarshipApplication",
-                // },
-                {
-                    icon: "mdi-chevron-up",
-                    "icon-alt": "mdi-chevron-down",
-                    "icon-ctr": "mdi-note-multiple",
-                    text: "Fill-up forms    ",
-                    model: false,
-                    children: [
-                        {
-                            icon: "mdi-note-plus",
-                            text: "Relocation",
-                            route: "/form-one",
-                        },
-                        {
-                            icon: "mdi-note-plus",
-                            text: "For Recommendation",
-                            route: "/form-one",
-                        },
-                        {
-                            icon: "mdi-note-plus",
-                            text: "For Processing",
-                            route: "/form-one",
-                        },
-                    ],
-                },
-                {
-                    icon: "mdi-chevron-up",
-                    "icon-alt": "mdi-chevron-down",
-                    "icon-ctr": "mdi-account-box",
-                    text: "Profile",
-                    model: false,
-                    children: [
-                        {
-                            icon: "mdi-information-outline",
-                            text: "User Info",
-                            route: "/YouTherecord",
-                        },
-                        {
-                            icon: "mdi-printer",
-                            text: "Print",
-                            route: "/viewshit",
-                        },
-                        {
-                            icon: "mdi-logout-variant",
-                            text: "Log Out",
-                            route: "/log-in",
-                        },
-                    ],
-                },
-            ],
+
         }
     },
     watch: {

@@ -5,8 +5,10 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import "bootstrap/dist/css/bootstrap.min.css"
 
-
-
+import './ChartsComponent'
+import './HeaderList'
+import './RightSideCards'
+// import "./views/Header"
 Vue.config.productionTip = false
 
 new Vue({

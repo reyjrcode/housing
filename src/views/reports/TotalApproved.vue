@@ -74,22 +74,13 @@
                                                 label="Address"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.contact"
+                                            <v-text-field outlined v-model="editedItem.contact" type="number"
                                                 label="Contact number"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined v-model="editedItem.relocation"
                                                 label="Relocation site"></v-text-field>
                                         </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.blocklot"
-                                                label="Block/Lot"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.area"
-                                                label="Area SQM"></v-text-field>
-                                        </v-col>
-
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined label="Relocation site name"></v-text-field>
                                         </v-col>
@@ -101,8 +92,15 @@
                                                 type="number" label="Area SQM" />
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.note"
-                                                label="Notes"></v-text-field>
+                                            <!-- <v-text-field outlined v-model="editedItem.note"
+                                                label="Notes"></v-text-field> -->
+
+                                            <div class="form-outline">
+                                                <textarea class="form-control" id="textAreaExample2"
+                                                    rows="4"></textarea>
+                                                <label class="form-label" for="textAreaExample2">Message</label>
+                                            </div>
+
                                         </v-col>
                                     </v-row>
                                 </v-container>

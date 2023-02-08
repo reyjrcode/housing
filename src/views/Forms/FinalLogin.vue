@@ -4,7 +4,6 @@
         <v-app id="inspire" class="background">
             <v-main class="d-flex justify-center align-center">
                 <v-col cols="10" lg="5" class="mx-auto">
-
                     <v-form @submit.prevent="submitHandler" ref="form">
                         <v-container>
                             <v-layout row wrap>
@@ -32,23 +31,17 @@
                                             <v-text-field class="custom-label-color" v-model="id" label="I.D number"
                                                 color="white" type="sample"
                                                 prepend-inner-icon="mdi mdi-account mdi-light" autofocus></v-text-field>
-
                                             <v-text-field v-model="password" class="custom-label-color" label="Password"
                                                 color="white" type="password"
                                                 prepend-inner-icon="mdi-key mdi-light"></v-text-field>
-
                                         </v-col>
                                     </v-row>
-
                                     <v-container>
-
                                         <v-row>
                                             <v-col offset="2" size="9">
-
                                                 <v-btn type="submit" color="blue" class="rounded-xl" @click=userlogin>
                                                     <v-icon left>mdi-login-variant</v-icon>
                                                     LOG IN
-
                                                 </v-btn>
                                                 <v-dialog v-model="dialog" max-width="290">
                                                     <v-card>
@@ -76,7 +69,7 @@
                                             </v-col>
                                             <v-col offset="" size="9"
                                                 @click="$router.push({ name: 'RegistrationPage' })">
-                                                
+
                                                 <v-btn color="green" class="rounded-xl">
                                                     <v-icon left>mdi-lead-pencil</v-icon>
                                                     SING UP
@@ -137,7 +130,7 @@ export default {
             data.append('password', this.password);
             console.log(this.id);
             console.log(this.password);
-            
+
             if (this.id.length == 0) {
                 this.inputcheck = true;
                 this.snackbar = true;
