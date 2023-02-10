@@ -1,17 +1,13 @@
 <template>
 
     <div class="to-approved">
-
-
-
-
-
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
                     <v-toolbar-title> <v-icon>
 
                         </v-icon> </v-toolbar-title>
+                        <h3>Natural calamities</h3><v-icon>mdi-note-text</v-icon>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 

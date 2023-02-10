@@ -26,11 +26,8 @@ const mutations = {
         state.users = payload;
 
     },
-
     setAuth(state, payload) {
-
         state.auth = payload;
-
     }
 }
 

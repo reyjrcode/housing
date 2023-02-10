@@ -75,25 +75,26 @@
                                                     <v-container>
                                                         <v-row>
                                                             <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Apelyido" clearable required
+                                                                <v-text-field label="Apelyido"
+                                                                    v-model="editedItem.lastname"  required
                                                                     outlined autofocus></v-text-field>
                                                             </v-col>
                                                             <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Pangalan" clearable required
+                                                                <v-text-field label="Pangalan"  v-model="editedItem.firstname" clearable required
                                                                     outlined></v-text-field>
                                                             </v-col>
                                                             <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Middle Name" clearable required
+                                                                <v-text-field label="Middle Name"  v-model="editedItem.middlename" clearable required
                                                                     outlined></v-text-field>
 
                                                             </v-col>
                                                             <v-col cols="12" sm="6" md="3">
                                                                 <!-- <v-text-field label="Suffix" required hint="Jr., III, etc"></v-text-field> -->
-                                                                <v-select :items="['Jr.', 'Sr.']" label="Suffix"
+                                                                <v-select :items="['Jr.', 'Sr.']"   v-model="editedItem.suffix" label="Suffix" 
                                                                     outlined required></v-select>
                                                             </v-col>
                                                             <v-col cols="12" sm="6" md="6">
-                                                                <v-text-field label="Purok" clearable required
+                                                                <v-text-field label="Purok"  v-model="editedItem.address" clearable required
                                                                     outlined></v-text-field>
                                                             </v-col>
                                                             <v-col cols="12" sm="6">
@@ -108,7 +109,7 @@
                                                                     outlined></v-select>
                                                             </v-col>
                                                             <v-col cols="12" sm="6" md="6">
-                                                                <v-text-field label="Contact No." clearable required
+                                                                <v-text-field label="Contact No."  v-model="editedItem.contact" clearable required
                                                                     outlined></v-text-field>
                                                             </v-col>
                                                             <v-col cols="12" sm="6">
@@ -659,6 +660,7 @@ export default {
             { text: 'First name', value: 'firstname' },
             { text: 'Middle name', value: 'middlename' },
             { text: 'Last name', value: 'lastname' },
+            { text: 'Suffix', value: 'suffix' },
             { text: 'Baranggay', value: 'address' },
             { text: 'Contact', value: 'contact' },
             { text: 'Actions', value: 'actions', sortable: false },
@@ -718,6 +720,7 @@ export default {
                     firstname: 'Frozen Yogurt',
                     middlename: 'Frozen Yogurt',
                     lastname: 'Frozen Yogurt',
+                    suffix:'jr',
                     address: 'Mankilam',
                     contact: '09123456789'
                 },
@@ -725,6 +728,7 @@ export default {
                     firstname: 'Ice cream sandwich',
                     middlename: 'Ice cream sandwich',
                     lastname: 'Ice cream sandwich',
+                    suffix:'sr',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -732,6 +736,7 @@ export default {
                     firstname: 'Eclair',
                     middlename: 'Eclair',
                     lastname: 'Eclair',
+                    suffix:'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -739,6 +744,7 @@ export default {
                     firstname: 'Cupcake',
                     middlename: 'Cupcake',
                     lastname: 'Cupcake',
+                    suffix:'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -746,6 +752,7 @@ export default {
                     firstname: 'Gingerbread',
                     middlename: 'Gingerbread',
                     lastname: 'Gingerbread',
+                    suffix:'sr',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -753,6 +760,7 @@ export default {
                     firstname: 'Jelly bean',
                     middlename: 'Gingerbread',
                     lastname: 'Gingerbread',
+                    suffix:'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -760,6 +768,7 @@ export default {
                     firstname: 'Lollipop',
                     middlename: 'Lollipop',
                     lastname: 'Lollipop',
+                    suffix:'jr',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -767,6 +776,7 @@ export default {
                     firstname: 'Honeycomb',
                     middlename: 'Honeycomb',
                     lastname: 'Honeycomb',
+                    suffix:'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -774,6 +784,7 @@ export default {
                     firstname: 'Donut',
                     middlename: 'Donut',
                     lastname: 'Donut',
+                    suffix:'sr',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -781,6 +792,7 @@ export default {
                     firstname: 'KitKat',
                     middlename: 'KitKat',
                     lastname: 'KitKat',
+                    suffix:'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },

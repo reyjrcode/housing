@@ -24,12 +24,10 @@ import LocationShelterForm from '../views/Forms/LocationShelterForm.vue'
 import LandSlide from '../views/dangerzone/LandSlide.vue'
 import ToApproved from '../views/listing/RelocationDialog.vue'
 import EditProfile from '../views/Forms/EditProfile.vue'
-import ShelterAssistanceDialog from '../views/listing/ShelterAssistanceDialog.vue'
-
-
-
-
-
+import ShelterDashBoard from '../views/shelterassistance/DashBoard.vue'
+import BayanihanPage from '../views/shelterassistance/headercards/BayanihanPage.vue'
+import NaturalCalamityPage from '../views/shelterassistance/headercards/NaturalCalamityPage.vue'
+import SelfHelpPage from '../views/shelterassistance/headercards/SelfHelpPage.vue'
 
 
 
@@ -45,17 +43,17 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard
-  }, 
+  },
   {
     path: '/navigation',
     name: 'AdminNavbar',
     component: AdminNavbar
-  }, 
+  },
   {
     path: '/home',
     name: 'HomeShit',
     component: HomeShit
-  }, 
+  },
   {
     path: '/form-one',
     name: 'FormOne',
@@ -86,17 +84,17 @@ const routes = [
     path: '/total-awards',
     name: 'TotalAwards',
     component: TotalAwards
-  }, 
+  },
   {
     path: '/total-approved',
     name: 'TotalApproved',
     component: TotalApproved
-  }, 
+  },
   {
     path: '/total-project',
     name: 'TotalProject',
     component: TotalProject
-  }, 
+  },
   {
     path: '/total-blocklisted',
     name: 'TotalBlocklisted',
@@ -121,7 +119,7 @@ const routes = [
     path: '/npc-line',
     name: 'NPCline',
     component: NPCline
-  }, 
+  },
   {
     path: '/inventory',
     name: 'Inventory',
@@ -158,12 +156,31 @@ const routes = [
     component: EditProfile
   },
   {
-    path: '/shelter-assistance-dialog',
-    name: 'ShelterAssistanceDialog',
-    component: ShelterAssistanceDialog
+    path: '/shelter-assistance-dashboard',
+    name: 'ShelterDashBoard',
+    component: ShelterDashBoard
+  },
+  {
+    path: '/bayanihan-page',
+    name: 'BayanihanPage',
+    component: BayanihanPage
+  },
+  {
+    path: '/natural-calamity',
+    name: 'NaturalCalamityPage',
+    component: NaturalCalamityPage
+  },
+  {
+    path: '/self-help',
+    name: 'SelfHelpPage',
+    component: SelfHelpPage
   },
 
 
+
+  
+
+  
   
 ]
 

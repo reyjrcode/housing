@@ -3,7 +3,7 @@
     <div class="addmaterial">
         <AdminNavbar />
         <div class="div">
-            <DataTable />
+            <KilidsaSapaTable />
         </div>
     </div>
 </template>
@@ -14,13 +14,13 @@
 
 import AdminNavbar from '../Navigation/AdminNavbar.vue';
 
-import DataTable from "@/components/DangerZoneList.vue"
+
 
 export default {
 
     components: {
         AdminNavbar,
-        DataTable
+
 
     },
 

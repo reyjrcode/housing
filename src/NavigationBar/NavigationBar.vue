@@ -100,7 +100,7 @@ export default {
         drawer: null,
         items: [
             { icon: "mdi-view-dashboard", text: "Relocation dashboard", route: "/dashboard" },
-            { icon: "mdi-view-dashboard", text: "Shelter assistance", route: "/shelter-assistance-dashboard" },
+            { icon: "mdi-view-dashboard", text: "Shelter dashboard", route: "/shelter-assistance-dashboard" },
             // {
             //     icon: "mdi mdi-account",
             //     text: "Forms",

@@ -6,8 +6,21 @@ import vuetify from './plugins/vuetify'
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import './ChartsComponent'
-import './HeaderList'
-import './RightSideCards'
+
+
+import './relocation/ButtomCards'
+import './relocation/DangerZonelist'
+import './relocation/HeaderList'
+import './relocation/RightSideCards'
+import './NavigationBar'
+
+import './shelterassistancecomponent/ShelterHeader'
+
+import './shelterassistancecomponent/ShelterAssistanceList'
+import './shelterassistancecomponent/RightSideCards'
+
+
+
 // import "./views/Header"
 Vue.config.productionTip = false
 
