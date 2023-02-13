@@ -5,7 +5,7 @@
                 <div class="panel-heading">
                     <br />
                     <h4 class="panel-title">Kilid sa creek</h4>
-                    <div class="panel-body">
+                    <div class="panel-body text-light">
                         Adunay 30 kabook
                     </div>
                 </div>

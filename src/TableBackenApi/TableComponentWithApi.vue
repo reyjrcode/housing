@@ -218,7 +218,6 @@ export default {
 
 /* buttons */
 
-/* 
 
 button {
     position: relative;
@@ -329,5 +328,5 @@ button:hover span {
 .btn-shine:hover:after {
     left: 120%;
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-} */
+}
 </style>

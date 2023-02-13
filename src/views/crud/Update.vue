@@ -77,7 +77,8 @@ export default {
             setTimeout(() => {
                 // this.loading = false;
 
-                this.$router.push('/dashboard')
+                this.$router.push('/add-materials')
+                
                 window.location = window.location
             }, 2000)
         },

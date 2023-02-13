@@ -28,7 +28,8 @@ import ShelterDashBoard from '../views/shelterassistance/DashBoard.vue'
 import BayanihanPage from '../views/shelterassistance/headercards/BayanihanPage.vue'
 import NaturalCalamityPage from '../views/shelterassistance/headercards/NaturalCalamityPage.vue'
 import SelfHelpPage from '../views/shelterassistance/headercards/SelfHelpPage.vue'
-
+import HomePage from '../views/HomePage.vue'
+import ShelterAssistanceDialog from '../views/listing/ShelterAssistanceDialog.vue'
 
 
 Vue.use(VueRouter)
@@ -175,13 +176,22 @@ const routes = [
     name: 'SelfHelpPage',
     component: SelfHelpPage
   },
+  {
+    path: '/home-page',
+    name: 'HomePage',
+    component: HomePage
+  },
+
+  {
+    path: '/shelter-assistance-dialog',
+    name: 'ShelterAssistanceDialog',
+    component: ShelterAssistanceDialog
+  },
 
 
 
-  
 
-  
-  
+
 ]
 
 

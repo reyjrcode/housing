@@ -3,12 +3,12 @@
         <center>
             <div>
                 <div class="panel-heading"> <br />
-                    <h3 class="panel-title">Bayanihan</h3>
-                    <div class="panel-body">
-                        Adunay 80 kabook
+                    <h3 class="panel-title">Natural Calamity</h3>
+                    <div class="panel-body text-light">
+                        Adunay 83 kabook
                     </div>
                 </div>
-                <a @click="$router.push({ name: 'BayanihanPage' })" class="stretched-link"></a>
+                <a @click="$router.push({ name: 'NaturalCalamityPage' })" class="stretched-link"></a>
             </div>
         </center>
     </div>

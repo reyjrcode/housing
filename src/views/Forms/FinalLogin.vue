@@ -149,7 +149,9 @@ export default {
                     }
                     else {
 
-                        this.$router.push('dashboard');
+                        // this.$router.push('dashboard');
+                        this.$router.push('home-page');
+                        
                     }
                 });
 

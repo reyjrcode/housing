@@ -6,18 +6,14 @@
                 <v-toolbar flat>
                     <v-toolbar-title> <v-icon>
                         </v-icon> </v-toolbar-title>
-                        <h3>Self help</h3><v-icon>mdi-note-text</v-icon>
+                    <h3>Bayanihan</h3><v-icon>mdi-note-text</v-icon>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
                     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                         hide-details></v-text-field>
-                    <v-dialog v-model="dialog" max-width="700px">
-                        <!-- <template v-slot:activator="{ on, attrs }">
-                        <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
-                            New Item
-                        </v-btn>
-                    </template> -->
+                    <v-dialog v-model="dialog" max-width="1000px">
+
                         <v-card>
                             <v-card-title>
                                 <span class="text-h5">{{ formTitle }}</span>
@@ -27,25 +23,17 @@
                                 <v-container style="max-width: 100%;">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.firstname"
-                                                label="First name"></v-text-field>
+                                            <v-text-field disabled v-model="editedItem.baranngay"
+                                                label="Baranngay"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.middlename"
-                                                label="Middle name"></v-text-field>
+                                            <v-text-field disabled v-model="editedItem.serve"
+                                                label="Serve"></v-text-field>
                                         </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.lastname"
-                                                label="Last name"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.address"
-                                                label="Address"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.contact"
-                                                label="Contact number"></v-text-field>
-                                        </v-col>
+
+
+                                        <SelfhelpSubtable />
+
 
                                     </v-row>
                                 </v-container>
@@ -146,11 +134,11 @@ export default {
             //     sortable: false,
             //     value: 'name',
             // },
-            { text: 'First name', value: 'firstname' },
-            { text: 'Middle name', value: 'middlename' },
-            { text: 'Last name', value: 'lastname' },
-            { text: 'Address', value: 'address' },
-            { text: 'Contact number', value: 'contact' },
+            { text: 'Baranngay', value: 'baranngay' },
+            { text: 'Serve', value: 'serve' },
+            // { text: 'Last name', value: 'lastname' },
+            // { text: 'Address', value: 'address' },
+            // { text: 'Contact number', value: 'contact' },
 
 
             { text: 'Actions', value: 'actions', sortable: false },
@@ -196,81 +184,81 @@ export default {
         initialize() {
             this.desserts = [
                 {
-                    firstname: 'Frozen Yogurt',
-                    middlename: 159,
-                    lastname: 6.0,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Frozen Yogurt',
+                    serve: 159,
+                    // lastname: 6.0,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
                 },
                 {
-                    firstname: 'Ice cream sandwich',
-                    middlename: 237,
-                    lastname: 9.0,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Ice cream sandwich',
+                    serve: 237,
+                    // lastname: 9.0,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
                 },
                 {
-                    firstname: 'Eclair',
-                    middlename: 262,
-                    lastname: 16.0,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Eclair',
+                    serve: 262,
+                    // lastname: 16.0,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
 
                 },
                 {
-                    firstname: 'Cupcake',
-                    middlename: 305,
-                    lastname: 3.7,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Cupcake',
+                    serve: 305,
+                    // lastname: 3.7,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
 
                 },
                 {
-                    firstname: 'Gingerbread',
-                    middlename: 356,
-                    lastname: 16.0,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Gingerbread',
+                    serve: 356,
+                    // lastname: 16.0,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
 
                 },
                 {
-                    firstname: 'Jelly bean',
-                    middlename: 375,
-                    lastname: 0.0,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Jelly bean',
+                    serve: 375,
+                    // lastname: 0.0,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
 
                 },
                 {
-                    firstname: 'Lollipop',
-                    middlename: 392,
-                    lastname: 0.2,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Lollipop',
+                    serve: 392,
+                    // lastname: 0.2,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
 
                 },
                 {
-                    firstname: 'Honeycomb',
-                    middlename: 408,
-                    lastname: 3.2,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Honeycomb',
+                    serve: 408,
+                    // lastname: 3.2,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
 
                 },
                 {
-                    firstname: 'Donut',
-                    middlename: 452,
-                    lastname: 25.0,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    baranngay: 'Donut',
+                    serve: 452,
+                    // lastname: 25.0,
+                    // address: 'Mankilam',
+                    // contact: '123123123',
 
                 },
                 {
-                    firstname: 'KitKat',
-                    middlename: 518,
+                    baranngay: 'KitKat',
+                    serve: 518,
                     lastname: 26.0,
-                    address: 'Mankilam',
-                    contact: '123123123',
+                    // address: 'Mankilam',
+                    // contact: '123123123',
 
                 },
             ]

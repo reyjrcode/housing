@@ -4,7 +4,7 @@
             <div>
                 <div class="panel-heading"> <br />
                     <h3 class="panel-title">Others</h3>
-                    <div class="panel-body">
+                    <div class="panel-body text-light">
                         Adunay 36 kabook
                     </div>
                 </div>

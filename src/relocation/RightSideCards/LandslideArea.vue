@@ -4,7 +4,7 @@
         <div>
             <div class="panel-heading"> <br />
                 <h4 class="panel-title">Landslide prone area</h4>
-                <div class="panel-body">
+                <div class="panel-body text-light">
                     Adunay 50 kabook
                 </div>
             </div>

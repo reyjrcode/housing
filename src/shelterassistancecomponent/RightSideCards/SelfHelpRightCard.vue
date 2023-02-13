@@ -4,8 +4,8 @@
             <div>
                 <div class="panel-heading"> <br />
                     <h3 class="panel-title">Self help</h3>
-                    <div class="panel-body">
-                        Adunay 80 kabook
+                    <div class="panel-body text-light">
+                        Adunay 45 kabook
                     </div>
                 </div>
                 <a @click="$router.push({ name: 'SelfHelpPage' })" class="stretched-link"></a>

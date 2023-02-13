@@ -57,14 +57,18 @@
                                         </v-stepper-step>
                                         <v-divider></v-divider>
                                         <v-stepper-step :complete="e1 > 3" step="3" offset-y min-width="auto">
+                                            Ngalan sa nakig ipon
+                                        </v-stepper-step>
+                                        <v-stepper-step :complete="e1 > 4" step="4" offset-y min-width="auto">
                                             Istado sa Pagpuyo
                                         </v-stepper-step>
+                                        
                                         <!-- <v-stepper-step step="3" offset-x min-width="auto">
                                             Istado sa Pagpuyo
                                         </v-stepper-step> -->
                                         <v-divider></v-divider>
-                                        <v-stepper-step step="4" offset-x min-width="auto">
-                                            Sitwasyon sa Pagpuyo
+                                        <v-stepper-step step="5" offset-x min-width="auto">
+                                            Materiales
                                         </v-stepper-step>
 
                                     </v-stepper-header>

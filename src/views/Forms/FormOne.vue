@@ -199,11 +199,12 @@
                                                                                         class="btn btn-success btn-sm "
                                                                                         @click="addRow">Add</button>
                                                                                 </div>
-                                                                            </div> <br /><button type="button"
-                                                                                class="btn btn-success btn-sm"
-                                                                                padding-top="3px" @click="saveItem">Save
-                                                                                Item</button>
-                                                                        </div>
+
+                                                                            </div>
+                                                                        </div> <br /><button type="button"
+                                                                            class="btn btn-success btn-sm"
+                                                                            padding-top="3px" @click="saveItem">Save
+                                                                            Item</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

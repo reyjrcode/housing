@@ -3,6 +3,7 @@
     <div class="addmaterial">
         <AdminNavbar />
         add materials
+        <TableComponentWithApi/>
     </div>
 </template>
 

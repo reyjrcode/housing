@@ -4,7 +4,8 @@
             <div>
                 <div class="panel-heading"> <br />
                     <h3 class="panel-title">Flood prone area</h3>
-                    <div class="panel-body">
+                    <!-- <div class="panel-body text-light"></div> -->
+                    <div class="panel-body text-light">
                         Adunay 80 kabook
                     </div>
                 </div>

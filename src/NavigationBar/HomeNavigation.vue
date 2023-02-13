@@ -99,120 +99,119 @@ export default {
     data: () => ({
         drawer: null,
         items: [
-            { icon: "mdi-home", text: "Home", route: "/home-page" },
-            // { icon: "mdi-view-dashboard", text: "Relocation dashboard", route: "/dashboard" },
-            // { icon: "mdi-view-dashboard", text: "Shelter assistance", route: "/shelter-assistance-dashboard" },
-            // {
-            //     icon: "mdi mdi-account",
-            //     text: "Forms",
-            //     route: "/ScholarshipApplication",
-            // },
-            {
-                icon: "mdi-chevron-up",
-                "icon-alt": "mdi-chevron-down",
-                "icon-ctr": "mdi-note-multiple",
-                text: "Relocation",
-                model: false,
-                children: [
-                    {
-                        icon: "mdi-note-plus",
-                        text: "Relocation Form",
-                        route: "/form-one",
-                    },
-                    {
-                        icon: "mdi-playlist-check",
-                        text: "Relocation applicants",
-                        route: "/relocation-list",
-                    },
+        { icon: "mdi-home", text: "Home", route: "/home-page" },
+        //     { icon: "mdi-view-dashboard", text: "Shelter dashboard", route: "/shelter-assistance-dashboard" },
+        //     // {
+        //     //     icon: "mdi mdi-account",
+        //     //     text: "Forms",
+        //     //     route: "/ScholarshipApplication",
+        //     // },
+        //     {
+        //         icon: "mdi-chevron-up",
+        //         "icon-alt": "mdi-chevron-down",
+        //         "icon-ctr": "mdi-note-multiple",
+        //         text: "Relocation",
+        //         model: false,
+        //         children: [
+        //             {
+        //                 icon: "mdi-note-plus",
+        //                 text: "Relocation Form",
+        //                 route: "/form-one",
+        //             },
+        //             {
+        //                 icon: "mdi-playlist-check",
+        //                 text: "Relocation applicants",
+        //                 route: "/relocation-list",
+        //             },
 
-                ],
-            },
-            {
-                icon: "mdi-chevron-up",
-                "icon-alt": "mdi-chevron-down",
-                "icon-ctr": "mdi-note-multiple",
-                text: "Shelter",
-                model: false,
-                children: [
-                    {
-                        icon: "mdi-note-plus",
-                        text: "Shelter Assistance Form",
-                        route: "/shelter-assistance",
-                    },
-                    {
-                        icon: "mdi-playlist-check",
-                        text: "List of applicants",
-                        route: "/shelter-assistance-dialog",
-                    },
-                ],
-            },
-            {
-                icon: "mdi-chevron-up",
-                "icon-alt": "mdi-chevron-down",
-                "icon-ctr": "mdi-account-box",
-                text: "List",
-                model: false,
-                children: [
-                    {
-                        icon: "mdi-trophy",
-                        text: "Total awarded",
-                        route: "/total-awards",
-                    },
-                    {
-                        icon: "mdi-thumb-up",
-                        text: "Total approved",
-                        route: "/total-approved",
-                    },
-                    {
-                        icon: "mdi-home-variant",
-                        text: "Total project",
-                        route: "/total-project",
-                    },
-                    {
-                        icon: "mdi-block-helper",
-                        text: "Total blocklisted",
-                        route: "/total-blocklisted",
-                    },
-                ],
-            },
-            {
-                icon: "mdi-chevron-up",
-                "icon-alt": "mdi-chevron-down",
-                "icon-ctr": "mdi-account-box",
-                text: "Actions",
-                model: false,
-                children: [
-                    {
-                        icon: "mdi-wallet-travel",
-                        text: "Inventory",
-                        route: "/inventory",
-                    },
-                    {
-                        icon: "mdi-database-plus",
-                        text: "Add material",
-                        route: "/add-materials",
-                    },
-                    // {
-                    //     icon: "mdi-thumb-up",
-                    //     text: "List of applicants",
-                    //     route: "/to-aproved",
-                    // },
-                    {
-                        icon: "mdi-printer",
-                        text: "Print",
-                        route: "/viewshit",
-                    },
+        //         ],
+        //     },
+        //     {
+        //         icon: "mdi-chevron-up",
+        //         "icon-alt": "mdi-chevron-down",
+        //         "icon-ctr": "mdi-note-multiple",
+        //         text: "Shelter",
+        //         model: false,
+        //         children: [
+        //             {
+        //                 icon: "mdi-note-plus",
+        //                 text: "Shelter Assistance Form",
+        //                 route: "/shelter-assistance",
+        //             },
+        //             {
+        //                 icon: "mdi-playlist-check",
+        //                 text: "List of applicants",
+        //                 route: "/shelter-assistance-dialog",
+        //             },
+        //         ],
+        //     },
+        //     {
+        //         icon: "mdi-chevron-up",
+        //         "icon-alt": "mdi-chevron-down",
+        //         "icon-ctr": "mdi-account-box",
+        //         text: "List",
+        //         model: false,
+        //         children: [
+        //             {
+        //                 icon: "mdi-trophy",
+        //                 text: "Total awarded",
+        //                 route: "/total-awards",
+        //             },
+        //             {
+        //                 icon: "mdi-thumb-up",
+        //                 text: "Total approved",
+        //                 route: "/total-approved",
+        //             },
+        //             {
+        //                 icon: "mdi-home-variant",
+        //                 text: "Total project",
+        //                 route: "/total-project",
+        //             },
+        //             {
+        //                 icon: "mdi-block-helper",
+        //                 text: "Total blocklisted",
+        //                 route: "/total-blocklisted",
+        //             },
+        //         ],
+        //     },
+        //     {
+        //         icon: "mdi-chevron-up",
+        //         "icon-alt": "mdi-chevron-down",
+        //         "icon-ctr": "mdi-account-box",
+        //         text: "Actions",
+        //         model: false,
+        //         children: [
+        //             {
+        //                 icon: "mdi-wallet-travel",
+        //                 text: "Inventory",
+        //                 route: "/inventory",
+        //             },
+        //             {
+        //                 icon: "mdi-database-plus",
+        //                 text: "Add material",
+        //                 route: "/add-materials",
+        //             },
+        //             // {
+        //             //     icon: "mdi-thumb-up",
+        //             //     text: "List of applicants",
+        //             //     route: "/to-aproved",
+        //             // },
+        //             {
+        //                 icon: "mdi-printer",
+        //                 text: "Print",
+        //                 route: "/viewshit",
+        //             },
 
 
-                    {
+        //             {
 
-                        icon: "mdi-logout-variant",
-                        text: "Log Out",
-                        route: "/log-in",
-                    },
-                ],
-            },
-        ],
+        //                 icon: "mdi-logout-variant",
+        //                 text: "Log Out",
+        //                 route: "/log-in",
+        //             },
+        //         ],
+        //     },
+       ],
     }),
     methods: {
         logout() {

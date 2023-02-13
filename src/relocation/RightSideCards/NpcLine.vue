@@ -5,7 +5,7 @@
             <div>
                 <div class="panel-heading"> <br />
                     <h4 class="panel-title">NPC line</h4>
-                    <div class="panel-body">
+                    <div class="panel-body text-light">
                         dunay 45 kabook
                     </div>
                 </div>

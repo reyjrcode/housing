@@ -1,10 +1,10 @@
 <template>
     <div class="div">
-        <div class="card text-black bg-primary rounded-4" max-width="100%">
+        <div class="card text-black bg-success rounded-4" max-width="100%">
             <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-                <h4 class="card-title">  Natural Calamities</h4>
-                <p class="card-text">100 total blocklisted</p>
+            <div class="card-body"> 
+                <h4 class="card-title"> <v-icon dark right color="black">mdi-weather-pouring </v-icon> Natural Calamities</h4>
+                <p class="card-text">123 Natural Calamity</p>
                 <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'NaturalCalamityPage' })">
                     More info
                 </v-btn>
