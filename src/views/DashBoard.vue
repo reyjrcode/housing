@@ -22,7 +22,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-                    <PieChartRelocation />
+                    <!-- <div class="card"> -->
+                        <PieChartRelocation />
+                    <!-- </div> -->
                 </div>
                 <div class="col-sm">
                     <div class="container">

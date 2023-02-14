@@ -49,7 +49,7 @@
                         <img src="https://www.sandhillrelo.com/wp-content/uploads/2019/07/additional-relocation-services-8.png"
                             height="425px" class="card-img-top" alt="???">
                         <div class="card-body">
-                            <h2 class="card-title">Relocation dashboard</h2>
+                            <h2 class="card-title">Relocation applicants dashboard</h2>
                             <p class="card-text">123,456 relocation applicants.</p>
                             <!-- <a href="#" class="btn btn-primary stretched-link" @click="$router.push({ name: 'Dashboard' })"></a> -->
                             <a class="btn stretched-link" @click="$router.push({ name: 'Dashboard' })"></a>
@@ -131,7 +131,7 @@ export default {
 .card-1 {
     box-sizing: border-box;
     width: 500px;
-    height: 550px;
+    height: 540px;
     background: rgba(217, 217, 217, 0.58);
     border: 1px solid white;
     box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);

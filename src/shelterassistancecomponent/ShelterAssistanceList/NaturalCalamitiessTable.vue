@@ -6,19 +6,16 @@
                 <v-toolbar flat>
                     <v-toolbar-title> <v-icon>
                         </v-icon> </v-toolbar-title>
-                    <h3>Bayanihan</h3><v-icon>mdi-note-text</v-icon>
+                    <h3>Natural Calamities</h3><v-icon size="45"  dark right color="#11301d">mdi-note-text</v-icon>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
-
                     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                         hide-details></v-text-field>
                     <v-dialog v-model="dialog" max-width="1000px">
-
                         <v-card>
                             <v-card-title>
                                 <span class="text-h5">{{ formTitle }}</span>
                             </v-card-title>
-
                             <v-card-text>
                                 <v-container style="max-width: 100%;">
                                     <v-row>
@@ -31,31 +28,16 @@
                                                 label="Serve"></v-text-field>
                                         </v-col>
                                         <NaturalCalamitySubtable />
-
-
                                     </v-row>
                                 </v-container>
-
-
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer></v-spacer>
                                 <v-btn color="blue darken-1" text @click="close">
                                     Close
                                 </v-btn>
-
                             </v-card-actions>
                         </v-card>
-
-
-
-
-
-
-
-
-
-
 
                     </v-dialog>
                     <v-dialog v-model="dialogDelete" max-width="500px">
@@ -103,23 +85,14 @@
 <script>
 
 /* eslint-disable */
-
-
-
-
 export default {
-
     data: () => ({
-
         search: '',
         dialog: false,
         dialogDelete: false,
         headers: [
-
             { text: 'Baranngay', value: 'baranngay' },
             { text: 'Serve', value: 'serve' },
-
-
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -145,7 +118,6 @@ export default {
             return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
         },
     },
-
     watch: {
         dialog(val) {
             val || this.close()
@@ -154,52 +126,103 @@ export default {
             val || this.closeDelete()
         },
     },
-
     created() {
         this.initialize()
     },
     methods: {
         initialize() {
             this.desserts = [
-                {
-                    baranngay: 'Frozen Yogurt',
+            {
+                    baranngay: 'Apokon',
                     serve: 159,
                 },
                 {
-                    baranngay: 'Ice cream sandwich',
+                    baranngay: 'Bincungan',
                     serve: 237,
                 },
                 {
-                    baranngay: 'Eclair',
+                    baranngay: 'Busaon',
                     serve: 262,
                 },
                 {
-                    baranngay: 'Cupcake',
+                    baranngay: 'Canocotan',
                     serve: 305,
                 },
                 {
-                    baranngay: 'Gingerbread',
+                    baranngay: 'Cuambogan',
                     serve: 356,
                 },
                 {
-                    baranngay: 'Jelly bean',
+                    baranngay: 'La Filipina',
                     serve: 375,
                 },
                 {
-                    baranngay: 'Lollipop',
-                    serve: 392,
-                },
-                {
-                    baranngay: 'Honeycomb',
+                    baranngay: 'Liboganon',
                     serve: 408,
                 },
                 {
-                    baranngay: 'Donut',
+                    baranngay: 'Madaum',
                     serve: 452,
-
                 },
                 {
-                    baranngay: 'KitKat',
+                    baranngay: 'Magdum',
+                    serve: 452,
+                },
+                {
+                    baranngay: 'Magugpo East',
+                    serve: 518,
+                    lastname: 26.0,
+                },
+                {
+                    baranngay: 'Magugpo North',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Magugpo Poblacion',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Magugpo South',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Magugpo West',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Mankilam',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'New Balamban',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Nueva Fuerza',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Pagsabangan',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Pandapan',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'San Agustin',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'San Isidro',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'San Miguel',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Visayan Village',
                     serve: 518,
                 },
             ]

@@ -6,7 +6,7 @@
                 <v-toolbar flat>
                     <v-toolbar-title> <v-icon>
                         </v-icon> </v-toolbar-title>
-                    <h3>Bayanihan</h3><v-icon>mdi-note-text</v-icon>
+                    <h3>Bayanihan</h3><v-icon size="45" dark right color="#11301d">mdi-note-text</v-icon>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
@@ -34,22 +34,7 @@
                                             <v-text-field disabled v-model="editedItem.serve"
                                                 label="Serve"></v-text-field>
                                         </v-col>
-                                        <!-- <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.lastname"
-                                                label="Last name"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.address"
-                                                label="Address"></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.contact"
-                                                label="Contact number"></v-text-field>
-                                        </v-col> -->
-
                                         <BayanihanSubtable />
-
-
                                     </v-row>
                                 </v-container>
 
@@ -151,11 +136,6 @@ export default {
             // },
             { text: 'Baranngay', value: 'baranngay' },
             { text: 'Serve', value: 'serve' },
-            // { text: 'Last name', value: 'lastname' },
-            // { text: 'Address', value: 'address' },
-            // { text: 'Contact number', value: 'contact' },
-
-
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -199,83 +179,99 @@ export default {
         initialize() {
             this.desserts = [
                 {
-                    baranngay: 'Frozen Yogurt',
+                    baranngay: 'Apokon',
                     serve: 159,
-                    // lastname: 6.0,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
                 },
                 {
-                    baranngay: 'Ice cream sandwich',
+                    baranngay: 'Bincungan',
                     serve: 237,
-                    // lastname: 9.0,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
                 },
                 {
-                    baranngay: 'Eclair',
+                    baranngay: 'Busaon',
                     serve: 262,
-                    // lastname: 16.0,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
-
                 },
                 {
-                    baranngay: 'Cupcake',
+                    baranngay: 'Canocotan',
                     serve: 305,
-                    // lastname: 3.7,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
-
                 },
                 {
-                    baranngay: 'Gingerbread',
+                    baranngay: 'Cuambogan',
                     serve: 356,
-                    // lastname: 16.0,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
-
                 },
                 {
-                    baranngay: 'Jelly bean',
+                    baranngay: 'La Filipina',
                     serve: 375,
-                    // lastname: 0.0,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
-
                 },
                 {
-                    baranngay: 'Lollipop',
-                    serve: 392,
-                    // lastname: 0.2,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
-
-                },
-                {
-                    baranngay: 'Honeycomb',
+                    baranngay: 'Liboganon',
                     serve: 408,
-                    // lastname: 3.2,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
-
                 },
                 {
-                    baranngay: 'Donut',
+                    baranngay: 'Madaum',
                     serve: 452,
-                    // lastname: 25.0,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
-
                 },
                 {
-                    baranngay: 'KitKat',
+                    baranngay: 'Magdum',
+                    serve: 452,
+                },
+                {
+                    baranngay: 'Magugpo East',
                     serve: 518,
                     lastname: 26.0,
-                    // address: 'Mankilam',
-                    // contact: '123123123',
-
                 },
+                {
+                    baranngay: 'Magugpo North',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Magugpo Poblacion',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Magugpo South',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Magugpo West',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Mankilam',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'New Balamban',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Nueva Fuerza',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Pagsabangan',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Pandapan',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'San Agustin',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'San Isidro',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'San Miguel',
+                    serve: 518,
+                },
+                {
+                    baranngay: 'Visayan Village',
+                    serve: 518,
+                },
+
             ]
         },
 

@@ -3,7 +3,7 @@
         <center>
             <div>
                 <div class="panel-heading"> <br />
-                    <h3 class="panel-title">Bayanihan</h3>
+                    <h3 class="panel-title"><strong>Bayanihan</strong></h3>
                     <div class="panel-body text-light" >
                         Adunay 38 kabook
                     </div>

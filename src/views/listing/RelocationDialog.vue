@@ -49,7 +49,7 @@
                                 <v-stepper v-model="e1">
                                     <v-stepper-header>
                                         <v-stepper-step :complete="e1 > 1" step="1" offset-y min-width="auto">
-                                            Personal na Impormasyon
+                                            Sitwasyon sa Pagpuyo
                                         </v-stepper-step>
                                         <v-divider></v-divider>
                                         <v-stepper-step :complete="e1 > 2" step="2" offset-y min-width="auto">
@@ -64,271 +64,12 @@
                                         </v-stepper-step> -->
                                         <v-divider></v-divider>
                                         <v-stepper-step step="4" offset-x min-width="auto">
-                                            Sitwasyon sa Pagpuyo
+                                            Personal na Impormasyon
                                         </v-stepper-step>
 
                                     </v-stepper-header>
                                     <v-stepper-items>
                                         <v-stepper-content step="1">
-                                            <v-card class="mb-1" color="grey lighten-4">
-                                                <v-card-text>
-                                                    <v-container>
-                                                        <v-row>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Apelyido"
-                                                                    v-model="editedItem.lastname"  required
-                                                                    outlined autofocus></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Pangalan"  v-model="editedItem.firstname" clearable required
-                                                                    outlined></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Middle Name"  v-model="editedItem.middlename" clearable required
-                                                                    outlined></v-text-field>
-
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <!-- <v-text-field label="Suffix" required hint="Jr., III, etc"></v-text-field> -->
-                                                                <v-select :items="['Jr.', 'Sr.']"   v-model="editedItem.suffix" label="Suffix" 
-                                                                    outlined required></v-select>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="6">
-                                                                <v-text-field label="Purok"  v-model="editedItem.address" clearable required
-                                                                    outlined></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6">
-                                                                <v-select
-                                                                    :items="['Minyo', 'Minyo nga naay kaipon lain', 'Nag ipon apan wala na kasal', 'Byuda', 'Byudo', 'Bulas sa Asawa / Bana', 'Dalaga', 'Ulitawo']"
-                                                                    label="Civil Status" required outlined></v-select>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6">
-                                                                <v-select
-                                                                    :items="['Stado 1', 'Stado 2', 'Stado 3', 'Stado 4', 'Stado 5']"
-                                                                    label="Stado sa Pagpanarbaho" required
-                                                                    outlined></v-select>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="6">
-                                                                <v-text-field label="Contact No."  v-model="editedItem.contact" clearable required
-                                                                    outlined></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6">
-                                                                <v-text-field label="Pangalan sa Employer"
-                                                                    type="address" clearable required
-                                                                    outlined></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="3">
-                                                                <v-select
-                                                                    :items="['1000 to 3000', '4000 to 6000', '7000 to 8000', '9000 to 10000',]"
-                                                                    label="Bulan na kita" required outlined></v-select>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <div>
-                                                                    <div class="mb-1">
-                                                                    </div>
-                                                                    <v-menu ref="menu" v-model="menu"
-                                                                        :close-on-content-click="false"
-                                                                        transition="scale-transition" offset-y
-                                                                        min-width="auto">
-                                                                        <template v-slot:activator="{ on, attrs }">
-                                                                            <v-text-field v-model="date"
-                                                                                label="Adlaw Natawhan"
-                                                                                prepend-icon="mdi-calendar" readonly
-                                                                                v-bind="attrs" v-on="on"
-                                                                                outlined></v-text-field>
-                                                                        </template>
-                                                                        <v-date-picker v-model="date"
-                                                                            :active-picker.sync="activePicker"
-                                                                            :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
-                                                                            min="1950-01-01"
-                                                                            @change="save"></v-date-picker>
-                                                                    </v-menu>
-                                                                </div>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="3">
-                                                                <v-select
-                                                                    :items="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', , '12 pa taas nga nag puy']"
-                                                                    label="Pila ka tuig nagpuyo" required
-                                                                    outlined></v-select>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Pangalan sa bana / asawa" clearable
-                                                                    required outlined></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Middle Name" clearable required
-                                                                    outlined></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Apelyido" clearable required
-                                                                    outlined></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Trabaho" clearable required
-                                                                    outlined></v-text-field>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="3">
-                                                                <v-select
-                                                                    :items="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '12 pa taas ang mga anak']"
-                                                                    label="Pila ang anak" required outlined> </v-select>
-                                                            </v-col>
-                                                        </v-row>
-                                                    </v-container>
-                                                    <h2 class="red--text">*indicates required field</h2>
-                                                </v-card-text>
-                                            </v-card>
-                                            <v-btn class="ma-4" color="#F7A4A4" @click="$router.push('/dashboard')">
-                                                <v-icon large color="green darken-2">
-                                                    mdi-cancel
-                                                </v-icon>
-
-                                                Cancel
-                                            </v-btn>
-
-                                            <v-btn color="#B6E2A1" @click="e1 = 2">
-                                                <v-icon large color="green darken-2">
-                                                    mdi-arrow-right-circle
-                                                </v-icon>
-                                                Continue
-                                            </v-btn>
-                                        </v-stepper-content>
-                                        <v-stepper-content step="2">
-                                            <v-card class="mb-12" color="grey lighten-4">
-                                                <v-card-text>
-                                                    <v-container fluid>
-                                                        <v-row>
-                                                            <v-responsive class="overflow-y-auto" max-height="400">
-
-
-
-                                                                <v-lazy v-model="isActive" :options="{
-                                                                    threshold: .5
-                                                                }" min-height="200" transition="fade-transition">
-                                                                    <v-card class="mx-auto" max-width="100%">
-                                                                        <v-card-title>Card title</v-card-title>
-                                                                        <v-card-text>
-                                                                            <!-- start of dynamic text -->
-                                                                            <div class="container mt-4">
-                                                                                <div class="card">
-                                                                                    <div class="card-body">
-                                                                                        <div v-for="item, index in form"
-                                                                                            :key="item">
-                                                                                            <!-- <H3>Anak number {{ index }}</H3>
-{{ item }} -->
-                                                                                            <div class="row">
-                                                                                                <div class="col-sm-2">
-                                                                                                    <label>Pangalan sa
-                                                                                                        anak:</label>
-                                                                                                    <input type="text"
-                                                                                                        class="form-control"
-                                                                                                        v-model="item.FullName">
-                                                                                                </div>
-                                                                                                <div class="col-sm-2">
-                                                                                                    <label>Civil
-                                                                                                        Status:</label>
-                                                                                                    <input type="text"
-                                                                                                        class="form-control"
-                                                                                                        v-model="item.CivilStatus">
-                                                                                                </div>
-                                                                                                <div class="col-sm-2">
-                                                                                                    <label>Address:</label>
-                                                                                                    <input type="text"
-                                                                                                        class="form-control"
-                                                                                                        v-model="item.Address">
-                                                                                                </div>
-                                                                                                <div class="col-sm-2">
-                                                                                                    <label>Income:</label>
-                                                                                                    <input type="number"
-                                                                                                        class="form-control"
-                                                                                                        v-model="item.income">
-                                                                                                </div>
-                                                                                                <div
-                                                                                                    class="col-sm-2 pt-4">
-                                                                                                    <br />
-                                                                                                    <button
-                                                                                                        type="button"
-                                                                                                        class="btn btn-danger btn-sm"
-                                                                                                        @click="removeRow(index)">Remove</button>
-                                                                                                    <button
-                                                                                                        type="button"
-                                                                                                        class="btn btn-success btn-sm "
-                                                                                                        @click="addRow">Add</button>
-                                                                                                </div>
-                                                                                            </div> <br /><button
-                                                                                                type="button"
-                                                                                                class="btn btn-success btn-sm"
-                                                                                                padding-top="3px"
-                                                                                                @click="saveItem">Save
-                                                                                                Item</button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- end of dynamic text -->
-                                                                        </v-card-text>
-                                                                    </v-card>
-                                                                </v-lazy>
-                                                            </v-responsive>
-                                                        </v-row>
-                                                    </v-container>
-                                                </v-card-text>
-                                                <v-card flat>
-                                                </v-card>
-                                            </v-card>
-                                            <v-btn color="secondary" @click="e1 = 3">
-                                                Continue
-                                            </v-btn>
-                                            <v-btn @click="e1 = 1" class="ma-2">
-                                                Back
-                                            </v-btn>
-                                        </v-stepper-content>
-                                        <v-stepper-content step="3">
-                                            <v-card class="mb-1" color="grey lighten-4" height="400px">
-                                                <v-card-text>
-                                                    <v-container>
-                                                        <v-row>
-                                                            <v-col cols="12" sm="6">
-                                                                <v-select
-                                                                    :items="['Kwarto', 'Balay', 'Kaugalingon nga balay pero ga arkila sa yuta']"
-                                                                    label="Nag Arkila ug" required outlined></v-select>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6">
-                                                                <v-select
-                                                                    :items="['500 to 1,000', '1,100 to 1,500', '1,600 to 2,00', '2,100, to 2,500', '2,600, to 3,000', '3,000 pa taas and arkila']"
-                                                                    label="Pila ang pag Arkila" outlined
-                                                                    required></v-select>
-                                                            </v-col>
-                                                            <v-col cols="12">
-                                                                <v-select
-                                                                    :items="['Kaugalingon ang balay pero wala ga arkila sa yuta, nasayod ang tag-iya sa yuta', 'Kaugalingon nga balay pero wala ga arkila sa yuta, walay pag tugot sa tag-iya', 'Libre nga pagpuyo sa balay nga adunay pagtugot sa tag-iya', 'Libre nga pagpuyo sa balay ug yuta nga walay pagtugot sa tag-iya', 'Nakipuyo Lang']"
-                                                                    label="Istado sa Pagpuyo" outlined
-                                                                    required></v-select>
-                                                            </v-col>
-                                                            <v-col cols="12" sm="6" md="6">
-                                                                <v-text-field label="Pangalan sa gipuy-an " outlined
-                                                                    clearable></v-text-field>
-                                                            </v-col>
-                                                        </v-row>
-                                                    </v-container>
-                                                    <h2 class="red--text">Please indicates required field</h2>
-                                                </v-card-text>
-                                            </v-card>
-                                            <v-btn color="secondary" @click="e1 = 4">
-                                                Continue
-                                            </v-btn>
-                                            <v-btn @click="e1 = 2" class="ma-3">
-                                                Back
-                                            </v-btn>
-                                            <!-- <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
-                                                Save
-                                            </v-btn> -->
-                                        </v-stepper-content>
-
-
-
-
-
-                                        <v-stepper-content step="4">
 
 
                                             <v-card class="mb-12" height="1100px">
@@ -519,6 +260,283 @@
                                                     </v-row>
                                                 </v-container>
                                             </v-card>
+
+
+
+
+
+                                            <v-btn class="ma-4" color="#F7A4A4" @click="$router.push('/dashboard')">
+                                                <v-icon large color="green darken-2">
+                                                    mdi-cancel
+                                                </v-icon>
+
+                                                Cancel
+                                            </v-btn>
+
+                                            <v-btn color="#B6E2A1" @click="e1 = 2">
+                                                <v-icon large color="green darken-2">
+                                                    mdi-arrow-right-circle
+                                                </v-icon>
+                                                Continue
+                                            </v-btn>
+                                        </v-stepper-content>
+                                        <v-stepper-content step="2">
+                                            <v-card class="mb-12" color="grey lighten-4">
+                                                <v-card-text>
+                                                    <v-container fluid>
+                                                        <v-row>
+                                                            <v-responsive class="overflow-y-auto" max-height="400">
+
+
+
+                                                                <v-lazy v-model="isActive" :options="{
+                                                                    threshold: .5
+                                                                }" min-height="200" transition="fade-transition">
+                                                                    <v-card class="mx-auto" max-width="100%">
+                                                                        <v-card-title>Card title</v-card-title>
+                                                                        <v-card-text>
+                                                                            <!-- start of dynamic text -->
+                                                                            <div class="container mt-4">
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <div v-for="item, index in form"
+                                                                                            :key="item">
+                                                                                            <!-- <H3>Anak number {{ index }}</H3>
+{{ item }} -->
+                                                                                            <div class="row">
+                                                                                                <div class="col-sm-2">
+                                                                                                    <label>Pangalan sa
+                                                                                                        anak:</label>
+                                                                                                    <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        v-model="item.FullName">
+                                                                                                </div>
+                                                                                                <div class="col-sm-2">
+                                                                                                    <label>Civil
+                                                                                                        Status:</label>
+                                                                                                    <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        v-model="item.CivilStatus">
+                                                                                                </div>
+                                                                                                <div class="col-sm-2">
+                                                                                                    <label>Address:</label>
+                                                                                                    <input type="text"
+                                                                                                        class="form-control"
+                                                                                                        v-model="item.Address">
+                                                                                                </div>
+                                                                                                <div class="col-sm-2">
+                                                                                                    <label>Income:</label>
+                                                                                                    <input type="number"
+                                                                                                        class="form-control"
+                                                                                                        v-model="item.income">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="col-sm-2 pt-4">
+                                                                                                    <br />
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="btn btn-danger btn-sm"
+                                                                                                        @click="removeRow(index)">Remove</button>
+                                                                                                    <button
+                                                                                                        type="button"
+                                                                                                        class="btn btn-success btn-sm "
+                                                                                                        @click="addRow">Add</button>
+                                                                                                </div>
+                                                                                            </div> <br /><button
+                                                                                                type="button"
+                                                                                                class="btn btn-success btn-sm"
+                                                                                                padding-top="3px"
+                                                                                                @click="saveItem">Save
+                                                                                                Item</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- end of dynamic text -->
+                                                                        </v-card-text>
+                                                                    </v-card>
+                                                                </v-lazy>
+                                                            </v-responsive>
+                                                        </v-row>
+                                                    </v-container>
+                                                </v-card-text>
+                                                <v-card flat>
+                                                </v-card>
+                                            </v-card>
+                                            <v-btn color="secondary" @click="e1 = 3">
+                                                Continue
+                                            </v-btn>
+                                            <v-btn @click="e1 = 1" class="ma-2">
+                                                Back
+                                            </v-btn>
+                                        </v-stepper-content>
+                                        <v-stepper-content step="3">
+                                            <v-card class="mb-1" color="grey lighten-4" height="400px">
+                                                <v-card-text>
+                                                    <v-container>
+                                                        <v-row>
+                                                            <v-col cols="12" sm="6">
+                                                                <v-select
+                                                                    :items="['Kwarto', 'Balay', 'Kaugalingon nga balay pero ga arkila sa yuta']"
+                                                                    label="Nag Arkila ug" required outlined></v-select>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6">
+                                                                <v-select
+                                                                    :items="['500 to 1,000', '1,100 to 1,500', '1,600 to 2,00', '2,100, to 2,500', '2,600, to 3,000', '3,000 pa taas and arkila']"
+                                                                    label="Pila ang pag Arkila" outlined
+                                                                    required></v-select>
+                                                            </v-col>
+                                                            <v-col cols="12">
+                                                                <v-select
+                                                                    :items="['Kaugalingon ang balay pero wala ga arkila sa yuta, nasayod ang tag-iya sa yuta', 'Kaugalingon nga balay pero wala ga arkila sa yuta, walay pag tugot sa tag-iya', 'Libre nga pagpuyo sa balay nga adunay pagtugot sa tag-iya', 'Libre nga pagpuyo sa balay ug yuta nga walay pagtugot sa tag-iya', 'Nakipuyo Lang']"
+                                                                    label="Istado sa Pagpuyo" outlined
+                                                                    required></v-select>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="6">
+                                                                <v-text-field label="Pangalan sa gipuy-an " outlined
+                                                                    clearable></v-text-field>
+                                                            </v-col>
+                                                        </v-row>
+                                                    </v-container>
+                                                    <h2 class="red--text">Please indicates required field</h2>
+                                                </v-card-text>
+                                            </v-card>
+                                            <v-btn color="secondary" @click="e1 = 4">
+                                                Continue
+                                            </v-btn>
+                                            <v-btn @click="e1 = 2" class="ma-3">
+                                                Back
+                                            </v-btn>
+                                            <!-- <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
+                                                Save
+                                            </v-btn> -->
+                                        </v-stepper-content>
+
+
+
+
+
+                                        <v-stepper-content step="4">
+
+
+                                            <v-card class="mb-1" color="grey lighten-4">
+                                                <v-card-text>
+                                                    <v-container>
+                                                        <v-row>
+                                                            <v-col cols="12" sm="6" md="3">
+                                                                <v-text-field label="Apelyido"
+                                                                    v-model="editedItem.lastname" required outlined
+                                                                    autofocus></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="3">
+                                                                <v-text-field label="Pangalan"
+                                                                    v-model="editedItem.firstname" clearable required
+                                                                    outlined></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="3">
+                                                                <v-text-field label="Middle Name"
+                                                                    v-model="editedItem.middlename" clearable required
+                                                                    outlined></v-text-field>
+
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="3">
+
+                                                                <v-select :items="['Jr.', 'Sr.']"
+                                                                    v-model="editedItem.suffix" label="Suffix" outlined
+                                                                    required></v-select>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="6">
+                                                                <v-text-field label="Purok" v-model="editedItem.address"
+                                                                    clearable required outlined></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6">
+                                                                <v-select
+                                                                    :items="['Minyo', 'Minyo nga naay kaipon lain', 'Nag ipon apan wala na kasal', 'Byuda', 'Byudo', 'Bulas sa Asawa / Bana', 'Dalaga', 'Ulitawo']"
+                                                                    label="Civil Status" required outlined></v-select>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6">
+                                                                <v-select
+                                                                    :items="['Stado 1', 'Stado 2', 'Stado 3', 'Stado 4', 'Stado 5']"
+                                                                    label="Stado sa Pagpanarbaho" required
+                                                                    outlined></v-select>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="6">
+                                                                <v-text-field label="Contact No."
+                                                                    v-model="editedItem.contact" clearable required
+                                                                    outlined></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6">
+                                                                <v-text-field label="Pangalan sa Employer"
+                                                                    type="address" clearable required
+                                                                    outlined></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="3">
+                                                                <v-select
+                                                                    :items="['1000 to 3000', '4000 to 6000', '7000 to 8000', '9000 to 10000',]"
+                                                                    label="Bulan na kita" required outlined></v-select>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="3">
+                                                                <div>
+                                                                    <div class="mb-1">
+                                                                    </div>
+                                                                    <v-menu ref="menu" v-model="menu"
+                                                                        :close-on-content-click="false"
+                                                                        transition="scale-transition" offset-y
+                                                                        min-width="auto">
+                                                                        <template v-slot:activator="{ on, attrs }">
+                                                                            <v-text-field v-model="date"
+                                                                                label="Adlaw Natawhan"
+                                                                                prepend-icon="mdi-calendar" readonly
+                                                                                v-bind="attrs" v-on="on"
+                                                                                outlined></v-text-field>
+                                                                        </template>
+                                                                        <v-date-picker v-model="date"
+                                                                            :active-picker.sync="activePicker"
+                                                                            :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
+                                                                            min="1950-01-01"
+                                                                            @change="save"></v-date-picker>
+                                                                    </v-menu>
+                                                                </div>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="3">
+                                                                <v-select
+                                                                    :items="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', , '12 pa taas nga nag puy']"
+                                                                    label="Pila ka tuig nagpuyo" required
+                                                                    outlined></v-select>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="3">
+                                                                <v-text-field label="Pangalan sa bana / asawa" clearable
+                                                                    required outlined></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="3">
+                                                                <v-text-field label="Middle Name" clearable required
+                                                                    outlined></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="3">
+                                                                <v-text-field label="Apelyido" clearable required
+                                                                    outlined></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="3">
+                                                                <v-text-field label="Trabaho" clearable required
+                                                                    outlined></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="3">
+                                                                <v-select
+                                                                    :items="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '12 pa taas ang mga anak']"
+                                                                    label="Pila ang anak" required outlined> </v-select>
+                                                            </v-col>
+                                                        </v-row>
+                                                    </v-container>
+                                                    <h2 class="red--text">*indicates required field</h2>
+                                                </v-card-text>
+                                            </v-card>
+
+
+
+
+
+
+
 
 
                                             <v-btn @click="e1 = 3" class="ma-3">
@@ -720,7 +738,7 @@ export default {
                     firstname: 'Frozen Yogurt',
                     middlename: 'Frozen Yogurt',
                     lastname: 'Frozen Yogurt',
-                    suffix:'jr',
+                    suffix: 'jr',
                     address: 'Mankilam',
                     contact: '09123456789'
                 },
@@ -728,7 +746,7 @@ export default {
                     firstname: 'Ice cream sandwich',
                     middlename: 'Ice cream sandwich',
                     lastname: 'Ice cream sandwich',
-                    suffix:'sr',
+                    suffix: 'sr',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -736,7 +754,7 @@ export default {
                     firstname: 'Eclair',
                     middlename: 'Eclair',
                     lastname: 'Eclair',
-                    suffix:'N/A',
+                    suffix: 'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -744,7 +762,7 @@ export default {
                     firstname: 'Cupcake',
                     middlename: 'Cupcake',
                     lastname: 'Cupcake',
-                    suffix:'N/A',
+                    suffix: 'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -752,7 +770,7 @@ export default {
                     firstname: 'Gingerbread',
                     middlename: 'Gingerbread',
                     lastname: 'Gingerbread',
-                    suffix:'sr',
+                    suffix: 'sr',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -760,7 +778,7 @@ export default {
                     firstname: 'Jelly bean',
                     middlename: 'Gingerbread',
                     lastname: 'Gingerbread',
-                    suffix:'N/A',
+                    suffix: 'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -768,7 +786,7 @@ export default {
                     firstname: 'Lollipop',
                     middlename: 'Lollipop',
                     lastname: 'Lollipop',
-                    suffix:'jr',
+                    suffix: 'jr',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -776,7 +794,7 @@ export default {
                     firstname: 'Honeycomb',
                     middlename: 'Honeycomb',
                     lastname: 'Honeycomb',
-                    suffix:'N/A',
+                    suffix: 'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -784,7 +802,7 @@ export default {
                     firstname: 'Donut',
                     middlename: 'Donut',
                     lastname: 'Donut',
-                    suffix:'sr',
+                    suffix: 'sr',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },
@@ -792,7 +810,7 @@ export default {
                     firstname: 'KitKat',
                     middlename: 'KitKat',
                     lastname: 'KitKat',
-                    suffix:'N/A',
+                    suffix: 'N/A',
                     address: 'Mankilam',
                     contact: '09123456789',
                 },

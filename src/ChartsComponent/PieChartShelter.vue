@@ -30,7 +30,7 @@ export default {
     },
     data: function () {
         return {
-            data: [38, 45, 83,],
+            data: [38, 45, 103,],
         };
     },
     computed: {

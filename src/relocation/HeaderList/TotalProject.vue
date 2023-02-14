@@ -6,8 +6,8 @@
                     mdi-home-variant
                 </v-icon> Total project</h3>
             <p class="card-text">11,123 total project</p>
-            <v-btn text color="deep-purple accent-4" @click="$router.push({ name: 'TotalProject' })">
-                More info
+            <v-btn text color="#7a0769" @click="$router.push({ name: 'TotalProject' })">
+                <v-icon>mdi-magnify-plus</v-icon> More info
             </v-btn>
         </div>
     </div>
