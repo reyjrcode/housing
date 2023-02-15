@@ -1,7 +1,7 @@
 <template>
 
     <div class="form-one">
-        <AdminNavbar />
+        <NavigationBar />
 
 
         <v-container fluid class="my-5">
@@ -52,7 +52,7 @@
                                             </v-col>
                                             <v-col cols="12" sm="6" md="3">
                                                 <!-- <v-text-field label="Suffix" required hint="Jr., III, etc"></v-text-field> -->
-                                                <v-select :items="['Jr.', 'Sr.']" label="Suffix" outlined
+                                                <v-select :items="['Jr.', 'Sr.']" label=" Suffix" outlined
                                                     required></v-select>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="6">
@@ -81,23 +81,14 @@
                                                     :items="['1000 to 3000', '4000 to 6000', '7000 to 8000', '9000 to 10000',]"
                                                     label="Bulan na kita" required outlined></v-select>
                                             </v-col>
+
                                             <v-col cols="12" sm="6" md="3">
-                                                <div>
-                                                    <div class="mb-1">
-                                                    </div>
-                                                    <v-menu ref="menu" v-model="menu" :close-on-content-click="false"
-                                                        transition="scale-transition" offset-y min-width="auto">
-                                                        <template v-slot:activator="{ on, attrs }">
-                                                            <v-text-field v-model="date" label="Adlaw Natawhan"
-                                                                prepend-icon="mdi-calendar" readonly v-bind="attrs"
-                                                                v-on="on" outlined></v-text-field>
-                                                        </template>
-                                                        <v-date-picker v-model="date" :active-picker.sync="activePicker"
-                                                            :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
-                                                            min="1950-01-01" @change="save"></v-date-picker>
-                                                    </v-menu>
-                                                </div>
+                                                <v-text-field outlined label="Adlaw na tawhan" type="date" dense
+                                                    color="primary" v-model="formatDate">
+                                                </v-text-field>
+
                                             </v-col>
+
                                             <v-col cols="12" sm="3">
                                                 <v-select
                                                     :items="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', , '12 pa taas nga nag puy']"
@@ -158,58 +149,60 @@
                                                 }" min-height="200" transition="fade-transition">
                                                     <v-card class="mx-auto" max-width="100%">
                                                         <v-card-title>Card title</v-card-title>
-                                                        <v-card-text>
-                                                            <!-- start of dynamic text -->
-                                                            <div class="container mt-4">
-                                                                <div class="card">
-                                                                    <div class="card-body">
-                                                                        <div v-for="item, index in form" :key="item">
-                                                                            <!-- <H3>Anak number {{ index }}</H3>
-{{ item }} -->
-                                                                            <div class="row">
-                                                                                <div class="col-sm-2">
-                                                                                    <label>Pangalan sa anak:</label>
-                                                                                    <input type="text"
-                                                                                        class="form-control"
-                                                                                        v-model="item.FullName">
-                                                                                </div>
-                                                                                <div class="col-sm-2">
-                                                                                    <label>Civil Status:</label>
-                                                                                    <input type="text"
-                                                                                        class="form-control"
-                                                                                        v-model="item.CivilStatus">
-                                                                                </div>
-                                                                                <div class="col-sm-2">
-                                                                                    <label>Address:</label>
-                                                                                    <input type="text"
-                                                                                        class="form-control"
-                                                                                        v-model="item.Address">
-                                                                                </div>
-                                                                                <div class="col-sm-2">
-                                                                                    <label>Income:</label>
-                                                                                    <input type="number"
-                                                                                        class="form-control"
-                                                                                        v-model="item.income">
-                                                                                </div>
-                                                                                <div class="col-sm-2 pt-4"><br />
-                                                                                    <button type="button"
-                                                                                        class="btn btn-danger btn-sm"
-                                                                                        @click="removeRow(index)">Remove</button>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-success btn-sm "
-                                                                                        @click="addRow">Add</button>
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </div> <br /><button type="button"
-                                                                            class="btn btn-success btn-sm"
-                                                                            padding-top="3px" @click="saveItem">Save
-                                                                            Item</button>
-                                                                    </div>
+                                                        <v-card>
+                                                            <v-col cols="12" md="12" sm="12">
+                                                                <div v-for="(item, index) in form" :key="item">
+                                                                    <v-row>
+                                                                        <v-col cols="12" md="2">
+                                                                            <v-text-field outlined label="Full name"
+                                                                                dense color="success"
+                                                                                v-model="item.FullName">
+                                                                            </v-text-field>
+                                                                        </v-col>
+                                                                        <v-col cols="12" md="2">
+                                                                            <v-text-field outlined label="Civil Status"
+                                                                                dense color="success"
+                                                                                v-model="item.CivilStatus">
+                                                                            </v-text-field>
+                                                                        </v-col>
+                                                                        <v-col cols="12" md="2">
+                                                                            <v-text-field outlined label="Address" dense
+                                                                                color="success" v-model="item.Address">
+                                                                            </v-text-field>
+                                                                        </v-col>
+                                                                        <v-col cols="12" md="2">
+                                                                            <v-text-field outlined label="Income"
+                                                                                type="number" dense color="success"
+                                                                                v-model="item.income">
+                                                                            </v-text-field>
+                                                                        </v-col>
+                                                                        <v-col cols="12" md="2">
+                                                                            <v-btn color="error"
+                                                                                @click="removeRow(index)">
+                                                                                <v-icon>
+                                                                                    mdi-delete
+                                                                                </v-icon>
+                                                                                Remove
+                                                                            </v-btn>
+                                                                            <v-btn color="#374ac4" class=" text-light"
+                                                                                @click="addRow">
+                                                                                <v-icon>
+                                                                                    mdi-plus
+                                                                                </v-icon>
+                                                                                Add
+                                                                            </v-btn>
+                                                                        </v-col>
+                                                                    </v-row>
                                                                 </div>
-                                                            </div>
-                                                            <!-- end of dynamic text -->
-                                                        </v-card-text>
+                                                                <v-btn padding-top="3px" @click="saveItem"
+                                                                    color="success">
+                                                                    <v-icon>
+                                                                        mdi-content-save
+                                                                    </v-icon>
+                                                                    Save Item
+                                                                </v-btn>
+                                                            </v-col>
+                                                        </v-card>
                                                     </v-card>
                                                 </v-lazy>
                                             </v-responsive>
@@ -250,6 +243,11 @@
                                                 <v-text-field label="Pangalan sa gipuy-an " outlined
                                                     clearable></v-text-field>
                                             </v-col>
+                                            <v-col cols="12" sm="6" md="6">
+                                                <v-select :items="['SHFC', 'Home owner']" label="Type of applicant"
+                                                    required outlined> </v-select>
+                                            </v-col>
+
                                         </v-row>
                                     </v-container>
                                     <h2 class="red--text">Please indicates required field</h2>
@@ -262,100 +260,7 @@
                                 Save
                             </v-btn>
                         </v-stepper-content>
-                        <!-- <v-stepper-content step="4">
-                            <v-card class="mb-12">
-                                <v-container class="grey lighten-5" offset-x min-width="auto">
-                                    <v-row class="mb-6" no-gutters>
-                                        <v-col sm="5" md="6">
-                                            <v-card class="pa-2" outlined tile>
-                                                <h2>Atop</h2>
-                                                <v-checkbox v-model="ex4" label="Kawayan/Sawali/Cogon/Nipa"
-                                                    color="secondary" value="Kawayan/Sawali/Cogon/Nipa" hide-details
-                                                    autofocus></v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Asbestos/Sin" color="secondary"
-                                                    value="Asbestos/Sin" hide-details></v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Improvised Materials" color="secondary"
-                                                    value="Improvised Materials" hide-details></v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Trapal" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                            </v-card>
-                                        </v-col>
-                                        <v-col sm="5" offset-sm="2" md="6" offset-md="0">
-                                            <v-card class="pa-2" outlined tile>
-                                                <h2>Bong bong</h2>
-                                                <v-checkbox v-model="ex4" label="Amakan" color="secondary"
-                                                    value="Amakan" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Semento" color="secondary"
-                                                    value="Semento" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Trapal" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                            </v-card>
-                                        </v-col>
-                                    </v-row>
-                                    <v-row no-gutters>
-                                        <v-col sm="6" md="5" lg="6">
-                                            <v-card class="pa-2" outlined tile>
-                                                <h2>Sitwasyon sa pagpuyo</h2>
-                                                <v-checkbox v-model="ex4" label="With notice to evacuate"
-                                                    color="secondary" value="WithNoticeToEvacuate" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4"
-                                                    label="With court order for demolition and eviction"
-                                                    color="secondary" value="Semento" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4"
-                                                    label="Affected by government infrastructure project"
-                                                    color="secondary" value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4"
-                                                    label="Affected by private construction project" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Accretion Area" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <br>
-                                                <h2 class="red--text">Please indicates required field</h2>
-                                            </v-card>
-                                        </v-col>
-                                        <v-col sm="6" md="5" offset-md="2" lg="6" offset-lg="0">
-                                            <v-card class="pa-2" outlined tile>
-                                                <h2>Danger zone</h2>
-                                                <v-checkbox v-model="ex4" label="Kilid sa creek" color="secondary"
-                                                    value="WithNoticeToEvacuate" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Kilid sa sapa" color="secondary"
-                                                    value="Semento" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="NPC line" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Landslide prone area" color="secondary"
-                                                    value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-checkbox v-model="ex4" label="Identified flood prone area"
-                                                    color="secondary" value="Trapal" hide-details>
-                                                </v-checkbox>
-                                                <v-col cols="12" sm="6" md="12">
-                                                    <v-text-field label="Others:" clearable required
-                                                        outlined></v-text-field>
-                                                </v-col>
-                                            </v-card>
-                                        </v-col>
-                                    </v-row>
-                                </v-container>
-                            </v-card>
-                            <v-btn @click="e1 = 3" class="ma-3">
-                                Back
-                            </v-btn>
-                            <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
-                                Save
-                            </v-btn>
-                        </v-stepper-content> -->
+
                     </v-stepper-items>
                 </v-stepper>
             </v-card>
@@ -366,12 +271,18 @@
 
 <script>
 /* eslint-disable */
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 import { reactive } from 'vue'
+
+import 'vue2-datepicker/index.css';
+
+
 export default {
 
+
+
     components: {
-        AdminNavbar,
+        // AdminNavbar,
 
     },
     setup() {
@@ -396,28 +307,37 @@ export default {
             form,
             addRow,
             removeRow,
-            saveItem
+            saveItem,
+            time1: null,
+            time2: null,
+            time3: null,
         }
     },
 
     data() {
+
         return {
+            value: '',
             e1: 1,
             dialog: false,
             drawer: null,
-
         }
+        // return {
+
+        //     // mydate: '2017-07-04'
+
+        // }
     },
-    watch: {
-        menu(val) {
-            val && setTimeout(() => (this.activePicker = 'YEAR'))
-        },
-    },
-    methods: {
-        save(date) {
-            this.$refs.menu.save(date)
-        },
-    },
+    // watch: {
+    //     menu(val) {
+    //         val && setTimeout(() => (this.activePicker = 'YEAR'))
+    //     },
+    // },
+    // methods: {
+    //     save(date) {
+    //         this.$refs.menu.save(date)
+    //     },
+    // },
 
 
 

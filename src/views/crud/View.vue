@@ -8,13 +8,13 @@
                 </p>
             </v-card-text>
 
-            <v-text-field class="text-h3" label="First Name" disabled placeholder="First Name" v-model="firstname"
+            <v-text-field class="text-h5" label="First Name" disabled placeholder="First Name" v-model="firstname"
                 outlined></v-text-field>
-            <v-text-field class="text-h3" label="Last Name" disabled placeholder="Last Name" v-model="lastname"
+            <v-text-field class="text-h5" label="Last Name" disabled placeholder="Last Name" v-model="lastname"
                 outlined></v-text-field>
-            <v-text-field class="text-h3" label="User Name" disabled placeholder="User Name" v-model="username"
+            <v-text-field class="text-h5" label="User Name" disabled placeholder="User Name" v-model="username"
                 outlined></v-text-field>
-            <v-text-field class="text-h3" label="department" disabled placeholder="Password" v-model="department_name"
+            <v-text-field class="text-h5" label="department" disabled placeholder="Password" v-model="department_name"
                 outlined></v-text-field>
 
 

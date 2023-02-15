@@ -5,46 +5,6 @@
             <div class="row">
                 <div class="col">
 
-                    <!-- <v-card class="mx-auto" max-width="500"  >
-                        <v-img
-                            src="https://www.sandhillrelo.com/wp-content/uploads/2019/07/additional-relocation-services-8.png"
-                            height="430px"></v-img>
-
-                        <v-card-title>
-                            Relocation
-                        </v-card-title>
-
-                        <v-card-subtitle>
-                            123,456 Total relocation
-                        </v-card-subtitle>
-
-                        <v-card-actions>
-                            <v-btn color="red lighten-2" text @click="$router.push({ name: 'Dashboard' })">
-                                Explore
-                            </v-btn>
-
-                            <v-spacer></v-spacer>
-
-                            <v-btn icon @click="show1 = !show1">
-                                <v-icon>{{ show1? 'mdi-chevron-up': 'mdi-chevron-down' }}</v-icon>
-                            </v-btn>
-                        </v-card-actions>
-
-                        <v-expand-transition>
-                            <div v-show="show1">
-                                <v-divider></v-divider>
-
-                                <v-card-text>
-                                    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy
-                                    dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the
-                                    lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
-                                    over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox
-                                    jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-                                </v-card-text>
-                            </div>
-                        </v-expand-transition>
-                    </v-card> -->
-
                     <div class="card" id="card-1">
                         <img src="https://www.sandhillrelo.com/wp-content/uploads/2019/07/additional-relocation-services-8.png"
                             height="425px" class="card-img-top" alt="???">
@@ -56,52 +16,8 @@
                         </div>
                     </div>
 
-
-
-
                 </div>
                 <div class="col">
-                    <!-- <v-card class="mx-auto" max-width="500">
-                        <v-img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51uCDHipEp4m3XTaUhmWgIqMA6_xtD5mOHAnF3IOonVvXAq3cffVoYt13eIu0qne9pck&usqp=CAU"
-                            height="430px">
-                        </v-img>
-
-                        <v-card-title>
-                            Shelter Assistance
-                        </v-card-title>
-
-                        <v-card-subtitle>
-                            123,456 Total shelter assistance
-
-                        </v-card-subtitle>
-
-                        <v-card-actions>
-                            <v-btn color="red lighten-2" text @click="$router.push({ name: 'ShelterDashBoard' })">
-                                Explore
-                            </v-btn>
-
-                            <v-spacer></v-spacer>
-
-                            <v-btn icon @click="show = !show">
-                                <v-icon>{{ show? 'mdi-chevron-up': 'mdi-chevron-down' }}</v-icon>
-                            </v-btn>
-                        </v-card-actions>
-
-                        <v-expand-transition>
-                            <div v-show="show">
-                                <v-divider></v-divider>
-
-                                <v-card-text>
-                                    The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy
-                                    dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the
-                                    lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps
-                                    over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox
-                                    jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-                                </v-card-text>
-                            </div>
-                        </v-expand-transition>
-                    </v-card> -->
                     <div class="card" id="card-1">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51uCDHipEp4m3XTaUhmWgIqMA6_xtD5mOHAnF3IOonVvXAq3cffVoYt13eIu0qne9pck&usqp=CAU"
                             height="425px" class="card-img-top" alt="...">

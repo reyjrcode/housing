@@ -1,7 +1,7 @@
 <template>
 
     <div class="addmaterial">
-        <AdminNavbar />
+       <NavigationBar/>
         <div class="div">
             <KilidsaSapaTable />
         </div>
@@ -12,14 +12,14 @@
 
 /* eslint-disable */
 
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 
 
 
 export default {
 
     components: {
-        AdminNavbar,
+        // AdminNavbar,
 
 
     },

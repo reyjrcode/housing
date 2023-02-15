@@ -1,7 +1,7 @@
 <template>
 
     <div class="to-approved">
-        <AdminNavbar />
+    <NavigationBar/>
 
         <!--     
     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
@@ -197,13 +197,13 @@
 
 /* eslint-disable */
 
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 
 
 export default {
 
     components: {
-        AdminNavbar,
+        // AdminNavbar,
 
 
     },

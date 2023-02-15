@@ -5,6 +5,11 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import "bootstrap/dist/css/bootstrap.min.css"
 
+
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 import './ChartsComponent'
 
 
@@ -14,11 +19,17 @@ import './relocation/HeaderList'
 import './relocation/RightSideCards'
 import './NavigationBar'
 
-import './shelterassistancecomponent/ShelterHeader'
 
+
+
+import './shelterassistancecomponent/ShelterHeader'
 import './shelterassistancecomponent/ShelterAssistanceList'
 import './shelterassistancecomponent/RightSideCards'
 import './shelterassistancecomponent/SubTable'
+
+
+
+
 
 
 import './TableBackenApi'
@@ -27,7 +38,8 @@ import './TableBackenApi'
 
 // import "./views/Header"
 Vue.config.productionTip = false
-
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 new Vue({
   router,
   store,

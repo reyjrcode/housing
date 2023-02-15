@@ -1,6 +1,6 @@
 <template>
     <div class="div">
-        <AdminNavbar />
+        <NavigationBar/>
 
         <div class="container">
             <div class="row">
@@ -48,10 +48,10 @@
 
 </template>
 <script>
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 export default {
     components: {
-        AdminNavbar,
+        // AdminNavbar,
     },
 }
 </script>

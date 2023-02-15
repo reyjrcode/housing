@@ -1,7 +1,7 @@
 <template>
 
     <div class="to-approved">
-        <AdminNavbar />
+        <NavigationBar/>
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
@@ -112,14 +112,14 @@
 
 /* eslint-disable */
 
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 import DataTable from "@/components/ListingTable.vue"
 
 
 export default {
 
     components: {
-        AdminNavbar,
+        // AdminNavbar,
         DataTable
 
     },

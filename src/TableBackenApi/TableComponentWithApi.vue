@@ -2,6 +2,7 @@
 
 <template>
     <div class="container">
+
         <div class="row">
             <div class="table-responsive">
                 <nav class="navbar navbar-light bg-light">
@@ -9,6 +10,7 @@
                         <input placeholder="Search full name.." v-model="search" type="text" name="text"
                             class="input" />
                     </form>
+                    
                 </nav>
 
                 <!-- <v-text-field label="Search here" v-model="search" placeholder="Search here" outlined></v-text-field> -->

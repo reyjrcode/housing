@@ -99,8 +99,9 @@ export default {
     data: () => ({
         drawer: null,
         items: [
+            { icon: "mdi-home", text: "Home", route: "/home-page" },
             // { icon: "mdi-view-dashboard", text: "Relocation dashboard", route: "/dashboard" },
-            // { icon: "mdi-view-dashboard", text: "Shelter dashboard", route: "/shelter-assistance-dashboard" },
+            // { icon: "mdi-view-dashboard", text: "Shelter assistance", route: "/shelter-assistance-dashboard" },
             // {
             //     icon: "mdi mdi-account",
             //     text: "Forms",
@@ -122,6 +123,26 @@ export default {
                         icon: "mdi-playlist-check",
                         text: "Relocation applicants",
                         route: "/relocation-list",
+                    },
+                    {
+                        icon: "mdi-trophy",
+                        text: "Total awards",
+                        route: "/total-awards",
+                    },
+                    {
+                        icon: "mdi-thumb-up",
+                        text: "Tag & validated",
+                        route: "/total-approved",
+                    },
+                    {
+                        icon: "mdi-home-variant",
+                        text: "Housing",
+                        route: "/total-project",
+                    },
+                    {
+                        icon: "mdi-block-helper",
+                        text: "Total blocklisted",
+                        route: "/total-blocklisted",
                     },
 
                 ],
@@ -145,35 +166,35 @@ export default {
                     },
                 ],
             },
-            {
-                icon: "mdi-chevron-up",
-                "icon-alt": "mdi-chevron-down",
-                "icon-ctr": "mdi-account-box",
-                text: "List",
-                model: false,
-                children: [
-                    {
-                        icon: "mdi-trophy",
-                        text: "Total awarded",
-                        route: "/total-awards",
-                    },
-                    {
-                        icon: "mdi-thumb-up",
-                        text: "Total approved",
-                        route: "/total-approved",
-                    },
-                    {
-                        icon: "mdi-home-variant",
-                        text: "Total project",
-                        route: "/total-project",
-                    },
-                    {
-                        icon: "mdi-block-helper",
-                        text: "Total blocklisted",
-                        route: "/total-blocklisted",
-                    },
-                ],
-            },
+            // {
+            //     icon: "mdi-chevron-up",
+            //     "icon-alt": "mdi-chevron-down",
+            //     "icon-ctr": "mdi-account-box",
+            //     text: "List",
+            //     model: false,
+            //     children: [
+            //         {
+            //             icon: "mdi-trophy",
+            //             text: "Total awarded",
+            //             route: "/total-awards",
+            //         },
+            //         {
+            //             icon: "mdi-thumb-up",
+            //             text: "Total approved",
+            //             route: "/total-approved",
+            //         },
+            //         {
+            //             icon: "mdi-home-variant",
+            //             text: "Total project",
+            //             route: "/total-project",
+            //         },
+            //         {
+            //             icon: "mdi-block-helper",
+            //             text: "Total blocklisted",
+            //             route: "/total-blocklisted",
+            //         },
+            //     ],
+            // },
             {
                 icon: "mdi-chevron-up",
                 "icon-alt": "mdi-chevron-down",

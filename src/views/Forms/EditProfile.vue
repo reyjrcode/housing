@@ -1,7 +1,7 @@
 <template>
 
     <div class="addmaterial">
-        <AdminNavbar />
+        <NavigationBar/>
         <div class="container">
             <v-card class="mx-auto" max-width="700" outlined>
                 <v-list-item three-line>
@@ -49,13 +49,13 @@
 
 /* eslint-disable */
 
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 
 
 export default {
 
     components: {
-        AdminNavbar,
+        // AdminNavbar,
 
     },
 

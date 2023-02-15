@@ -1,7 +1,7 @@
 <template>
 
     <div class="form-one">
-        <AdminNavbar />
+        <NavigationBar />
 
 
         <v-container fluid class="my-5">
@@ -157,53 +157,62 @@
                                                         <v-card-title>Card title</v-card-title>
                                                         <v-card-text>
                                                             <!-- start of dynamic text -->
-                                                            <div class="container mt-4">
-                                                                <div class="card">
-                                                                    <div class="card-body">
-                                                                        <div v-for="item, index in form" :key="item">
-                                                                            <!-- <H3>Anak number {{ index }}</H3>
-{{ item }} -->
-                                                                            <div class="row">
-                                                                                <div class="col-sm-2">
-                                                                                    <label>Pangalan sa anak:</label>
-                                                                                    <input type="text"
-                                                                                        class="form-control"
-                                                                                        v-model="item.FullName">
-                                                                                </div>
-                                                                                <div class="col-sm-2">
-                                                                                    <label>Civil Status:</label>
-                                                                                    <input type="text"
-                                                                                        class="form-control"
-                                                                                        v-model="item.CivilStatus">
-                                                                                </div>
-                                                                                <div class="col-sm-2">
-                                                                                    <label>Address:</label>
-                                                                                    <input type="text"
-                                                                                        class="form-control"
-                                                                                        v-model="item.Address">
-                                                                                </div>
-                                                                                <div class="col-sm-2">
-                                                                                    <label>Income:</label>
-                                                                                    <input type="number"
-                                                                                        class="form-control"
-                                                                                        v-model="item.income">
-                                                                                </div>
-                                                                                <div class="col-sm-2 pt-4"><br />
-                                                                                    <button type="button"
-                                                                                        class="btn btn-danger btn-sm"
-                                                                                        @click="removeRow(index)">Remove</button>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-success btn-sm "
-                                                                                        @click="addRow">Add</button>
-                                                                                </div>
-                                                                            </div> <br /><button type="button"
-                                                                                class="btn btn-success btn-sm"
-                                                                                padding-top="3px" @click="saveItem">Save
-                                                                                Item</button>
-                                                                        </div>
+                                                            <v-card>
+                                                                <v-col cols="12" md="12" sm="12">
+                                                                    <div v-for="(item, index) in form" :key="item">
+                                                                        <v-row>
+                                                                            <v-col cols="12" md="2">
+                                                                                <v-text-field outlined label="Full name"
+                                                                                    dense color="success"
+                                                                                    v-model="item.FullName">
+                                                                                </v-text-field>
+                                                                            </v-col>
+                                                                            <v-col cols="12" md="2">
+                                                                                <v-text-field outlined
+                                                                                    label="Civil Status" dense
+                                                                                    color="success"
+                                                                                    v-model="item.CivilStatus">
+                                                                                </v-text-field>
+                                                                            </v-col>
+                                                                            <v-col cols="12" md="2">
+                                                                                <v-text-field outlined label="Address"
+                                                                                    dense color="success"
+                                                                                    v-model="item.Address">
+                                                                                </v-text-field>
+                                                                            </v-col>
+                                                                            <v-col cols="12" md="2">
+                                                                                <v-text-field outlined label="Income"
+                                                                                    type="number" dense color="success"
+                                                                                    v-model="item.income">
+                                                                                </v-text-field>
+                                                                            </v-col>
+                                                                            <v-col cols="12" md="2">
+                                                                                <v-btn color="error"
+                                                                                    @click="removeRow(index)">
+                                                                                    <v-icon>
+                                                                                        mdi-delete
+                                                                                    </v-icon>
+                                                                                    Remove
+                                                                                </v-btn>
+                                                                                <v-btn color="#374ac4"
+                                                                                    class=" text-light" @click="addRow">
+                                                                                    <v-icon>
+                                                                                        mdi-plus
+                                                                                    </v-icon>
+                                                                                    Add
+                                                                                </v-btn>
+                                                                            </v-col>
+                                                                        </v-row>
                                                                     </div>
-                                                                </div>
-                                                            </div>
+                                                                    <v-btn padding-top="3px" @click="saveItem"
+                                                                        color="success">
+                                                                        <v-icon>
+                                                                            mdi-content-save
+                                                                        </v-icon>
+                                                                        Save Item
+                                                                    </v-btn>
+                                                                </v-col>
+                                                            </v-card>
                                                             <!-- end of dynamic text -->
                                                         </v-card-text>
                                                     </v-card>
@@ -222,7 +231,7 @@
                                 Back
                             </v-btn>
                         </v-stepper-content>
-                        
+
                         <v-stepper-content step="3">
 
                             <LocationShelter />
@@ -246,12 +255,12 @@
 /* eslint-disable */
 // import PieChart from "@/components/ChartComponent.vue";
 import LocationShelter from "@/components/ShelterLocation.vue";
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 import { reactive } from 'vue'
 export default {
 
     components: {
-        AdminNavbar,
+        // AdminNavbar,
         LocationShelter
 
     },

@@ -216,13 +216,13 @@
                                                                         <v-card-title>Card title</v-card-title>
                                                                         <v-card-text>
                                                                             <!-- start of dynamic text -->
-                                                                            <div class="container mt-4">
+                                                                            <!-- <div class="container mt-4">
                                                                                 <div class="card">
                                                                                     <div class="card-body">
                                                                                         <div v-for="item, index in form"
                                                                                             :key="item">
-                                                                                            <!-- <H3>Anak number {{ index }}</H3>
-{{ item }} -->
+
+                                                                                            {{ item }}
                                                                                             <div class="row">
                                                                                                 <div class="col-sm-2">
                                                                                                     <label>Pangalan sa
@@ -271,7 +271,79 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
+                                                                            </div> -->
+
+                                                                            <v-card>
+                                                                                <v-col cols="12" md="12" sm="12">
+                                                                                    <div v-for="(item, index) in form"
+                                                                                        :key="item">
+                                                                                        <v-row>
+                                                                                            <v-col cols="12" md="2">
+                                                                                                <v-text-field outlined
+                                                                                                    label="Full name"
+                                                                                                    dense
+                                                                                                    color="success"
+                                                                                                    v-model="item.FullName">
+                                                                                                </v-text-field>
+                                                                                            </v-col>
+                                                                                            <v-col cols="12" md="2">
+                                                                                                <v-text-field outlined
+                                                                                                    label="Civil Status"
+                                                                                                    dense
+                                                                                                    color="success"
+                                                                                                    v-model="item.CivilStatus">
+                                                                                                </v-text-field>
+                                                                                            </v-col>
+                                                                                            <v-col cols="12" md="2">
+                                                                                                <v-text-field outlined
+                                                                                                    label="Address"
+                                                                                                    dense
+                                                                                                    color="success"
+                                                                                                    v-model="item.Address">
+                                                                                                </v-text-field>
+                                                                                            </v-col>
+                                                                                            <v-col cols="12" md="2">
+                                                                                                <v-text-field outlined
+                                                                                                    label="Income"
+                                                                                                    type="number" dense
+                                                                                                    color="success"
+                                                                                                    v-model="item.income">
+                                                                                                </v-text-field>
+                                                                                            </v-col>
+                                                                                            <v-col cols="12" md="2">
+                                                                                                <v-btn color="error"
+                                                                                                    @click="removeRow(index)">
+                                                                                                    <v-icon>
+                                                                                                        mdi-delete
+                                                                                                    </v-icon>
+                                                                                                    Remove
+                                                                                                </v-btn>
+                                                                                                <v-btn color="#374ac4"
+                                                                                                    class=" text-light"
+                                                                                                    @click="addRow">
+                                                                                                    <v-icon>
+                                                                                                        mdi-plus
+                                                                                                    </v-icon>
+                                                                                                    Add
+                                                                                                </v-btn>
+                                                                                            </v-col>
+                                                                                        </v-row>
+                                                                                    </div>
+                                                                                    <v-btn padding-top="3px"
+                                                                                        @click="saveItem"
+                                                                                        color="success">
+                                                                                        <v-icon>
+                                                                                            mdi-content-save
+                                                                                        </v-icon>
+                                                                                        Save Item
+                                                                                    </v-btn>
+                                                                                </v-col>
+                                                                            </v-card>
+
+
+
+
+
                                                                             <!-- end of dynamic text -->
                                                                         </v-card-text>
                                                                     </v-card>
@@ -387,27 +459,10 @@
                                                                     label="Bulan na kita" required outlined></v-select>
                                                             </v-col>
                                                             <v-col cols="12" sm="6" md="3">
-                                                                <div>
-                                                                    <div class="mb-1">
-                                                                    </div>
-                                                                    <v-menu ref="menu" v-model="menu"
-                                                                        :close-on-content-click="false"
-                                                                        transition="scale-transition" offset-y
-                                                                        min-width="auto">
-                                                                        <template v-slot:activator="{ on, attrs }">
-                                                                            <v-text-field v-model="date"
-                                                                                label="Adlaw Natawhan"
-                                                                                prepend-icon="mdi-calendar" readonly
-                                                                                v-bind="attrs" v-on="on"
-                                                                                outlined></v-text-field>
-                                                                        </template>
-                                                                        <v-date-picker v-model="date"
-                                                                            :active-picker.sync="activePicker"
-                                                                            :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
-                                                                            min="1950-01-01"
-                                                                            @change="save"></v-date-picker>
-                                                                    </v-menu>
-                                                                </div>
+                                                                <v-text-field outlined label="Adlaw na tawhan"
+                                                                    type="date" dense color="primary"
+                                                                    v-model="formatDate">
+                                                                </v-text-field>
                                                             </v-col>
                                                             <v-col cols="12" sm="3">
                                                                 <v-select

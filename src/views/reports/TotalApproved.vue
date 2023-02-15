@@ -1,7 +1,7 @@
 <template>
 
     <div class="to-approved">
-        <AdminNavbar />
+        <NavigationBar/>
 
         <div>
 
@@ -198,13 +198,13 @@
 
 /* eslint-disable */
 
-import AdminNavbar from '../Navigation/AdminNavbar.vue';
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 
 
 export default {
 
     components: {
-        AdminNavbar,
+        // AdminNavbar,
 
 
     },
