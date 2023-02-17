@@ -1,5 +1,4 @@
 <template>
-
     <div>
         <v-app id="inspire" class="background">
             <v-main class="d-flex justify-center align-center">
@@ -29,8 +28,8 @@
 
                                         <v-col offset="1" md="10">
                                             <v-text-field class="custom-label-color" v-model="id" label="I.D number"
-                                                color="white" type="sample"
-                                                prepend-inner-icon="mdi mdi-account mdi-light" autofocus></v-text-field>
+                                                color="white" type="sample" prepend-inner-icon="mdi mdi-account mdi-light"
+                                                autofocus></v-text-field>
                                             <v-text-field v-model="password" class="custom-label-color" label="Password"
                                                 color="white" type="password"
                                                 prepend-inner-icon="mdi-key mdi-light"></v-text-field>
@@ -57,8 +56,8 @@
                                                             <v-spacer></v-spacer>
 
                                                             <!-- <v-btn color="green darken-1" text @click="dialog = false">
-                                                                Disagree
-                                                            </v-btn> -->
+                                                                    Disagree
+                                                                </v-btn> -->
 
                                                             <v-btn color="green darken-1" text @click="dialog = false">
                                                                 Agree
@@ -67,8 +66,7 @@
                                                     </v-card>
                                                 </v-dialog>
                                             </v-col>
-                                            <v-col offset="" size="9"
-                                                @click="$router.push({ name: 'RegistrationPage' })">
+                                            <v-col offset="" size="9" @click="$router.push({ name: 'RegistrationPage' })">
 
                                                 <v-btn color="green" class="rounded-xl">
                                                     <v-icon left>mdi-lead-pencil</v-icon>
@@ -84,11 +82,11 @@
                 </v-col>
             </v-main>
         </v-app>
-    </div>
-
+</div>
 </template>
 
 <script>
+
 
 /* eslint-disable */
 import { mapActions } from 'vuex';
@@ -151,7 +149,12 @@ export default {
 
                         // this.$router.push('dashboard');
                         this.$router.push('home-page');
-                        
+                        location.reload();
+
+
+
+
+
                     }
                 });
 

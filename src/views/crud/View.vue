@@ -14,10 +14,17 @@
                 outlined></v-text-field>
             <v-text-field class="text-h5" label="User Name" disabled placeholder="User Name" v-model="username"
                 outlined></v-text-field>
-            <v-text-field class="text-h5" label="department" disabled placeholder="Password" v-model="department_name"
-                outlined></v-text-field>
+            <!-- <v-text-field class="text-h5" label="department" disabled placeholder="Password" v-model="department_name"
+                outlined></v-text-field> -->
 
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                v-model="department_id">
 
+                <option value="1">Human Resource</option>
+                <option value="2">Department Head</option>
+                <option value="3">Team Leader</option>
+                <option value="4">Aid</option>
+            </select>
             <v-card-actions>
                 <v-btn text color="deep-purple accent-4" @click="register">
                     Back

@@ -96,10 +96,15 @@
 
 <script>
 export default {
+
     data: () => ({
+
         drawer: null,
         items: [
-            { icon: "mdi-home", text: "Home", route: "/home-page" },
+            {
+                icon: "mdi-home", text: "Home", route: "/home-page",
+                
+            },
             // { icon: "mdi-view-dashboard", text: "Relocation dashboard", route: "/dashboard" },
             // { icon: "mdi-view-dashboard", text: "Shelter assistance", route: "/shelter-assistance-dashboard" },
             // {
@@ -118,6 +123,11 @@ export default {
                         icon: "mdi-note-plus",
                         text: "Relocation Form",
                         route: "/form-one",
+                    },
+                    {
+                        icon: "mdi-note-plus",
+                        text: "Housing project form",
+                        route: "/housing-project-form",
                     },
                     {
                         icon: "mdi-playlist-check",
@@ -166,35 +176,6 @@ export default {
                     },
                 ],
             },
-            // {
-            //     icon: "mdi-chevron-up",
-            //     "icon-alt": "mdi-chevron-down",
-            //     "icon-ctr": "mdi-account-box",
-            //     text: "List",
-            //     model: false,
-            //     children: [
-            //         {
-            //             icon: "mdi-trophy",
-            //             text: "Total awarded",
-            //             route: "/total-awards",
-            //         },
-            //         {
-            //             icon: "mdi-thumb-up",
-            //             text: "Total approved",
-            //             route: "/total-approved",
-            //         },
-            //         {
-            //             icon: "mdi-home-variant",
-            //             text: "Total project",
-            //             route: "/total-project",
-            //         },
-            //         {
-            //             icon: "mdi-block-helper",
-            //             text: "Total blocklisted",
-            //             route: "/total-blocklisted",
-            //         },
-            //     ],
-            // },
             {
                 icon: "mdi-chevron-up",
                 "icon-alt": "mdi-chevron-down",
@@ -212,20 +193,12 @@ export default {
                         text: "Add material",
                         route: "/add-materials",
                     },
-                    // {
-                    //     icon: "mdi-thumb-up",
-                    //     text: "List of applicants",
-                    //     route: "/to-aproved",
-                    // },
                     {
                         icon: "mdi-printer",
                         text: "Print",
                         route: "/viewshit",
                     },
-
-
                     {
-
                         icon: "mdi-logout-variant",
                         text: "Log Out",
                         route: "/log-in",
@@ -234,6 +207,7 @@ export default {
             },
         ],
     }),
+
     methods: {
         logout() {
             console.log("Local storage clear")
@@ -243,6 +217,4 @@ export default {
     }
 };
 </script>
-<style>
-
-</style>
+<style></style>

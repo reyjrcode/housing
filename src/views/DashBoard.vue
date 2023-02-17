@@ -1,6 +1,6 @@
 <template>
     <div class="div">
-        <NavigationBar/>
+        <NavigationBar />
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-sm">
                     <!-- <div class="card"> -->
-                        <PieChartRelocation />
+                    <PieChartRelocation />
                     <!-- </div> -->
                 </div>
                 <div class="col-sm">
@@ -49,9 +49,7 @@
                 </div>
             </div>
         </div>
-
-
-    </div>
+</div>
 </template>
 
 <script>

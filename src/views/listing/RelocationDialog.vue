@@ -1,7 +1,6 @@
 <template>
-
     <div class="to-approved">
-        <NavigationBar/>
+        <NavigationBar />
         <div>
 
             <nav class="navbar navbar-light bg-light justify-content-between">
@@ -26,7 +25,7 @@
                     <v-spacer></v-spacer>
 
                     <!-- <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-                        hide-details></v-text-field> -->
+                                        hide-details></v-text-field> -->
                     <v-dialog v-model="dialog" max-width="1100px">
 
 
@@ -60,8 +59,8 @@
                                             Istado sa Pagpuyo
                                         </v-stepper-step>
                                         <!-- <v-stepper-step step="3" offset-x min-width="auto">
-                                            Istado sa Pagpuyo
-                                        </v-stepper-step> -->
+                                                            Istado sa Pagpuyo
+                                                        </v-stepper-step> -->
                                         <v-divider></v-divider>
                                         <v-stepper-step step="4" offset-x min-width="auto">
                                             Personal na Impormasyon
@@ -72,49 +71,48 @@
                                         <v-stepper-content step="1">
 
 
-                                            <v-card class="mb-12" height="1100px">
+                                            <v-card class="mb-12" height="900px">
                                                 <v-container class="grey lighten-5" offset-x min-width="auto">
                                                     <v-row class="mb-6" no-gutters>
                                                         <v-col sm="5" md="6">
                                                             <v-card class="pa-2" outlined tile>
                                                                 <h2>Atop</h2>
-                                                                <v-checkbox v-model="ex4"
-                                                                    label="Kawayan/Sawali/Cogon/Nipa" color="secondary"
-                                                                    value="Kawayan/Sawali/Cogon/Nipa" hide-details
-                                                                    autofocus></v-checkbox>
+                                                                <v-checkbox v-model="ex4" label="Kawayan/Sawali/Cogon/Nipa"
+                                                                    color="secondary" value="Kawayan/Sawali/Cogon/Nipa"
+                                                                    hide-details autofocus></v-checkbox>
                                                                 <v-checkbox v-model="ex4" label="Asbestos/Sin"
                                                                     color="secondary" value="Asbestos/Sin"
                                                                     hide-details></v-checkbox>
                                                                 <v-checkbox v-model="ex4" label="Improvised Materials"
                                                                     color="secondary" value="Improvised Materials"
                                                                     hide-details></v-checkbox>
-                                                                <v-checkbox v-model="ex4" label="Trapal"
-                                                                    color="secondary" value="Trapal" hide-details>
+                                                                <v-checkbox v-model="ex4" label="Trapal" color="secondary"
+                                                                    value="Trapal" hide-details>
                                                                 </v-checkbox>
                                                             </v-card>
                                                         </v-col>
                                                         <v-col sm="5" offset-sm="2" md="6" offset-md="0">
                                                             <v-card class="pa-2" outlined tile>
                                                                 <h2>Bong bong</h2>
-                                                                <v-checkbox v-model="ex4" label="Amakan"
-                                                                    color="secondary" value="Amakan" hide-details>
+                                                                <v-checkbox v-model="ex4" label="Amakan" color="secondary"
+                                                                    value="Amakan" hide-details>
                                                                 </v-checkbox>
-                                                                <v-checkbox v-model="ex4" label="Semento"
-                                                                    color="secondary" value="Semento" hide-details>
+                                                                <v-checkbox v-model="ex4" label="Semento" color="secondary"
+                                                                    value="Semento" hide-details>
                                                                 </v-checkbox>
-                                                                <v-checkbox v-model="ex4" label="Trapal"
-                                                                    color="secondary" value="Trapal" hide-details>
+                                                                <v-checkbox v-model="ex4" label="Trapal" color="secondary"
+                                                                    value="Trapal" hide-details>
                                                                 </v-checkbox>
                                                             </v-card>
                                                         </v-col>
                                                     </v-row>
                                                     <v-row no-gutters>
-                                                        <v-col sm="6" md="5" lg="6" height="900px">
+                                                        <v-col sm="6" md="5" lg="6" height="600px">
                                                             <v-card class="pa-2" outlined tile>
                                                                 <h2>Sitwasyon sa pagpuyo</h2>
-                                                                <v-checkbox v-model="ex4"
-                                                                    label="With notice to evacuate" color="secondary"
-                                                                    value="WithNoticeToEvacuate" hide-details>
+                                                                <v-checkbox v-model="ex4" label="With notice to evacuate"
+                                                                    color="secondary" value="WithNoticeToEvacuate"
+                                                                    hide-details>
                                                                 </v-checkbox>
                                                                 <v-checkbox v-model="ex4"
                                                                     label="With court order for demolition and eviction"
@@ -145,15 +143,19 @@
                                                                     <option value="5">4 - Disqualified</option>
                                                                     <option value="6">5 - HOA (SHFC)</option>
                                                                     <option value="7">6 - Awarded</option>
-                                                                    <option value="8">7 - Special Case (Priority)</option>
+                                                                    <option value="8">7 - Special Case (Priority)
+                                                                    </option>
                                                                     <option value="9">8 - Waived</option>
                                                                     <option value="10">9 - Waived</option>
-                                                                    <option value="11">10 - 10,000 & below Renters, Sharers, Single/ Married with dependents</option>
-                                                                    <option value="12">11 - Over 10,000 renter/ Sharers/ Single/ Married with no dependents</option>
+                                                                    <option value="11">10 - 10,000 & below Renters,
+                                                                        Sharers, Single/ Married with dependents
+                                                                    </option>
+                                                                    <option value="12">11 - Over 10,000 renter/ Sharers/
+                                                                        Single/ Married with no dependents</option>
                                                                 </select>
                                                                 <br>
-                                                                <h2 class="red--text">Please indicates required field
-                                                                </h2>
+                                                                <h4 class="red--text">Please indicates required field
+                                                                </h4>
                                                             </v-card>
                                                         </v-col>
                                                         <v-col sm="6" md="5" offset-md="2" lg="6" offset-lg="0">
@@ -166,15 +168,15 @@
                                                                 <v-checkbox v-model="ex4" label="Kilid sa sapa"
                                                                     color="secondary" value="Semento" hide-details>
                                                                 </v-checkbox>
-                                                                <v-checkbox v-model="ex4" label="NPC line"
-                                                                    color="secondary" value="Trapal" hide-details>
+                                                                <v-checkbox v-model="ex4" label="NPC line" color="secondary"
+                                                                    value="Trapal" hide-details>
                                                                 </v-checkbox>
                                                                 <v-checkbox v-model="ex4" label="Landslide prone area"
                                                                     color="secondary" value="Trapal" hide-details>
                                                                 </v-checkbox>
                                                                 <v-checkbox v-model="ex4"
-                                                                    label="Identified flood prone area"
-                                                                    color="secondary" value="Trapal" hide-details>
+                                                                    label="Identified flood prone area" color="secondary"
+                                                                    value="Trapal" hide-details>
                                                                 </v-checkbox>
                                                                 <v-col cols="12" sm="6" md="12">
                                                                     <v-text-field label="Others:" clearable required
@@ -184,58 +186,59 @@
                                                         </v-col>
                                                         <br />
 
-
+                                                        <br>
                                                         <v-card class="scroll-y" style="height: 650px">
                                                             <div class="card-body">
 
                                                                 <div class="container">
                                                                     <div class="row row-cols-2">
-                                                                        <div class="col">
+                                                                        <div class="col-mt-6">
                                                                             <div class="form-group">
                                                                                 <label
                                                                                     for="exampleFormControlInput1">Assisted
                                                                                     by</label>
                                                                                 <input type="text" class="form-control"
                                                                                     id="exampleFormControlInput1"
-                                                                                    placeholder="Assisted by">
+                                                                                    placeholder="Assisted by"
+                                                                                    style="width: 400px;">
                                                                             </div>
-
                                                                         </div>
-                                                                        <div class="col">
+                                                                        <div class="col-mt-6">
                                                                             <div class="form-group">
-                                                                                <label
-                                                                                    for="exampleFormControlInput1">HOA
+                                                                                <label for="exampleFormControlInput1">HOA
                                                                                     officer
                                                                                 </label>
                                                                                 <input type="text" class="form-control"
                                                                                     id="exampleFormControlInput1"
-                                                                                    placeholder="HOA officer">
+                                                                                    placeholder="HOA officer"
+                                                                                    style="width: 400px;">
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col">
+                                                                        <div class="col-mt-6">
                                                                             <div class="form-group">
-                                                                                <label
-                                                                                    for="exampleFormControlInput1">Purok
+                                                                                <label for="exampleFormControlInput1">Purok
                                                                                     official
                                                                                 </label>
                                                                                 <input type="text" class="form-control"
                                                                                     id="exampleFormControlInput1"
-                                                                                    placeholder="Purok official">
+                                                                                    placeholder="Purok official"
+                                                                                    style="width: 400px;">
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col">
+                                                                        <div class="col-mt-6">
                                                                             <div class="form-group">
-                                                                                <label
-                                                                                    for="exampleFormControlInput1">Tagged
+                                                                                <label for="exampleFormControlInput1">Tagged
                                                                                     and validated by
                                                                                 </label>
                                                                                 <input type="text" class="form-control"
                                                                                     id="exampleFormControlInput1"
-                                                                                    placeholder="Tagged and validated by">
+                                                                                    placeholder="Tagged and validated by"
+                                                                                    style="width: 400px;">
                                                                             </div>
                                                                         </div>
                                                                         <div class="col"><select class="form-select"
-                                                                                aria-label="Default select example">
+                                                                                aria-label="Default select example"
+                                                                                style="width: 400px;">
                                                                                 <option selected>Type of applicant
                                                                                 </option>
                                                                                 <option value="1">Walk-in</option>
@@ -244,34 +247,30 @@
                                                                                 </option>
                                                                             </select></div>
                                                                         <div class="col">
-                                                                            <div class="col"><select class="form-select"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected>Status of
-                                                                                        application
-                                                                                    </option>
-                                                                                    <option value="1">For-tagging
-                                                                                    </option>
-                                                                                    <option value="2">Tagged and
-                                                                                        validated</option>
-                                                                                </select></div>
+                                                                            <select class="form-select"
+                                                                                aria-label="Default select example"
+                                                                                style="width: 400px;">
+                                                                                <option selected>Status of
+                                                                                    application
+                                                                                </option>
+                                                                                <option value="1">For-tagging
+                                                                                </option>
+                                                                                <option value="2">Tagged and
+                                                                                    validated</option>
+                                                                            </select>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <v-col cols="12">
-                                                                                <v-text-field outlined label="Date"
-                                                                                    type="date" dense color="primary"
-                                                                                    v-model="formatDate">
-                                                                                </v-text-field>
-                                                                            </v-col>
-
+                                                                            <v-text-field outlined label="Date" type="date"
+                                                                                dense color="primary" v-model="formatDate"
+                                                                                style="width: 400px;">
+                                                                            </v-text-field>
                                                                         </div>
-                                                                        <div class="col">
-                                                                            <div class="mb-3">
-                                                                                <label for="exampleFormControlTextarea1"
-                                                                                    class="form-label">Remarks</label>
-                                                                                <textarea class="form-control"
-                                                                                    id="exampleFormControlTextarea1"
-                                                                                    rows="3"></textarea>
-                                                                            </div>
+                                                                        <div class="col-mt-12">
+                                                                            <label for="exampleFormControlTextarea1"
+                                                                                class="form-label">Remarks</label>
+                                                                            <textarea class="form-control"
+                                                                                id="exampleFormControlTextarea1"
+                                                                                rows="3"  style="width: 400px;"></textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -280,8 +279,6 @@
                                                     </v-row>
                                                 </v-container>
                                             </v-card>
-
-
 
 
 
@@ -323,8 +320,7 @@
                                                                                         <v-row>
                                                                                             <v-col cols="12" md="2">
                                                                                                 <v-text-field outlined
-                                                                                                    label="Full name"
-                                                                                                    dense
+                                                                                                    label="Full name" dense
                                                                                                     color="success"
                                                                                                     v-model="item.FullName">
                                                                                                 </v-text-field>
@@ -332,15 +328,13 @@
                                                                                             <v-col cols="12" md="2">
                                                                                                 <v-text-field outlined
                                                                                                     label="Civil Status"
-                                                                                                    dense
-                                                                                                    color="success"
+                                                                                                    dense color="success"
                                                                                                     v-model="item.CivilStatus">
                                                                                                 </v-text-field>
                                                                                             </v-col>
                                                                                             <v-col cols="12" md="2">
                                                                                                 <v-text-field outlined
-                                                                                                    label="Address"
-                                                                                                    dense
+                                                                                                    label="Address" dense
                                                                                                     color="success"
                                                                                                     v-model="item.Address">
                                                                                                 </v-text-field>
@@ -373,8 +367,7 @@
                                                                                         </v-row>
                                                                                     </div>
                                                                                     <v-btn padding-top="3px"
-                                                                                        @click="saveItem"
-                                                                                        color="success">
+                                                                                        @click="saveItem" color="success">
                                                                                         <v-icon>
                                                                                             mdi-content-save
                                                                                         </v-icon>
@@ -419,12 +412,16 @@
                                                             <v-col cols="12">
                                                                 <v-select
                                                                     :items="['Kaugalingon ang balay pero wala ga arkila sa yuta, nasayod ang tag-iya sa yuta', 'Kaugalingon nga balay pero wala ga arkila sa yuta, walay pag tugot sa tag-iya', 'Libre nga pagpuyo sa balay nga adunay pagtugot sa tag-iya', 'Libre nga pagpuyo sa balay ug yuta nga walay pagtugot sa tag-iya', 'Nakipuyo Lang']"
-                                                                    label="Istado sa Pagpuyo" outlined
-                                                                    required></v-select>
+                                                                    label="Istado sa Pagpuyo" outlined required></v-select>
                                                             </v-col>
                                                             <v-col cols="12" sm="6" md="6">
                                                                 <v-text-field label="Pangalan sa gipuy-an " outlined
                                                                     clearable></v-text-field>
+                                                            </v-col>
+                                                            <v-col cols="12" sm="6" md="6">
+                                                                <v-select :items="['SHFC', 'Home owner']"
+                                                                    label="Type of applicant" required outlined>
+                                                                </v-select>
                                                             </v-col>
                                                         </v-row>
                                                     </v-container>
@@ -438,8 +435,8 @@
                                                 Back
                                             </v-btn>
                                             <!-- <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
-                                                Save
-                                            </v-btn> -->
+                                                                Save
+                                                            </v-btn> -->
                                         </v-stepper-content>
 
 
@@ -454,9 +451,8 @@
                                                     <v-container>
                                                         <v-row>
                                                             <v-col cols="12" sm="6" md="3">
-                                                                <v-text-field label="Apelyido"
-                                                                    v-model="editedItem.lastname" required outlined
-                                                                    autofocus></v-text-field>
+                                                                <v-text-field label="Apelyido" v-model="editedItem.lastname"
+                                                                    required outlined autofocus></v-text-field>
                                                             </v-col>
                                                             <v-col cols="12" sm="6" md="3">
                                                                 <v-text-field label="Pangalan"
@@ -496,9 +492,8 @@
                                                                     outlined></v-text-field>
                                                             </v-col>
                                                             <v-col cols="12" sm="6">
-                                                                <v-text-field label="Pangalan sa Employer"
-                                                                    type="address" clearable required
-                                                                    outlined></v-text-field>
+                                                                <v-text-field label="Pangalan sa Employer" type="address"
+                                                                    clearable required outlined></v-text-field>
                                                             </v-col>
                                                             <v-col cols="12" sm="3">
                                                                 <v-select
@@ -507,9 +502,8 @@
                                                             </v-col>
 
                                                             <v-col cols="12" sm="3">
-                                                                <v-text-field outlined label="Adlaw na tawhan"
-                                                                    type="date" dense color="primary"
-                                                                    v-model="formatDate">
+                                                                <v-text-field outlined label="Adlaw na tawhan" type="date"
+                                                                    dense color="primary" v-model="formatDate">
                                                                 </v-text-field>
                                                             </v-col>
 
@@ -588,8 +582,8 @@
             </template>
             <template v-slot:item.actions="{ item }">
                 <!-- <v-icon small class="mr-2" @click="editItem(item)">
-                    mdi-pencil
-                </v-icon> -->
+                                    mdi-pencil
+                                </v-icon> -->
 
                 <v-tooltip top color="green">
                     <template v-slot:activator="{ on, }">
@@ -605,8 +599,8 @@
 
 
                 <!-- <v-icon small @click="deleteItem(item)">
-                    mdi-delete
-                </v-icon> -->
+                                    mdi-delete
+                                </v-icon> -->
                 <v-tooltip top color="red">
                     <template v-slot:activator="{ on, }">
                         <v-btn class="ma-2" outlined color="red" @click="deleteItem(item)" v-on="on">
@@ -631,7 +625,7 @@
             </template>
         </v-data-table>
 
-    </div>
+</div>
 </template>
 
 <script>

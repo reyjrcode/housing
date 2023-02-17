@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Dashboard from '../views/DashBoard.vue'
 import AdminNavbar from '../views/Navigation/AdminNavbar.vue'
 import HomeShit from '../views/HomeView.vue'
-import FormOne from '../views/Forms/FormOne.vue'
+import FormOne from '../views/Forms/RelocationForm.vue'
 import RegistrationPage from '../views/Forms/RegisterPage.vue'
 import Loginpage from '../views/Forms/FinalLogin.vue'
 import UpdateShit from '../views/crud/Update.vue'
@@ -30,6 +30,7 @@ import NaturalCalamityPage from '../views/shelterassistance/headercards/NaturalC
 import SelfHelpPage from '../views/shelterassistance/headercards/SelfHelpPage.vue'
 import HomePage from '../views/HomePage.vue'
 import ShelterAssistanceDialog from '../views/listing/ShelterAssistanceDialog.vue'
+import HousingPrjectForm from '../views/Forms/HousingPrjectForm.vue'
 
 
 Vue.use(VueRouter)
@@ -187,10 +188,14 @@ const routes = [
     name: 'ShelterAssistanceDialog',
     component: ShelterAssistanceDialog
   },
+  {
+    path: '/housing-project-form',
+    name: 'HousingPrjectForm',
+    component: HousingPrjectForm
+  },
 
 
-
-
+  
 
 ]
 
@@ -205,10 +210,10 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
 
-  if (to.name == 'Dashboard' && localStorage.getItem('auth') == null)
+  if (to.name == 'HomePage' && localStorage.getItem('auth') == null)
     next({ name: 'Loginpage' });
   else if (localStorage.getItem('auth') != null && (to.name == 'RegistrationPage' || to.name == 'Loginpage'))
-    next({ name: 'Dashboard' });
+    next({ name: 'HomePage' });
   else
     next();
 
