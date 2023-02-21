@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-navigation-drawer v-model="drawer" color="#1B5E20" dark app>
+        <v-navigation-drawer v-model="drawer" color="#1B5E20" dark app width="280px">
             <v-layout column align-center>
                 <v-flex class="mt-5">
                     <v-btn class="mx-2" fab dark large color="purple" @click="$router.push({ name: 'EditProfile' })"
@@ -8,8 +8,7 @@
                         <v-avatar size="90">
                             <img src="https://i.pinimg.com/originals/72/cd/96/72cd969f8e21be3476277d12d44c791c.png"
                                 alt="123" />
-                            <!-- <img src="https://i1.sndcdn.com/artworks-qkXAmhFYFAo2JykO-CnLyqw-t500x500.jpg" alt="123" /> -->
-                        </v-avatar>
+                        </v-avatar >
                     </v-btn>
 
                     <p class="white--text subheading mt-1 text-center">Username</p>
@@ -21,7 +20,9 @@
                 <v-flex class="mt-4 mb-4">
                 </v-flex>
             </v-layout>
-
+            <center>
+                <!-- <v-btn variant="outlined" text color="#000000"  @click="$router.push({ name: 'HomePage' })"> <v-icon color="#73550a">mdi-home</v-icon>Home</v-btn> -->
+            </center>
             <v-list shaped class="clickable">
                 <template v-for="item in items">
                     <v-list-group v-if="item.children" :key="item.text" v-model="item.model"
@@ -101,22 +102,15 @@ export default {
 
         drawer: null,
         items: [
-            {
-                icon: "mdi-home", text: "Home", route: "/home-page",
-                
-            },
-            // { icon: "mdi-view-dashboard", text: "Relocation dashboard", route: "/dashboard" },
-            // { icon: "mdi-view-dashboard", text: "Shelter assistance", route: "/shelter-assistance-dashboard" },
             // {
-            //     icon: "mdi mdi-account",
-            //     text: "Forms",
-            //     route: "/ScholarshipApplication",
+            //     icon: "mdi-home", text: "Home", route: "/home-page",
+
             // },
             {
                 icon: "mdi-chevron-up",
                 "icon-alt": "mdi-chevron-down",
                 "icon-ctr": "mdi-note-multiple",
-                text: "Relocation",
+                text: "Relocation forms",
                 model: false,
                 children: [
                     {
@@ -134,10 +128,37 @@ export default {
                         text: "Relocation applicants",
                         route: "/relocation-list",
                     },
+                ],
+            },
+
+
+
+            {
+                icon: "mdi-chevron-up",
+                "icon-alt": "mdi-chevron-down",
+                "icon-ctr": "mdi-note-multiple",
+                text: "Relocation list",
+                model: false,
+                children: [
+                    // {
+                    //     icon: "mdi-note-plus",
+                    //     text: "Relocation Form",
+                    //     route: "/form-one",
+                    // },
+                    // {
+                    //     icon: "mdi-note-plus",
+                    //     text: "Housing project form",
+                    //     route: "/housing-project-form",
+                    // },
+                    // {
+                    //     icon: "mdi-playlist-check",
+                    //     text: "Relocation applicants",
+                    //     route: "/relocation-list",
+                    // },
                     {
                         icon: "mdi-trophy",
                         text: "Total awards",
-                        route: "/total-awards",
+                        route: "/total-awarded",
                     },
                     {
                         icon: "mdi-thumb-up",
@@ -161,7 +182,7 @@ export default {
                 icon: "mdi-chevron-up",
                 "icon-alt": "mdi-chevron-down",
                 "icon-ctr": "mdi-note-multiple",
-                text: "Shelter",
+                text: "Shelter form",
                 model: false,
                 children: [
                     {
@@ -174,6 +195,31 @@ export default {
                         text: "List of applicants",
                         route: "/shelter-assistance-dialog",
                     },
+                ],
+            },
+            {
+                icon: "mdi-chevron-up",
+                "icon-alt": "mdi-chevron-down",
+                "icon-ctr": "mdi-note-multiple",
+                text: "Shelter list",
+                model: false,
+                children: [
+                    {
+                        icon: "mdi-handshake",
+                        text: "Bayanihan",
+                        route: "/bayanihan-page",
+                    },
+                    {
+                        icon: "mdi-human-handsup",
+                        text: "Self help",
+                        route: "/self-help",
+                    },
+                    {
+                        icon: "mdi-weather-pouring ",
+                        text: "Natural calamity",
+                        route: "/natural-calamity",
+                    },
+
                 ],
             },
             {
@@ -205,6 +251,7 @@ export default {
                     },
                 ],
             },
+
         ],
     }),
 

@@ -19,7 +19,7 @@ import OtherDanger from '../views/dangerzone/OtherDanger.vue'
 import NPCline from '../views/dangerzone/NPCline.vue'
 import Inventory from '../views/actions/InventoryPage.vue'
 import AddMaterials from '../views/Forms/AddMaterials.vue'
-import ShelterAssistance from '../views/Forms/ShelterAssistance.vue'
+import ShelterAssistance from '../views/shelterassistance/Forms/ShelterAssistance.vue'
 import LocationShelterForm from '../views/Forms/LocationShelterForm.vue'
 import LandSlide from '../views/dangerzone/LandSlide.vue'
 import ToApproved from '../views/listing/RelocationDialog.vue'
@@ -31,6 +31,7 @@ import SelfHelpPage from '../views/shelterassistance/headercards/SelfHelpPage.vu
 import HomePage from '../views/HomePage.vue'
 import ShelterAssistanceDialog from '../views/listing/ShelterAssistanceDialog.vue'
 import HousingPrjectForm from '../views/Forms/HousingPrjectForm.vue'
+import WelcomePage from '../views/shelterassistance/WelcomePage.vue'
 
 
 Vue.use(VueRouter)
@@ -157,6 +158,7 @@ const routes = [
     name: 'EditProfile',
     component: EditProfile
   },
+
   {
     path: '/shelter-assistance-dashboard',
     name: 'ShelterDashBoard',
@@ -177,6 +179,8 @@ const routes = [
     name: 'SelfHelpPage',
     component: SelfHelpPage
   },
+
+
   {
     path: '/home-page',
     name: 'HomePage',
@@ -194,8 +198,13 @@ const routes = [
     component: HousingPrjectForm
   },
 
+  {
+    path: '/welcome-page',
+    name: 'WelcomePage',
+    component: WelcomePage
+  },
 
-  
+
 
 ]
 

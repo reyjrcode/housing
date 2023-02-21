@@ -1,9 +1,7 @@
 <template>
 
     <div class="form-one">
-        <NavigationBar />
-
-
+        <HomeNavigation />
         <v-container fluid class="my-5">
             <v-card>
                 <v-card-title>

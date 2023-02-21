@@ -1,7 +1,7 @@
 <template>
 
     <div class="addmaterial">
-        <NavigationBar/>
+        <HomeNavigation/>
         add materials
         <TableComponentWithApi/>
     </div>

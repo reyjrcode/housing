@@ -1,7 +1,7 @@
 <template>
 
     <div class="addmaterial">
-        <NavigationBar/>
+        <HomeNavigation/>
         <div class="container">
             <v-card class="mx-auto" max-width="700" outlined>
                 <v-list-item three-line>

@@ -1,7 +1,7 @@
 <template>
 
     <div class="to-approved">
-        <AdminNavbar />
+        <HomeNavigation />
         <div>
 
             <nav class="navbar navbar-light bg-light justify-content-between">

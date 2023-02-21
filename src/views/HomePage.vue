@@ -2,12 +2,12 @@
     <div class="div">
 
 
-        <HomeNavigation />
+        <HomeNav />
 
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="card" id="card-1">
+                    <div class="card" id="card-1" data-aos="fade-right">
                         <img src="https://www.sandhillrelo.com/wp-content/uploads/2019/07/additional-relocation-services-8.png"
                             height="425px" class="card-img-top" alt="???">
                         <div class="card-body">
@@ -19,7 +19,7 @@
 
                 </div>
                 <div class="col">
-                    <div class="card" id="card-1">
+                    <div class="card" id="card-1" data-aos="fade-left">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51uCDHipEp4m3XTaUhmWgIqMA6_xtD5mOHAnF3IOonVvXAq3cffVoYt13eIu0qne9pck&usqp=CAU"
                             height="425px" class="card-img-top" alt="...">
                         <div class="card-body">

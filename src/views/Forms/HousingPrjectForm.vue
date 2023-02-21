@@ -1,6 +1,6 @@
 <template>
     <div class="div">
-        <NavigationBar />
+        <HomeNavigation />
         <v-snackbar v-model="snackbar" :timeout="timeout">
             <h3> {{ text }}</h3>
 
@@ -51,8 +51,11 @@
                     <div class="text-h6 mb-1">
                         Housing
                     </div>
-                    <div class="text-caption"> <v-text-field v-model="block_name" type="date" label="Block Name" clearable
-                            required outlined autofocus></v-text-field>
+                    <div class="text-caption">
+                        <v-text-field v-model="block_name" label="Block Name" clearable required outlined
+                            autofocus></v-text-field>
+                        <!-- <v-text-field v-model="block_name" type="date" label="Block Name" clearable
+                                    required outlined autofocus></v-text-field> -->
                         <v-select :items="['1', '2', '3', '4', '5', '6', '7', '8']" v-model="lot_number" label="Lot number"
                             required outlined></v-select>
                         <v-select :items="['1', '2', '3', '4', '5', '6', '7', '8']" v-model="block_number"

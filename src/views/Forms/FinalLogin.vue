@@ -247,9 +247,10 @@ h1 {
 .background {
 
     margin: 0;
-    padding: 0;
+    padding: 0;background-image: url("https://scontent.fmnl3-2.fna.fbcdn.net/v/t1.15752-9/331417706_3397294360533561_7747306439003703708_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeF_SaNA18DOVO_lHI2VNwW_EVb-NktJnYsRVv42S0mdi7CFOHaKM8iNEzC1TMllj1kMjbBpZ55ZPbzoNZQT2ykK&_nc_ohc=S-hzIVohqz8AX9AZkko&tn=XJeZ-ESjxRf_PC06&_nc_ht=scontent.fmnl3-2.fna&oh=03_AdTh83Skq6KKTT4dB8zzl06ALvoydHHB1rrg22Fya7N9OQ&oe=641B77A9");
+    
     /* background-image: url(/cover4.jpg) !important; */
-    background-image: url("C:\Users\CityOfTagum\Desktop\housing\back-up\housing-dashboard\src\assets\images\cover.jpg");
+    /* background-image: url("C:\Users\CityOfTagum\Desktop\housing\back-up\housing-dashboard\src\assets\images\cover.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

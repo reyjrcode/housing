@@ -1,7 +1,7 @@
 <template>
 
     <div class="to-approved">
-        <NavigationBar/>
+        <HomeNavigation/>
 
         <div>
 

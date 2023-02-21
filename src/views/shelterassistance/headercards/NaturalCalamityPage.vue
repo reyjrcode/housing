@@ -1,6 +1,6 @@
 <template>
     <div class="div">
-        <NavigationBar />
+        <HomeNavigation />
 
         <NaturalCalamitiessTable />
     </div>

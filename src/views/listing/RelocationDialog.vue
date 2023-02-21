@@ -1,6 +1,6 @@
 <template>
     <div class="to-approved">
-        <NavigationBar />
+        <HomeNavigation />
         <div>
 
             <nav class="navbar navbar-light bg-light justify-content-between">
@@ -8,7 +8,6 @@
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" v-model="search" type="search" placeholder="Search"
                         aria-label="Search">
-
                 </form>
             </nav>
         </div>
@@ -23,12 +22,9 @@
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
-
                     <!-- <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-                                        hide-details></v-text-field> -->
+                                                                                                                    hide-details></v-text-field> -->
                     <v-dialog v-model="dialog" max-width="1100px">
-
-
 
                         <template v-slot:activator="{ on, attrs }">
                             <button class="btn btn-outline-success" type="button" v-bind="attrs" v-on="on"> <v-icon>
@@ -36,9 +32,6 @@
                                 </v-icon>
                                 New Item</button>
                         </template>
-
-
-
 
                         <v-container fluid class="my-5">
                             <v-card>
@@ -59,8 +52,8 @@
                                             Istado sa Pagpuyo
                                         </v-stepper-step>
                                         <!-- <v-stepper-step step="3" offset-x min-width="auto">
-                                                            Istado sa Pagpuyo
-                                                        </v-stepper-step> -->
+                                                                                                                                        Istado sa Pagpuyo
+                                                                                                                                    </v-stepper-step> -->
                                         <v-divider></v-divider>
                                         <v-stepper-step step="4" offset-x min-width="auto">
                                             Personal na Impormasyon
@@ -71,7 +64,7 @@
                                         <v-stepper-content step="1">
 
 
-                                            <v-card class="mb-12" height="900px">
+                                            <v-card class="mb-12" height="700px">
                                                 <v-container class="grey lighten-5" offset-x min-width="auto">
                                                     <v-row class="mb-6" no-gutters>
                                                         <v-col sm="5" md="6">
@@ -92,7 +85,7 @@
                                                             </v-card>
                                                         </v-col>
                                                         <v-col sm="5" offset-sm="2" md="6" offset-md="0">
-                                                            <v-card class="pa-2" outlined tile>
+                                                            <v-card class="pa-2" outlined tile height="235px">
                                                                 <h2>Bong bong</h2>
                                                                 <v-checkbox v-model="ex4" label="Amakan" color="secondary"
                                                                     value="Amakan" hide-details>
@@ -107,85 +100,28 @@
                                                         </v-col>
                                                     </v-row>
                                                     <v-row no-gutters>
-                                                        <v-col sm="6" md="5" lg="6" height="600px">
-                                                            <v-card class="pa-2" outlined tile>
-                                                                <h2>Sitwasyon sa pagpuyo</h2>
-                                                                <v-checkbox v-model="ex4" label="With notice to evacuate"
-                                                                    color="secondary" value="WithNoticeToEvacuate"
-                                                                    hide-details>
-                                                                </v-checkbox>
-                                                                <v-checkbox v-model="ex4"
-                                                                    label="With court order for demolition and eviction"
-                                                                    color="secondary" value="Semento" hide-details>
-                                                                </v-checkbox>
-                                                                <v-checkbox v-model="ex4"
-                                                                    label="Affected by government infrastructure project"
-                                                                    color="secondary" value="Trapal" hide-details>
-                                                                </v-checkbox>
-                                                                <v-checkbox v-model="ex4"
-                                                                    label="Affected by private construction project"
-                                                                    color="secondary" value="Trapal" hide-details>
-                                                                </v-checkbox>
-                                                                <v-checkbox v-model="ex4" label="Accretion Area"
-                                                                    color="secondary" value="Trapal" hide-details>
-                                                                </v-checkbox>
-                                                                <br>
-
-                                                                <select class="form-select"
-                                                                    aria-label="Default select example">
-                                                                    <option selected>Type of applicant
-                                                                    </option>
-                                                                    <option value="1">0 - For Revalidation/ For Tagging
-                                                                    </option>
-                                                                    <option value="2">1 - Tagged</option>
-                                                                    <option value="3">2 - Tagged</option>
-                                                                    <option value="4">3 - Tagged</option>
-                                                                    <option value="5">4 - Disqualified</option>
-                                                                    <option value="6">5 - HOA (SHFC)</option>
-                                                                    <option value="7">6 - Awarded</option>
-                                                                    <option value="8">7 - Special Case (Priority)
-                                                                    </option>
-                                                                    <option value="9">8 - Waived</option>
-                                                                    <option value="10">9 - Waived</option>
-                                                                    <option value="11">10 - 10,000 & below Renters,
-                                                                        Sharers, Single/ Married with dependents
-                                                                    </option>
-                                                                    <option value="12">11 - Over 10,000 renter/ Sharers/
-                                                                        Single/ Married with no dependents</option>
-                                                                </select>
-                                                                <br>
-                                                                <h4 class="red--text">Please indicates required field
-                                                                </h4>
-                                                            </v-card>
+                                                        <v-col cols="12" sm="6">
+                                                            <v-select
+                                                                :items="['Sitwasyon sa pag puyo', 'With court order for demolition and eviction', 'Affected by government infrastructure project', 'Affected by private construction project', 'Accretion Area']"
+                                                                label="Sitwasyon sa pag puyo" required outlined></v-select>
                                                         </v-col>
-                                                        <v-col sm="6" md="5" offset-md="2" lg="6" offset-lg="0">
-                                                            <v-card class="pa-2" outlined tile>
-                                                                <h2>Danger zone</h2>
-                                                                <v-checkbox v-model="ex4" label="Kilid sa creek"
-                                                                    color="secondary" value="WithNoticeToEvacuate"
-                                                                    hide-details>
-                                                                </v-checkbox>
-                                                                <v-checkbox v-model="ex4" label="Kilid sa sapa"
-                                                                    color="secondary" value="Semento" hide-details>
-                                                                </v-checkbox>
-                                                                <v-checkbox v-model="ex4" label="NPC line" color="secondary"
-                                                                    value="Trapal" hide-details>
-                                                                </v-checkbox>
-                                                                <v-checkbox v-model="ex4" label="Landslide prone area"
-                                                                    color="secondary" value="Trapal" hide-details>
-                                                                </v-checkbox>
-                                                                <v-checkbox v-model="ex4"
-                                                                    label="Identified flood prone area" color="secondary"
-                                                                    value="Trapal" hide-details>
-                                                                </v-checkbox>
-                                                                <v-col cols="12" sm="6" md="12">
-                                                                    <v-text-field label="Others:" clearable required
-                                                                        outlined></v-text-field>
-                                                                </v-col>
-                                                            </v-card>
+                                                        <v-col cols="12" sm="6">
+                                                            <v-select
+                                                                :items="['0. For Revalidation/ For Tagging', '1. Tagged', '2. Tagged', '3. Tagged', '4. Disqualified', '5. HOA (SHFC)', '6. Awarded', '7. Special Case (Priority)', '8. Waived', '9. Waived', '10. 10,000 & below Renters, Sharers, Single/ Married with dependents', '11. Over 10,000 renter/ Sharers/ Single/ Married with no dependents', '']"
+                                                                label="Type of applicant" required outlined></v-select>
+                                                        </v-col>
+
+                                                        <v-col sm="6" md="5" offset-md="3" lg="6" offset-lg="0">
+
+                                                            <v-select
+                                                                :items="['Kilid sa creek', 'NPC line', 'Landslide prone area', 'Identified flood prone area']"
+                                                                label="Danger zone" required outlined></v-select>
+                                                        </v-col>
+                                                        <v-col sm="6" md="5" offset-md="3" lg="6" offset-lg="0">
+                                                            <v-text-field label="Others:" clearable required
+                                                                outlined></v-text-field>
                                                         </v-col>
                                                         <br />
-
                                                         <br>
                                                         <v-card class="scroll-y" style="height: 650px">
                                                             <div class="card-body">
@@ -269,8 +205,8 @@
                                                                             <label for="exampleFormControlTextarea1"
                                                                                 class="form-label">Remarks</label>
                                                                             <textarea class="form-control"
-                                                                                id="exampleFormControlTextarea1"
-                                                                                rows="3"  style="width: 400px;"></textarea>
+                                                                                id="exampleFormControlTextarea1" rows="3"
+                                                                                style="width: 400px;"></textarea>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -434,17 +370,10 @@
                                             <v-btn @click="e1 = 2" class="ma-3">
                                                 Back
                                             </v-btn>
-                                            <!-- <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">
-                                                                Save
-                                                            </v-btn> -->
+                                            <!-- <v-btn class="ma-4" color="secondary" @click="dialog = false" value="save">                                                                                         </v-btn> -->
                                         </v-stepper-content>
 
-
-
-
-
                                         <v-stepper-content step="4">
-
 
                                             <v-card class="mb-1" color="grey lighten-4">
                                                 <v-card-text>
@@ -542,13 +471,6 @@
                                             </v-card>
 
 
-
-
-
-
-
-
-
                                             <v-btn @click="e1 = 3" class="ma-3">
                                                 Back
                                             </v-btn>
@@ -562,9 +484,6 @@
                             </v-card>
 
                         </v-container>
-
-
-
 
                     </v-dialog>
                     <v-dialog v-model="dialogDelete" max-width="500px">
@@ -582,8 +501,8 @@
             </template>
             <template v-slot:item.actions="{ item }">
                 <!-- <v-icon small class="mr-2" @click="editItem(item)">
-                                    mdi-pencil
-                                </v-icon> -->
+                                                                                                                mdi-pencil
+                                                                                                            </v-icon> -->
 
                 <v-tooltip top color="green">
                     <template v-slot:activator="{ on, }">
@@ -599,8 +518,8 @@
 
 
                 <!-- <v-icon small @click="deleteItem(item)">
-                                    mdi-delete
-                                </v-icon> -->
+                                                                                                                mdi-delete
+                                                                                                            </v-icon> -->
                 <v-tooltip top color="red">
                     <template v-slot:activator="{ on, }">
                         <v-btn class="ma-2" outlined color="red" @click="deleteItem(item)" v-on="on">
@@ -625,7 +544,7 @@
             </template>
         </v-data-table>
 
-</div>
+    </div>
 </template>
 
 <script>
@@ -653,7 +572,6 @@ export default {
             if (form.length > 1) {
                 form.splice(index, 1)
             }
-
         }
         const saveItem = () => {
             //install axios diri nga part npm install axios 

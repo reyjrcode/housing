@@ -1,7 +1,7 @@
 <template>
 
     <div class="to-approved">
-        <NavigationBar/>
+        <HomeNavigation/>
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
@@ -136,7 +136,7 @@ export default {
             //     sortable: false,
             //     value: 'name',
             // },
-            { text: 'Location', value: 'location' },
+            { text: 'Housing project', value: 'location' },
             { text: 'Vacant', value: 'vacant' },
             { text: 'Occupied', value: 'occupied' },
 
@@ -183,65 +183,120 @@ export default {
         initialize() {
             this.desserts = [
                 {
-                    location: 'Frozen Yogurt',
+                    location: 'APOKON TAGUMPAY VILLAGE',
                     vacant: 159,
                     occupied: 6.0,
 
                 },
                 {
-                    location: 'Ice cream sandwich',
+                    location: 'APOKON TAGUMPAY VILLAGE',
                     vacant: 237,
                     occupied: 9.0,
 
                 },
                 {
-                    location: 'Eclair',
+                    location: 'ELISEO V. WAKAN RESETTLEMENT SITE',
                     vacant: 262,
                     occupied: 16.0,
 
                 },
                 {
-                    location: 'Cupcake',
+                    location: 'ELISEO V. WAKAN RESETTLEMENT SITE',
                     vacant: 305,
                     occupied: 3.7,
 
                 },
                 {
-                    location: 'Gingerbread',
+                    location: 'LA FILIPINA MALINAWON, TAGUMPAY VILLAGE',
                     vacant: 356,
                     occupied: 16.0,
 
                 },
                 {
-                    location: 'Jelly bean',
+                    location: 'LIBOGANON BUGSAY TAGUMPAY VILLAGE',
                     vacant: 375,
                     occupied: 0.0,
 
                 },
                 {
-                    location: 'Lollipop',
+                    location: 'LIBOGANON BUGSAY TAGUMPAY VILLAGE',
                     vacant: 392,
                     occupied: 0.2,
 
                 },
                 {
-                    location: 'Honeycomb',
+                    location: 'MANKILAM TAGUMPAY VILLAGE',
                     vacant: 408,
                     occupied: 3.2,
 
                 },
                 {
-                    location: 'Donut',
+                    location: 'MANUEL B. SUAYBAGUIO SR., VILLAGE PHASE I',
                     vacant: 452,
                     occupied: 25.0,
 
                 },
                 {
-                    location: 'KitKat',
+                    location: 'MANUEL B. SUAYBAGUIO SR., VILLAGE PHASE II',
                     vacant: 518,
                     occupied: 26.0,
 
                 },
+                {
+                    location: 'MANUEL B. SUAYBAGUIO SR., VILLAGE PHASE III',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+                {
+                    location: 'MASANDAG TRIBAL VILLAGE',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+                {
+                    location: 'PANDAPAN TAGUMPAY VILLAGE',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+                {
+                    location: 'PRK. DAISY BINCUNGAN TAGUMPAY VILLAGE',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+                {
+                    location: 'RTU VILLAGE',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+                {
+                    location: 'SAN AGUSTIN TAGUMPAY VILLAGE',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+                {
+                    location: 'SAN ISIDRO TAGUMPAY VILLAGE',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+                {
+                    location: 'TAGUMPAY BALAI RESIDENCES',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+                {
+                    location: 'CITY EMPLOYEES VILLAGE (CITY HOMES)',
+                    vacant: 518,
+                    occupied: 26.0,
+
+                },
+
             ]
         },
 

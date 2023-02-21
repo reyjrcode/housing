@@ -5,6 +5,8 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css"
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -48,5 +50,11 @@ new Vue({
   store,
   vuetify,
   $,
-  render: h => h(App)
+
+created(){
+  AOS.init();
+},
+
+  render: h => h(App),
+
 }).$mount('#app')

@@ -1,9 +1,8 @@
 <template>
-
     <div class="to-approved">
-    <NavigationBar/>
+        <HomeNavigation />
 
-        <!--     
+        <!--             
     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                         hide-details></v-text-field> -->
         <div>
@@ -21,7 +20,7 @@
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Total awards <v-icon>
+                    <v-toolbar-title>List of awarded applicants <v-icon>
                             mdi-trophy
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
@@ -33,7 +32,7 @@
 
                     <v-dialog v-model="dialog" max-width="1000px">
 
-                        <!-- 
+
                         <template v-slot:activator="{ on, attrs }">
 
 
@@ -41,7 +40,7 @@
                                     mdi-account-plus
                                 </v-icon>
                                 New Item</button>
-                        </template> -->
+                        </template>
 
 
 
@@ -65,7 +64,7 @@
                         </template> -->
 
 
-                        <v-card>
+                        <v-card >
                             <v-card-title>
                                 <span class="text-h5">{{ formTitle }}</span>
                             </v-card-title>
@@ -74,41 +73,113 @@
                                 <v-container style="max-width: 100%;">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.firstname" disabled
+                                            <v-text-field outlined v-model="editedItem.firstname"
                                                 label="First name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.middlename" disabled
+                                            <v-text-field outlined v-model="editedItem.middlename"
                                                 label="Middle name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.lastname" disabled
+                                            <v-text-field outlined v-model="editedItem.lastname"
                                                 label="Last name"></v-text-field>
                                         </v-col>
-
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.relocation" disabled
+                                            <v-text-field outlined v-model="editedItem.address"
+                                                label="Address"></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="editedItem.contact" type="number"
+                                                label="Contact number"></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="editedItem.relocation"
                                                 label="Relocation site"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.blocklot" disabled
-                                                label="Block/Lot"></v-text-field>
+                                            <v-text-field outlined label="Relocation site name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.area" disabled
-                                                label="Area SQM"></v-text-field>
+                                            <v-text-field outlined label="Block and Lot"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.note" disabled
-                                                label="Notes"></v-text-field>
+                                            <v-text-field outlined v-model="numberValue" hide-details single-line
+                                                type="number" label="Area SQM" />
                                         </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <!-- <v-text-field outlined v-model="editedItem.note"
+                                                label="Notes"></v-text-field> -->
+
+                                            <div class="form-outline">
+                                                <textarea class="form-control" id="textAreaExample2" rows="4"></textarea>
+                                                <label class="form-label" for="textAreaExample2">Message</label>
+                                            </div>
+                                        </v-col>
+
+                                        <div v-show="isHidden">
+                                        <v-card>
+                                            <v-row>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined v-model="editedItem.firstname"
+                                                        label="First name"></v-text-field>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined v-model="editedItem.middlename"
+                                                        label="Middle name"></v-text-field>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined v-model="editedItem.lastname"
+                                                        label="Last name"></v-text-field>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined v-model="editedItem.address"
+                                                        label="Address"></v-text-field>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined v-model="editedItem.contact" type="number"
+                                                        label="Contact number"></v-text-field>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined v-model="editedItem.relocation"
+                                                        label="Relocation site"></v-text-field>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined label="Relocation site name"></v-text-field>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined label="Block and Lot"></v-text-field>
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <v-text-field outlined v-model="numberValue" hide-details single-line
+                                                        type="number" label="Area SQM" />
+                                                </v-col>
+                                                <v-col cols="12" sm="6" md="4">
+                                                    <!-- <v-text-field outlined v-model="editedItem.note"
+                                                label="Notes"></v-text-field> -->
+
+                                                    <div class="form-outline">
+                                                        <textarea class="form-control" id="textAreaExample2"
+                                                            rows="4"></textarea>
+                                                        <label class="form-label" for="textAreaExample2">Message</label>
+                                                    </div>
+
+                                                </v-col>
+
+
+                                            </v-row>
+                                        </v-card>
+                                    </div>
                                     </v-row>
                                 </v-container>
+
 
 
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer></v-spacer>
+                                <v-btn color="success" text  @click="isHidden = true">
+                                    Transfer
+                                </v-btn>
                                 <v-btn color="warning" text @click="close">
                                     Close
                                 </v-btn>
@@ -213,6 +284,7 @@ export default {
         search: '',
         dialog: false,
         dialogDelete: false,
+        isHidden:false,
         headers: [
             // {
             //     text: 'First name',

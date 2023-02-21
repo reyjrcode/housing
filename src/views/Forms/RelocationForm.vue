@@ -1,7 +1,6 @@
 <template>
-
     <div class="form-one">
-        <NavigationBar />
+        <HomeNavigation />
 
 
         <v-container fluid class="my-5">
@@ -42,8 +41,7 @@
                                                     autofocus></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="3">
-                                                <v-text-field label="Pangalan" clearable required
-                                                    outlined></v-text-field>
+                                                <v-text-field label="Pangalan" clearable required outlined></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="3">
                                                 <v-text-field label="Middle Name" clearable required
@@ -64,8 +62,7 @@
                                                     label="Civil Status" required outlined></v-select>
                                             </v-col>
                                             <v-col cols="12" sm="6">
-                                                <v-select
-                                                    :items="['Stado 1', 'Stado 2', 'Stado 3', 'Stado 4', 'Stado 5']"
+                                                <v-select :items="['Job order', 'Casual', 'Regular']"
                                                     label="Stado sa Pagpanarbaho" required outlined></v-select>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="6">
@@ -73,8 +70,8 @@
                                                     outlined></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6">
-                                                <v-text-field label="Pangalan sa Employer" type="address" clearable
-                                                    required outlined></v-text-field>
+                                                <v-text-field label="Pangalan sa Employer" type="address" clearable required
+                                                    outlined></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="3">
                                                 <v-select
@@ -103,12 +100,10 @@
                                                     outlined></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="3">
-                                                <v-text-field label="Apelyido" clearable required
-                                                    outlined></v-text-field>
+                                                <v-text-field label="Apelyido" clearable required outlined></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="3">
-                                                <v-text-field label="Trabaho" clearable required
-                                                    outlined></v-text-field>
+                                                <v-text-field label="Trabaho" clearable required outlined></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="3">
                                                 <v-select
@@ -154,9 +149,8 @@
                                                                 <div v-for="(item, index) in form" :key="item">
                                                                     <v-row>
                                                                         <v-col cols="12" md="2">
-                                                                            <v-text-field outlined label="Full name"
-                                                                                dense color="success"
-                                                                                v-model="item.FullName">
+                                                                            <v-text-field outlined label="Full name" dense
+                                                                                color="success" v-model="item.FullName">
                                                                             </v-text-field>
                                                                         </v-col>
                                                                         <v-col cols="12" md="2">
@@ -177,8 +171,7 @@
                                                                             </v-text-field>
                                                                         </v-col>
                                                                         <v-col cols="12" md="2">
-                                                                            <v-btn color="error"
-                                                                                @click="removeRow(index)">
+                                                                            <v-btn color="error" @click="removeRow(index)">
                                                                                 <v-icon>
                                                                                     mdi-delete
                                                                                 </v-icon>
@@ -194,8 +187,7 @@
                                                                         </v-col>
                                                                     </v-row>
                                                                 </div>
-                                                                <v-btn padding-top="3px" @click="saveItem"
-                                                                    color="success">
+                                                                <v-btn padding-top="3px" @click="saveItem" color="success">
                                                                     <v-icon>
                                                                         mdi-content-save
                                                                     </v-icon>
@@ -244,8 +236,8 @@
                                                     clearable></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="6">
-                                                <v-select :items="['SHFC', 'Home owner']" label="Type of applicant"
-                                                    required outlined> </v-select>
+                                                <v-select :items="['SHFC', 'Home owner']" label="Type of applicant" required
+                                                    outlined> </v-select>
                                             </v-col>
 
                                         </v-row>
@@ -344,7 +336,5 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
 

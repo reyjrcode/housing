@@ -2,7 +2,7 @@
 
     <div class="to-approved">
 
-        <AdminNavbar />
+        <HomeNavigation />
 
 
 

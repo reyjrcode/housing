@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-navigation-drawer v-model="drawer" color="#1B5E20" dark app>
+        <v-navigation-drawer v-model="drawer" color="#1B5E20" dark app width="345px">
             <v-layout column align-center>
                 <v-flex class="mt-5">
                     <v-btn class="mx-2" fab dark large color="purple" @click="$router.push({ name: 'EditProfile' })"
@@ -11,63 +11,165 @@
                             <!-- <img src="https://i1.sndcdn.com/artworks-qkXAmhFYFAo2JykO-CnLyqw-t500x500.jpg" alt="123" /> -->
                         </v-avatar>
                     </v-btn>
-
                     <p class="white--text subheading mt-1 text-center">Username</p>
                 </v-flex>
                 <v-flex>
                     <h3 class="white--text subheading mt-1 text-center">User Title</h3>
                 </v-flex>
-
                 <v-flex class="mt-4 mb-4">
                 </v-flex>
             </v-layout>
-
             <v-list shaped class="clickable">
-                <template v-for="item in items">
-                    <v-list-group v-if="item.children" :key="item.text" v-model="item.model"
-                        :prepend-icon="item['icon-ctr']" :append-icon="item.model ? item.icon : item['icon-alt']"
-                        active-class="orange--text">
+
+
+                <v-list-group :value="false"  prepend-icon="mdi-view-dashboard" active-class="orange--text">
+                    <template v-slot:activator>
+                        <v-list-item-title>Dashboard</v-list-item-title>
+                    </template>
+                    <v-list-group :value="false" no-action sub-group active-class="orange--text">
                         <template v-slot:activator>
-                            <v-list-item-content>
-                                <v-list-item-title>
-                                    {{ item.text }}
-                                </v-list-item-title>
+                            <v-list-item-content active-class="orange--text">
+                                <v-list-item-title>Dashboard</v-list-item-title>
                             </v-list-item-content>
                         </template>
-                        <v-list-item v-for="(child, i) in item.children" :key="i" route :to="child.route"
-                            active-class="orange--text">
-                            <v-list-item-action v-if="child.icon">
-                                <v-icon>{{ child.icon }}</v-icon>
-                            </v-list-item-action>
-                            <v-list-item-content>
-                                <v-list-item-title>
-                                    {{ child.text }}
-                                </v-list-item-title>
-                            </v-list-item-content>
+                        <v-list-item active-class="orange--text" v-for="item in dashboard" :key="item.text" router
+                            :to="item.route">
+                            <v-list-item-icon>
+                                <v-icon v-text="item.icon"></v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>
+                                <h6>{{ item.text }}</h6>
+                            </v-list-item-title>
+                            <v-list-item-icon>
+                                <v-icon v-text="icon"></v-icon>
+                            </v-list-item-icon>
                         </v-list-item>
                     </v-list-group>
-                    <v-list-item v-else :key="item.text" active-class="orange--text" route :to="item.route">
-                        <v-list-item-action>
-                            <v-icon>{{ item.icon }}</v-icon>
-                        </v-list-item-action>
-                        <v-list-item-content>
-                            <v-list-item-title>
-                                {{ item.text }}
-                            </v-list-item-title>
-                        </v-list-item-content>
-                    </v-list-item>
+                </v-list-group>
 
-                    <v-list-item v-else :key="item.text" active-class="orange--text" route :to="item.route">
-                        <v-list-item-action>
-                            <v-icon>{{ item.icon }}</v-icon>
-                        </v-list-item-action>
-                        <v-list-item-content>
+
+                <v-list-group :value="false" prepend-icon="mdi-format-list-checks" active-class="orange--text">
+                    <template v-slot:activator>
+                        <v-list-item-title> Relocation</v-list-item-title>
+                    </template>
+                    <v-list-group :value="false" no-action sub-group active-class="orange--text">
+                        <template v-slot:activator>
+                            <v-list-item-content >
+                                <v-list-item-title>Relocation form</v-list-item-title>
+                            </v-list-item-content>
+                        </template>
+                        <v-list-item active-class="orange--text" v-for="item in relocationform" :key="item.text" router
+                            :to="item.route">
+                            <v-list-item-icon>
+                                <v-icon v-text="item.icon"></v-icon>
+                            </v-list-item-icon>
                             <v-list-item-title>
-                                {{ item.text }}
+                                <h6>{{ item.text }}</h6>
                             </v-list-item-title>
-                        </v-list-item-content>
-                    </v-list-item>
-                </template>
+                            <v-list-item-icon>
+                                <v-icon v-text="icon"></v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+                    </v-list-group>
+
+
+
+                    <v-list-group :value="false" no-action sub-group active-class="orange--text">
+                        <template v-slot:activator>
+                            <v-list-item-content>
+                                <v-list-item-title>Relocation list</v-list-item-title>
+                            </v-list-item-content>
+                        </template>
+                        <v-list-item active-class="orange--text" v-for="item in relocationlist" :key="item.text" router
+                            :to="item.route">
+                            <v-list-item-icon>
+                                <v-icon v-text="item.icon"></v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>
+                                <h6>{{ item.text }}</h6>
+                            </v-list-item-title>
+                            <v-list-item-icon>
+                                <v-icon v-text="icon"></v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+                    </v-list-group>
+                </v-list-group>
+
+
+
+
+                <v-list-group :value="false" prepend-icon="mdi-format-list-checks" active-class="orange--text">
+                    <template v-slot:activator>
+                        <v-list-item-title>Shelter assistance</v-list-item-title>
+                    </template>
+                    <v-list-group :value="false" no-action sub-group   active-class="orange--text">
+                        <template v-slot:activator>
+                            <v-list-item-content>
+                                <v-list-item-title>Shelter forms</v-list-item-title>
+                            </v-list-item-content>
+                        </template>
+                        <v-list-item active-class="orange--text" v-for="item in shelterforms" :key="item.text" router
+                            :to="item.route">
+                            <v-list-item-icon>
+                                <v-icon v-text="item.icon"></v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>
+                                <h6>{{ item.text }}</h6>
+                            </v-list-item-title>
+                            <v-list-item-icon>
+                                <v-icon v-text="icon"></v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+                    </v-list-group>
+                    <v-list-group :value="false" no-action sub-group active-class="orange--text" >
+                        <template v-slot:activator>
+                            <v-list-item-content>
+                                <v-list-item-title>Shelter assistance list</v-list-item-title>
+                            </v-list-item-content>
+                        </template>
+                        <v-list-item active-class="orange--text" v-for="item in shelterlist" :key="item.text" router
+                            :to="item.route">
+                            <v-list-item-icon>
+                                <v-icon v-text="item.icon"></v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>
+                                <h6>{{ item.text }}</h6>
+                            </v-list-item-title>
+                            <v-list-item-icon>
+                                <v-icon v-text="icon"></v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+                    </v-list-group>
+                </v-list-group>
+
+
+                <v-list-group :value="false" prepend-icon="mdi-account-box" active-class="orange--text">
+                    <template v-slot:activator>
+                        <v-list-item-title>Actions</v-list-item-title>
+                    </template>
+                    <v-list-group :value="false" no-action sub-group active-class="orange--text">
+                        <template v-slot:activator>
+                            <v-list-item-content >
+                                <v-list-item-title>actions</v-list-item-title>
+                            </v-list-item-content>
+                        </template>
+                        <v-list-item active-class="orange--text" v-for="item in actions" :key="item.text" router
+                            :to="item.route">
+                            <v-list-item-icon>
+                                <v-icon v-text="item.icon"></v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>
+                                <h6>{{ item.text }}</h6>
+                            </v-list-item-title>
+                            <v-list-item-icon>
+                                <v-icon v-text="icon"></v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+                        <LogOut />
+                    </v-list-group>
+                </v-list-group>
+
+
             </v-list>
         </v-navigation-drawer>
         <v-app-bar color="#388E3C" dark app>
@@ -98,120 +200,109 @@
 export default {
     data: () => ({
         drawer: null,
-        items: [
-        { icon: "mdi-home", text: "Home", route: "/home-page" },
-        //     { icon: "mdi-view-dashboard", text: "Shelter dashboard", route: "/shelter-assistance-dashboard" },
-        //     // {
-        //     //     icon: "mdi mdi-account",
-        //     //     text: "Forms",
-        //     //     route: "/ScholarshipApplication",
-        //     // },
-        //     {
-        //         icon: "mdi-chevron-up",
-        //         "icon-alt": "mdi-chevron-down",
-        //         "icon-ctr": "mdi-note-multiple",
-        //         text: "Relocation",
-        //         model: false,
-        //         children: [
-        //             {
-        //                 icon: "mdi-note-plus",
-        //                 text: "Relocation Form",
-        //                 route: "/form-one",
-        //             },
-        //             {
-        //                 icon: "mdi-playlist-check",
-        //                 text: "Relocation applicants",
-        //                 route: "/relocation-list",
-        //             },
 
-        //         ],
-        //     },
-        //     {
-        //         icon: "mdi-chevron-up",
-        //         "icon-alt": "mdi-chevron-down",
-        //         "icon-ctr": "mdi-note-multiple",
-        //         text: "Shelter",
-        //         model: false,
-        //         children: [
-        //             {
-        //                 icon: "mdi-note-plus",
-        //                 text: "Shelter Assistance Form",
-        //                 route: "/shelter-assistance",
-        //             },
-        //             {
-        //                 icon: "mdi-playlist-check",
-        //                 text: "List of applicants",
-        //                 route: "/shelter-assistance-dialog",
-        //             },
-        //         ],
-        //     },
-        //     {
-        //         icon: "mdi-chevron-up",
-        //         "icon-alt": "mdi-chevron-down",
-        //         "icon-ctr": "mdi-account-box",
-        //         text: "List",
-        //         model: false,
-        //         children: [
-        //             {
-        //                 icon: "mdi-trophy",
-        //                 text: "Total awarded",
-        //                 route: "/total-awards",
-        //             },
-        //             {
-        //                 icon: "mdi-thumb-up",
-        //                 text: "Total approved",
-        //                 route: "/total-approved",
-        //             },
-        //             {
-        //                 icon: "mdi-home-variant",
-        //                 text: "Total project",
-        //                 route: "/total-project",
-        //             },
-        //             {
-        //                 icon: "mdi-block-helper",
-        //                 text: "Total blocklisted",
-        //                 route: "/total-blocklisted",
-        //             },
-        //         ],
-        //     },
-        //     {
-        //         icon: "mdi-chevron-up",
-        //         "icon-alt": "mdi-chevron-down",
-        //         "icon-ctr": "mdi-account-box",
-        //         text: "Actions",
-        //         model: false,
-        //         children: [
-        //             {
-        //                 icon: "mdi-wallet-travel",
-        //                 text: "Inventory",
-        //                 route: "/inventory",
-        //             },
-        //             {
-        //                 icon: "mdi-database-plus",
-        //                 text: "Add material",
-        //                 route: "/add-materials",
-        //             },
-        //             // {
-        //             //     icon: "mdi-thumb-up",
-        //             //     text: "List of applicants",
-        //             //     route: "/to-aproved",
-        //             // },
-        //             {
-        //                 icon: "mdi-printer",
-        //                 text: "Print",
-        //                 route: "/viewshit",
-        //             },
+        relocationform: [
 
+            {
+                icon: "mdi-note-plus",
+                text: "Relocation Form",
+                route: "/form-one",
+            },
+            {
+                icon: "mdi-note-plus",
+                text: "Housing project form",
+                route: "/housing-project-form",
+            },
+            {
+                icon: "mdi-playlist-check",
+                text: "Relocation applicants",
+                route: "/relocation-list",
+            },
+        ],
+        relocationlist: [
+            {
+                icon: "mdi-trophy",
+                text: "Awarding",
+                route: "/total-awards",
+            },
+            {
+                icon: "mdi-thumb-up",
+                text: "Tag & validated",
+                route: "/total-approved",
+            },
+            {
+                icon: "mdi-home-variant",
+                text: "Housing",
+                route: "/total-project",
+            },
+            {
+                icon: "mdi-block-helper",
+                text: "Total blocklisted",
+                route: "/total-blocklisted",
+            },
+        ],
 
-        //             {
+        shelterforms: [
+            {
+                icon: "mdi-note-plus",
+                text: "Shelter Form",
+                route: "/shelter-assistance",
+            },
+            {
+                icon: "mdi-playlist-check",
+                text: "List of applicants",
+                route: "/shelter-assistance-dialog",
+            },
+        ],
 
-        //                 icon: "mdi-logout-variant",
-        //                 text: "Log Out",
-        //                 route: "/log-in",
-        //             },
-        //         ],
-        //     },
-       ],
+        shelterlist: [
+            {
+                icon: "mdi-handshake",
+                text: "Bayanihan",
+                route: "/bayanihan-page",
+            },
+            {
+                icon: "mdi-human-handsup",
+                text: "Self help",
+                route: "/self-help",
+            },
+            {
+                icon: "mdi-weather-pouring ",
+                text: "Natural calamity",
+                route: "/natural-calamity",
+            },
+
+        ],
+        actions: [
+            {
+                icon: "mdi-wallet-travel",
+                text: "Inventory",
+                route: "/inventory",
+            },
+            {
+                icon: "mdi-database-plus",
+                text: "Add material",
+                route: "/add-materials",
+            },
+            {
+                icon: "mdi-printer",
+                text: "Print",
+                route: "/viewshit",
+            },
+        ],
+        dashboard: [
+            {
+                icon: "mdi-view-dashboard",
+                text: "Relocation",
+                route: "/dashboard",
+            },
+            {
+                icon: "mdi-view-dashboard",
+                text: "Shelter assistance",
+                route: "shelter-assistance-dashboard",
+            },
+
+        ],
     }),
     methods: {
         logout() {
@@ -222,6 +313,4 @@ export default {
     }
 };
 </script>
-<style>
-
-</style>
+<style></style>
