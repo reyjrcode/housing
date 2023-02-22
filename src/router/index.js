@@ -4,8 +4,8 @@ import Dashboard from '../views/DashBoard.vue'
 import AdminNavbar from '../views/Navigation/AdminNavbar.vue'
 import HomeShit from '../views/HomeView.vue'
 import FormOne from '../views/Forms/RelocationForm.vue'
-import RegistrationPage from '../views/Forms/RegisterPage.vue'
-import Loginpage from '../views/Forms/FinalLogin.vue'
+import RegistrationPage from '../views/loginandregister/RegisterPage.vue'
+import Loginpage from '../views/loginandregister/FinalLogin.vue'
 import UpdateShit from '../views/crud/Update.vue'
 import Views from '../views/crud/View.vue'
 import ViewerShit from '../views/ViewerShit.vue'
@@ -32,6 +32,10 @@ import HomePage from '../views/HomePage.vue'
 import ShelterAssistanceDialog from '../views/listing/ShelterAssistanceDialog.vue'
 import HousingPrjectForm from '../views/Forms/HousingPrjectForm.vue'
 import WelcomePage from '../views/shelterassistance/WelcomePage.vue'
+import LoginFirebase from '../views/loginandregister/LoginFirebase.vue'
+
+
+
 
 
 Vue.use(VueRouter)
@@ -203,8 +207,12 @@ const routes = [
     name: 'WelcomePage',
     component: WelcomePage
   },
-
-
+  {
+    path: '/login-firebase',
+    name: 'LoginFirebase',
+    component: LoginFirebase
+  },
+  
 
 ]
 
@@ -217,14 +225,14 @@ const router = new VueRouter({
 
 
 
-router.beforeEach((to, from, next) => {
+// router.beforeEach((to, from, next) => {
 
-  if (to.name == 'HomePage' && localStorage.getItem('auth') == null)
-    next({ name: 'Loginpage' });
-  else if (localStorage.getItem('auth') != null && (to.name == 'RegistrationPage' || to.name == 'Loginpage'))
-    next({ name: 'HomePage' });
-  else
-    next();
+//   if (to.name == 'HomePage' && localStorage.getItem('auth') == null)
+//     next({ name: 'Loginpage' });
+//   else if (localStorage.getItem('auth') != null && (to.name == 'RegistrationPage' || to.name == 'Loginpage'))
+//     next({ name: 'HomePage' });
+//   else
+//     next();
 
-});
+// });
 export default router

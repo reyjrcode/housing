@@ -25,35 +25,19 @@
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
-
                     <!-- 
                     <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
                         hide-details></v-text-field> -->
-
+                    <v-card-title>
+                        <span class="text-h5">{{ formTitle }}</span>
+                    </v-card-title>
                     <v-dialog v-model="dialog" max-width="1000px">
-
-
                         <template v-slot:activator="{ on, attrs }">
-
-
                             <button class="btn btn-outline-success" type="button" v-bind="attrs" v-on="on"> <v-icon>
                                     mdi-account-plus
                                 </v-icon>
                                 New Item</button>
                         </template>
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <!--  <template v-slot:activator="{ on, attrs }">
                             <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
                                 <v-icon>
@@ -62,12 +46,7 @@
                                 New Item
                             </v-btn>
                         </template> -->
-
-
-                        <v-card >
-                            <v-card-title>
-                                <span class="text-h5">{{ formTitle }}</span>
-                            </v-card-title>
+                        <v-card>
 
                             <v-card-text>
                                 <v-container style="max-width: 100%;">
@@ -107,77 +86,67 @@
                                                 type="number" label="Area SQM" />
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <!-- <v-text-field outlined v-model="editedItem.note"
-                                                label="Notes"></v-text-field> -->
+
 
                                             <div class="form-outline">
                                                 <textarea class="form-control" id="textAreaExample2" rows="4"></textarea>
                                                 <label class="form-label" for="textAreaExample2">Message</label>
                                             </div>
                                         </v-col>
-
                                         <div v-show="isHidden">
-                                        <v-card>
-                                            <v-row>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined v-model="editedItem.firstname"
-                                                        label="First name"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined v-model="editedItem.middlename"
-                                                        label="Middle name"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined v-model="editedItem.lastname"
-                                                        label="Last name"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined v-model="editedItem.address"
-                                                        label="Address"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined v-model="editedItem.contact" type="number"
-                                                        label="Contact number"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined v-model="editedItem.relocation"
-                                                        label="Relocation site"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined label="Relocation site name"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined label="Block and Lot"></v-text-field>
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <v-text-field outlined v-model="numberValue" hide-details single-line
-                                                        type="number" label="Area SQM" />
-                                                </v-col>
-                                                <v-col cols="12" sm="6" md="4">
-                                                    <!-- <v-text-field outlined v-model="editedItem.note"
-                                                label="Notes"></v-text-field> -->
-
-                                                    <div class="form-outline">
-                                                        <textarea class="form-control" id="textAreaExample2"
-                                                            rows="4"></textarea>
-                                                        <label class="form-label" for="textAreaExample2">Message</label>
-                                                    </div>
-
-                                                </v-col>
-
-
-                                            </v-row>
-                                        </v-card>
-                                    </div>
+                                            <v-card>
+                                                <v-row>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.firstname"
+                                                            label="First name"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.middlename"
+                                                            label="Middle name"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.lastname"
+                                                            label="Last name"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.address"
+                                                            label="Address"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.contact" type="number"
+                                                            label="Contact number"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.relocation"
+                                                            label="Relocation site"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined label="Relocation site name"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined label="Block and Lot"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="numberValue" hide-details
+                                                            single-line type="number" label="Area SQM" />
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <div class="form-outline">
+                                                            <textarea class="form-control" id="textAreaExample2"
+                                                                rows="4"></textarea>
+                                                            <label class="form-label" for="textAreaExample2">Message</label>
+                                                        </div>
+                                                    </v-col>
+                                                </v-row>
+                                            </v-card>
+                                        </div>
                                     </v-row>
                                 </v-container>
-
-
 
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer></v-spacer>
-                                <v-btn color="success" text  @click="isHidden = true">
+                                <v-btn color="success" text @click="isHidden = true">
                                     Transfer
                                 </v-btn>
                                 <v-btn color="warning" text @click="close">
@@ -188,18 +157,100 @@
                                 </v-btn>
                             </v-card-actions>
                         </v-card>
-
-
-
-
-
-
-
-
-
-
-
                     </v-dialog>
+
+                    <v-dialog v-model="isHidden" max-width="1000px">
+                        <v-card>
+
+                            <h3>Transfer form</h3>
+                            <v-card-text>
+                                <v-container style="max-width: 100%;">
+                                    <v-row>
+                                        <div>
+                                            <v-card>
+                                                <v-row>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.firstname"
+                                                            label="First name"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.middlename"
+                                                            label="Middle name"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.lastname"
+                                                            label="Last name"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.address"
+                                                            label="Address"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.contact" type="number"
+                                                            label="Contact number"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="editedItem.relocation"
+                                                            label="Relocation site"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined label="Relocation site name"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined label="Block and Lot"></v-text-field>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <v-text-field outlined v-model="numberValue" hide-details
+                                                            single-line type="number" label="Area SQM" />
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="3">
+                                                        <!-- <v-text-field label="Suffix" required hint="Jr., III, etc"></v-text-field> -->
+                                                        <v-select :items="['Jr.', 'Sr.']" label="Reason" outlined
+                                                            required></v-select>
+                                                    </v-col>
+                                                    <v-col cols="12" sm="6" md="4">
+                                                        <div class="form-outline">
+                                                            <textarea class="form-control" id="textAreaExample2"
+                                                                rows="4"></textarea>
+                                                            <label class="form-label" for="textAreaExample2">Message</label>
+                                                        </div>
+                                                    </v-col>
+
+                                                </v-row>
+                                            </v-card>
+                                        </div>
+                                    </v-row>
+                                </v-container>
+                            </v-card-text>
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn color="warning" text @click="isHidden = false">
+                                    Close
+                                </v-btn>
+                                <v-btn color="blue darken-1" text @click="isHidden = false">
+                                    Save
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <v-dialog v-model="dialogDelete" max-width="500px">
                         <v-card>
                             <v-card-title class="text-h6">Are you sure you want to add to blocklisted?</v-card-title>
@@ -284,7 +335,7 @@ export default {
         search: '',
         dialog: false,
         dialogDelete: false,
-        isHidden:false,
+        isHidden: false,
         headers: [
             // {
             //     text: 'First name',
@@ -322,7 +373,7 @@ export default {
 
     computed: {
         formTitle() {
-            return this.editedIndex === -1 ? 'New Item' : 'Applicant details'
+            return this.editedIndex === -1 ? '' : 'Applicant details'
         },
     },
 

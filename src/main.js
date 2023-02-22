@@ -7,6 +7,7 @@ import $ from "jquery";
 import "bootstrap/dist/css/bootstrap.min.css"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import firebase from './plugins/firebase'
 
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -46,6 +47,7 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 new Vue({
+  firebase, 
   router,
   store,
   vuetify,
