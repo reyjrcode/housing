@@ -28,11 +28,9 @@
                             <a class="btn   stretched-link" @click="$router.push({ name: 'ShelterDashBoard' })"> </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
 
         <div class="loader-wrapper">
             <div class="loader">
@@ -43,9 +41,6 @@
                 </span>
             </div>
         </div>
-
-
-
     </div>
 </template>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
@@ -56,10 +51,9 @@
 var $ = require("jquery");
 
 $(window).on("load", function () {
-    $(".loader-wrapper").fadeOut("slow");
+    // $(".loader-wrapper").fadeOut("slow");
     // window.location = window.location
-    
- 
+    $(".loader-wrapper").fadeOut(2000);
 }
 );
 

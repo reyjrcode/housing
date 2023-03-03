@@ -46,8 +46,6 @@ const actions = {
         let res = await axios.post(`${process.env.VUE_APP_API_URL}/block.php`, payload);
         // localStorage.setItem('auth', JSON.stringify(res.data.user));
         // commit('setAuth', res.data.user[0]);
-
-
     },
 
 }

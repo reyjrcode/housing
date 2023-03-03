@@ -105,10 +105,20 @@
                                             <v-col cols="12" sm="6" md="3">
                                                 <v-text-field label="Trabaho" clearable required outlined></v-text-field>
                                             </v-col>
-                                            <v-col cols="12" sm="3">
+                                            <!-- <v-col cols="12" sm="3">
                                                 <v-select
                                                     :items="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '12 pa taas ang mga anak']"
                                                     label="Pila ang anak" required outlined> </v-select>
+                                            </v-col> -->
+                                            <v-col cols="12" sm="3">
+                                                <v-select :items="['Walk-in', 'Walk-out']" label="Type of application"
+                                                    required outlined> </v-select>
+                                            </v-col>
+                                            <v-col cols="12" sm="6" md="3">
+                                                <v-img class="profile-image"
+                                                    src="https://img.freepik.com/premium-vector/happy-young-african-man-with-hand-pocket-waving-hand-say-hello-greeting-gesture_535862-1045.jpg"></v-img>
+                                                "Choose picture"
+                                                <input type="file" id="myFile" name="filename">
                                             </v-col>
                                         </v-row>
                                     </v-container>
@@ -236,8 +246,8 @@
                                                     clearable></v-text-field>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="6">
-                                                <v-select :items="['SHFC', 'Home owner']" label="Type of applicant" required
-                                                    outlined> </v-select>
+                                                <v-select :items="['SHFC/Home owner', 'Relocation site']"
+                                                    label="Type of applicant" required outlined> </v-select>
                                             </v-col>
 
                                         </v-row>
@@ -336,5 +346,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style>
+.profile-image {
+    max-width: 100%;
+    height: 200px;
+}
+</style>
 

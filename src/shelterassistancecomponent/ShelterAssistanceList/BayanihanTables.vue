@@ -181,6 +181,7 @@ export default {
                 {
                     baranngay: 'Apokon',
                     serve: 159,
+                    
                 },
                 {
                     baranngay: 'Bincungan',
@@ -189,6 +190,7 @@ export default {
                 {
                     baranngay: 'Busaon',
                     serve: 262,
+                    proirity:''
                 },
                 {
                     baranngay: 'Canocotan',

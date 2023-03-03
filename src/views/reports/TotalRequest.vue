@@ -1,25 +1,48 @@
 <template>
+
     <div class="to-approved">
+        <HomeNavigation/>
 
+        <div>
 
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <a class="navbar-brand">.</a>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" v-model="search" type="search" placeholder="Search"
+                        aria-label="Search">
 
+                </form>
+            </nav>
+        </div>
 
 
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title> <v-icon>
-
+                    <v-toolbar-title>Total Request <v-icon>
+                            mdi-thumb-up-outline
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
 
-                    <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-                        hide-details></v-text-field>
-                    <v-dialog v-model="dialog" max-width="700px">
+                    <!-- <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
+                        hide-details></v-text-field> -->
+                    <v-dialog v-model="dialog" max-width="1000px">
 
 
-                        <!-- <template v-slot:activator="{ on, attrs }">
+                        <template v-slot:activator="{ on, attrs }">
+
+
+                            <button class="btn btn-outline-success" type="button" v-bind="attrs" v-on="on"> <v-icon>
+                                    mdi-account-plus
+                                </v-icon>
+                                New Item</button>
+                        </template>
+
+
+
+<!-- 
+                        <template v-slot:activator="{ on, attrs }">
                         <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
                             New Item
                         </v-btn>
@@ -35,33 +58,50 @@
                                 <v-container style="max-width: 100%;">
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.firstname"
+                                            <v-text-field outlined v-model="editedItem.firstname"
                                                 label="First name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.middlename"
+                                            <v-text-field outlined v-model="editedItem.middlename"
                                                 label="Middle name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.lastname"
+                                            <v-text-field outlined v-model="editedItem.lastname"
                                                 label="Last name"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.address"
+                                            <v-text-field outlined v-model="editedItem.address"
                                                 label="Address"></v-text-field>
                                         </v-col>
-
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.contact"
+                                            <v-text-field outlined v-model="editedItem.contact" type="number"
                                                 label="Contact number"></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field disabled v-model="editedItem.status"
-                                                label="Status"></v-text-field>
+                                            <v-text-field outlined v-model="editedItem.relocation"
+                                                label="Relocation site"></v-text-field>
                                         </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined label="Relocation site name"></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined label="Block and Lot"></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="numberValue" hide-details single-line
+                                                type="number" label="Area SQM" />
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <!-- <v-text-field outlined v-model="editedItem.note"
+                                                label="Notes"></v-text-field> -->
 
+                                            <div class="form-outline">
+                                                <textarea class="form-control" id="textAreaExample2"
+                                                    rows="4"></textarea>
+                                                <label class="form-label" for="textAreaExample2">Message</label>
+                                            </div>
 
-
+                                        </v-col>
                                     </v-row>
                                 </v-container>
 
@@ -69,14 +109,15 @@
                             </v-card-text>
                             <v-card-actions>
                                 <v-spacer></v-spacer>
-                                <v-btn color="blue darken-1" text @click="close">
+                                <v-btn color="warning" text @click="close">
                                     Close
                                 </v-btn>
-                                <!-- <v-btn color="blue darken-1" text @click="save">
+                                <v-btn color="blue darken-1" text @click="save">
                                     Save
-                                </v-btn> -->
+                                </v-btn>
                             </v-card-actions>
                         </v-card>
+
 
 
 
@@ -120,6 +161,25 @@
 
 
 
+                <!-- <v-icon small @click="deleteItem(item)">
+                    mdi-delete
+                </v-icon> -->
+
+
+
+                <!-- <v-tooltip top color="red">
+                    <template v-slot:activator="{ on, }">
+                        <v-btn class="ma-2" outlined color="red" @click="deleteItem(item)" v-on="on">
+                            <v-icon>
+                                mdi-delete
+                            </v-icon>
+                        </v-btn>
+                    </template>
+                    <span>Click to add to blocklisted</span>
+                </v-tooltip> -->
+
+
+
             </template>
 
 
@@ -138,13 +198,13 @@
 
 /* eslint-disable */
 
-
+// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 
 
 export default {
 
     components: {
-
+        // AdminNavbar,
 
 
     },
@@ -165,8 +225,7 @@ export default {
             { text: 'Middle name', value: 'middlename' },
             { text: 'Last name', value: 'lastname' },
             { text: 'Address', value: 'address' },
-            { text: 'Contact Number', value: 'contact' },
-            { text: 'Status', value: 'status' },
+            { text: 'Contact', value: 'contact' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -214,8 +273,7 @@ export default {
                     middlename: 159,
                     lastname: 6.0,
                     address: 'Mankilam',
-                    contact: '09123456789',
-                    status: 'NOT PRIORITY',
+                    contact: '09123456789'
                 },
                 {
                     firstname: 'Ice cream sandwich',
@@ -223,7 +281,6 @@ export default {
                     lastname: 9.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'NOT PRIORITY',
                 },
                 {
                     firstname: 'Eclair',
@@ -231,7 +288,6 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'PRIORITY',
                 },
                 {
                     firstname: 'Cupcake',
@@ -239,7 +295,6 @@ export default {
                     lastname: 3.7,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'PRIORITY',
                 },
                 {
                     firstname: 'Gingerbread',
@@ -247,7 +302,6 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'NOT PRIORITY',
                 },
                 {
                     firstname: 'Jelly bean',
@@ -255,7 +309,6 @@ export default {
                     lastname: 0.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'NOT PRIORITY',
                 },
                 {
                     firstname: 'Lollipop',
@@ -263,7 +316,6 @@ export default {
                     lastname: 0.2,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'NOT PRIORITY',
                 },
                 {
                     firstname: 'Honeycomb',
@@ -271,7 +323,6 @@ export default {
                     lastname: 3.2,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'PRIORITY',
                 },
                 {
                     firstname: 'Donut',
@@ -279,7 +330,6 @@ export default {
                     lastname: 25.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'PRIORITY',
                 },
                 {
                     firstname: 'KitKat',
@@ -287,7 +337,6 @@ export default {
                     lastname: 26.0,
                     address: 'Mankilam',
                     contact: '09123456789',
-                    status: 'NOT PRIORITY',
                 },
             ]
         },

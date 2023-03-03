@@ -25,7 +25,6 @@
                     <label for="formFileSm" class="form-label"> </label>
                     <input id="formFileSm" max-width="70" type="file" />
                 </v-list-item>
-
                 <v-card-content>
                     <v-card class="mx-auto" max-width="600" outlined>
                         <v-text-field label="First name" placeholder="First name" outlined></v-text-field>
@@ -39,19 +38,15 @@
                         </v-card-actions>
                     </v-card>
                 </v-card-content>
-
             </v-card>
         </div>
     </div>
 </template>
 
 <script>
-
 /* eslint-disable */
 
 // import AdminNavbar from '../Navigation/AdminNavbar.vue';
-
-
 export default {
 
     components: {

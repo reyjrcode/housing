@@ -12,3 +12,10 @@
         </div>
     </div>
 </template>
+
+<style>
+.card-body {
+    min-height: 150px;
+}
+
+</style>

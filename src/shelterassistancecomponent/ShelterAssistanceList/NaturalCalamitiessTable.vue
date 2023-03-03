@@ -93,6 +93,7 @@ export default {
         headers: [
             { text: 'Baranngay', value: 'baranngay' },
             { text: 'Serve', value: 'serve' },
+            
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],

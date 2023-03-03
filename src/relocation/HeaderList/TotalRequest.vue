@@ -3,10 +3,10 @@
 
         <div class="card-body">
             <h3 class="card-title"> <v-icon dark right color="black">
-                    mdi-home-variant
-                </v-icon> Total project</h3>
-            <p class="card-text">11,123 total project</p>
-            <v-btn text color="#7a0769" @click="$router.push({ name: 'TotalProject' })">
+                    mdi-note-text
+                </v-icon> Total request</h3>
+            <p class="card-text">13,123 total project</p>
+            <v-btn text color="#7a0769" @click="$router.push({ name: 'TotalRequest' })">
                 <v-icon>mdi-magnify-plus</v-icon> More info
             </v-btn>
         </div>

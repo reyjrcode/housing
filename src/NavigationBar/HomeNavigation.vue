@@ -22,7 +22,7 @@
             <v-list shaped class="clickable">
 
 
-                <v-list-group :value="false"  prepend-icon="mdi-view-dashboard" active-class="orange--text">
+                <v-list-group :value="false" prepend-icon="mdi-view-dashboard" active-class="orange--text">
                     <template v-slot:activator>
                         <v-list-item-title>Dashboard</v-list-item-title>
                     </template>
@@ -54,7 +54,7 @@
                     </template>
                     <v-list-group :value="false" no-action sub-group active-class="orange--text">
                         <template v-slot:activator>
-                            <v-list-item-content >
+                            <v-list-item-content>
                                 <v-list-item-title>Relocation form</v-list-item-title>
                             </v-list-item-content>
                         </template>
@@ -102,7 +102,7 @@
                     <template v-slot:activator>
                         <v-list-item-title>Shelter assistance</v-list-item-title>
                     </template>
-                    <v-list-group :value="false" no-action sub-group   active-class="orange--text">
+                    <v-list-group :value="false" no-action sub-group active-class="orange--text">
                         <template v-slot:activator>
                             <v-list-item-content>
                                 <v-list-item-title>Shelter forms</v-list-item-title>
@@ -121,7 +121,7 @@
                             </v-list-item-icon>
                         </v-list-item>
                     </v-list-group>
-                    <v-list-group :value="false" no-action sub-group active-class="orange--text" >
+                    <v-list-group :value="false" no-action sub-group active-class="orange--text">
                         <template v-slot:activator>
                             <v-list-item-content>
                                 <v-list-item-title>Shelter assistance list</v-list-item-title>
@@ -149,7 +149,7 @@
                     </template>
                     <v-list-group :value="false" no-action sub-group active-class="orange--text">
                         <template v-slot:activator>
-                            <v-list-item-content >
+                            <v-list-item-content>
                                 <v-list-item-title>actions</v-list-item-title>
                             </v-list-item-content>
                         </template>
@@ -187,10 +187,18 @@
                     </v-list-item>
                 </v-list>
             </v-menu>
-            <v-btn elevation="4" color="error" @click="logout">
+            <!-- <v-btn elevation="4" color="error" @click="logout">
                 <span>LOG OUT</span>
                 <v-icon right> mdi-exit-to-app</v-icon>
-            </v-btn>
+            </v-btn> -->
+
+
+            <nav class="navbar">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+                </form>
+            </nav>
         </v-app-bar>
     </div>
 </template>

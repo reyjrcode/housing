@@ -56,6 +56,10 @@
                                             <v-text-field disabled v-model="editedItem.contact"
                                                 label="Contact number"></v-text-field>
                                         </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field disabled v-model="editedItem.status"
+                                                label="Status"></v-text-field>
+                                        </v-col>
 
 
                                     </v-row>
@@ -162,7 +166,7 @@ export default {
             { text: 'Last name', value: 'lastname' },
             { text: 'Address', value: 'address' },
             { text: 'Contact Number', value: 'contact' },
-
+            { text: 'Status', value: 'status' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -211,6 +215,7 @@ export default {
                     lastname: 6.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'PRIORITY',
 
                 },
                 {
@@ -219,6 +224,7 @@ export default {
                     lastname: 9.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'NOT PRIORITY',
 
                 },
                 {
@@ -227,6 +233,7 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'NOT PRIORITY',
 
                 },
                 {
@@ -235,6 +242,7 @@ export default {
                     lastname: 3.7,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'PRIORITY',
 
                 },
                 {
@@ -243,6 +251,7 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'PRIORITY',
 
                 },
                 {
@@ -251,6 +260,7 @@ export default {
                     lastname: 0.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'NOT PRIORITY',
 
                 },
                 {
@@ -259,6 +269,7 @@ export default {
                     lastname: 0.2,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'PRIORITY',
 
                 },
                 {
@@ -267,6 +278,7 @@ export default {
                     lastname: 3.2,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'NOT PRIORITY',
 
                 },
                 {
@@ -275,6 +287,7 @@ export default {
                     lastname: 25.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'PRIORITY',
 
                 },
                 {
@@ -283,6 +296,7 @@ export default {
                     lastname: 26.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    status:'PRIORITY',
 
                 },
             ]

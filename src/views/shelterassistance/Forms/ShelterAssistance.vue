@@ -289,13 +289,14 @@
 
                                         <div class="row">
                                             <div class="col-6">
-                                                <h2>Natural Calamity</h2>
+                                                <h2>Special concern</h2>
                                                 <select class="form-select form-select-lg mb-3"
                                                     aria-label=".form-select-lg example">
-                                                    <option selected>Natural Calamity</option>
+                                                    <option selected>Special concern</option>
                                                     <option value="Baha">Baha</option>
                                                     <option value="Sunog">Sunog</option>
                                                     <option value="Linog">Linog</option>
+                                                    <option value="Bagyo">Bagyo</option>
                                                 </select>
                                             </div>
                                         </div>

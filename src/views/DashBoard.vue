@@ -10,15 +10,29 @@
                     <total-approved />
                 </div>
                 <div class="col" data-aos="flip-left">
+                    <TotalRequest />
+                </div>
+                <!-- <div class="col" data-aos="flip-left">
+                    <total-project />
+                </div>
+                <div class="col" data-aos="flip-left">
+                    <toal-blocklisted />
+                </div> -->
+            </div>
+            <div class="row">
+                <div class="col" data-aos="flip-left">
                     <total-project />
                 </div>
                 <div class="col" data-aos="flip-left">
                     <toal-blocklisted />
                 </div>
+                <div class="col" data-aos="flip-left">
+                    <TotalWalkIn />
+                </div>
             </div>
         </div>
 
-
+        
         <div class="container">
             <div class="row">
                 <div class="col-sm">
@@ -26,10 +40,11 @@
                     <PieChartRelocation />
                     <!-- </div> -->
                 </div>
+                <br/> <br/>
                 <div class="col-sm">
                     <div class="container">
                         <div class="row row-cols-2">
-                            <div class="col"  data-aos="fade-up">
+                            <div class="col" data-aos="fade-up">
                                 <kilidsa-creek />
                             </div>
                             <div class="col" data-aos="fade-down">

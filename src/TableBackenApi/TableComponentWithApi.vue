@@ -20,12 +20,6 @@
                         style='height:700px;display:block;overflow:scroll;width:max-content' id="customers">
                         <thead>
                             <tr>
-                                <!-- <th scope="col">ID</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Password</th>
-                                <th scope="col">Actions</th> -->
                                 <th scope="col">ID</th>
                                 <th scope="col">First Name</th>
                                 <th scope="col">Last Name</th>
@@ -38,9 +32,7 @@
                         </thead>
 
                         <tbody>
-
                             <tr v-for="(user) in filteredItems" v-bind:key="user.id">
-
                                 <td>
                                     {{ user.id }}
                                 </td>
@@ -101,26 +93,13 @@
 
 <script>
 /* eslint-disable */
-
 import { mapActions, mapGetters } from 'vuex';
-
-
-
 export default {
-
-
-
-
-
     data: () => ({
         search: '',
         // loading: false,
         dialog: false
-
-
     }),
-
-
     computed: {
         // filter search
         ...mapGetters('users', { users: 'getUsers' }),
@@ -130,10 +109,6 @@ export default {
             })
         },
         // end of filter search 
-
-
-
-
     },
     methods: {
         ...mapActions('users', ['fetchUsers', 'Deleteuser']),
@@ -155,8 +130,7 @@ export default {
     },
     created() {
         this.fetchUsers();
-    },
-
+    }, 
 }
 </script>
 

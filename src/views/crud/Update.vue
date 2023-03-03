@@ -10,7 +10,6 @@
                     Update user
                 </p>
             </v-card-text>
-
             <v-text-field label="First Name" placeholder="First Name" v-model="firstname" outlined></v-text-field>
             <v-text-field label="Last Name" placeholder="Last Name" v-model="lastname" outlined></v-text-field>
             <v-text-field label="User Name" placeholder="User Name" v-model="username" outlined></v-text-field>

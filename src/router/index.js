@@ -33,10 +33,8 @@ import ShelterAssistanceDialog from '../views/listing/ShelterAssistanceDialog.vu
 import HousingPrjectForm from '../views/Forms/HousingPrjectForm.vue'
 import WelcomePage from '../views/shelterassistance/WelcomePage.vue'
 import LoginFirebase from '../views/loginandregister/LoginFirebase.vue'
-
-
-
-
+import TotalRequest from '../views/reports/TotalRequest'
+import TotalWalkin from '../views/reports/TotalWalkin.vue'
 
 Vue.use(VueRouter)
 
@@ -212,8 +210,21 @@ const routes = [
     name: 'LoginFirebase',
     component: LoginFirebase
   },
+  {
+    path: '/total-request',
+    name: 'TotalRequest',
+    component: TotalRequest
+  },
+  {
+    path: '/total-walk-in',
+    name: 'TotalWalkin',
+    component: TotalWalkin
+  },
+  
   
 
+
+  
 ]
 
 
@@ -225,14 +236,14 @@ const router = new VueRouter({
 
 
 
-// router.beforeEach((to, from, next) => {
+router.beforeEach((to, from, next) => {
 
-//   if (to.name == 'HomePage' && localStorage.getItem('auth') == null)
-//     next({ name: 'Loginpage' });
-//   else if (localStorage.getItem('auth') != null && (to.name == 'RegistrationPage' || to.name == 'Loginpage'))
-//     next({ name: 'HomePage' });
-//   else
-//     next();
+  if (to.name == 'HomePage' && localStorage.getItem('auth') == null)
+    next({ name: 'Loginpage' });
+  else if (localStorage.getItem('auth') != null && (to.name == 'RegistrationPage' || to.name == 'Loginpage'))
+    next({ name: 'HomePage' });
+  else
+    next();
+});
 
-// });
 export default router
