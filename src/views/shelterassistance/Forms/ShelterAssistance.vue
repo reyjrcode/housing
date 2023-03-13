@@ -69,8 +69,7 @@
                                                     label="Civil Status" required outlined></v-select>
                                             </v-col>
                                             <v-col cols="12" sm="6">
-                                                <v-select
-                                                    :items="['Stado 1', 'Stado 2', 'Stado 3', 'Stado 4', 'Stado 5']"
+                                                <v-select :items="['Job order', 'Casual', 'Regular']"
                                                     label="Stado sa Pagpanarbaho" required outlined></v-select>
                                             </v-col>
                                             <v-col cols="12" sm="6" md="6">
@@ -116,6 +115,12 @@
                                                 <v-select
                                                     :items="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '12 pa taas ang mga anak']"
                                                     label="Pila ang anak" required outlined> </v-select>
+                                            </v-col>
+                                            <v-col cols="12" sm="6" md="3">
+                                                <v-img class="profile-image"
+                                                    src="https://img.freepik.com/premium-vector/happy-young-african-man-with-hand-pocket-waving-hand-say-hello-greeting-gesture_535862-1045.jpg"></v-img>
+                                                "Choose picture"
+                                                <input type="file" id="myFile" name="filename">
                                             </v-col>
                                         </v-row>
                                     </v-container>

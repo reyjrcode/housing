@@ -7,7 +7,6 @@
             pdf-format="a4" :pdf-margin="10" pdf-orientation="landscape" pdf-content-width="800px"
             @progress="onProgress($event)" ref="html2Pdf">
             <section slot="pdf-content">
-
                 <ContentToPrint />
             </section>
         </vue-html2pdf>
@@ -16,6 +15,7 @@
         </div>
     </div>
 </template>
+
 
 <script>/* eslint-disable */
 import VueHtml2pdf from "vue-html2pdf";

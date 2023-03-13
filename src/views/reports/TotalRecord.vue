@@ -1,7 +1,6 @@
 <template>
-
     <div class="to-approved">
-        <HomeNavigation/>
+        <HomeNavigation />
 
         <div>
 
@@ -19,8 +18,8 @@
         <v-data-table :headers="headers" :items="desserts" :search="search" sort-by="calories" class="elevation-1">
             <template v-slot:top>
                 <v-toolbar flat>
-                    <v-toolbar-title>Total Request <v-icon>
-                            mdi-thumb-up-outline
+                    <v-toolbar-title>Total Record <v-icon>
+                        mdi-book-open-page-variant
                         </v-icon> </v-toolbar-title>
                     <v-divider class="mx-4" inset vertical></v-divider>
                     <v-spacer></v-spacer>
@@ -41,7 +40,7 @@
 
 
 
-<!-- 
+                        <!-- 
                         <template v-slot:activator="{ on, attrs }">
                         <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
                             New Item
@@ -96,8 +95,7 @@
                                                 label="Notes"></v-text-field> -->
 
                                             <div class="form-outline">
-                                                <textarea class="form-control" id="textAreaExample2"
-                                                    rows="4"></textarea>
+                                                <textarea class="form-control" id="textAreaExample2" rows="4"></textarea>
                                                 <label class="form-label" for="textAreaExample2">Message</label>
                                             </div>
 
@@ -226,6 +224,7 @@ export default {
             { text: 'Last name', value: 'lastname' },
             { text: 'Address', value: 'address' },
             { text: 'Contact', value: 'contact' },
+            { text: 'Date', value: 'date' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -273,7 +272,8 @@ export default {
                     middlename: 159,
                     lastname: 6.0,
                     address: 'Mankilam',
-                    contact: '09123456789'
+                    contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'Ice cream sandwich',
@@ -281,6 +281,7 @@ export default {
                     lastname: 9.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'Eclair',
@@ -288,6 +289,7 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'Cupcake',
@@ -295,6 +297,7 @@ export default {
                     lastname: 3.7,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'Gingerbread',
@@ -302,6 +305,7 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'Jelly bean',
@@ -309,6 +313,7 @@ export default {
                     lastname: 0.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'Lollipop',
@@ -316,6 +321,7 @@ export default {
                     lastname: 0.2,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'Honeycomb',
@@ -323,6 +329,7 @@ export default {
                     lastname: 3.2,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'Donut',
@@ -330,6 +337,7 @@ export default {
                     lastname: 25.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
                 {
                     firstname: 'KitKat',
@@ -337,6 +345,7 @@ export default {
                     lastname: 26.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date:'03/13/2023'
                 },
             ]
         },

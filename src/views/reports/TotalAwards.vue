@@ -53,27 +53,28 @@
                                     <v-row>
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined v-model="editedItem.firstname" label="First name"
-                                                required></v-text-field>
+                                                disabled></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined v-model="editedItem.middlename" label="Middle name"
+                                                disabled required></v-text-field>
+                                        </v-col>
+                                        <v-col cols="12" sm="6" md="4">
+                                            <v-text-field outlined v-model="editedItem.lastname" label="Last name" disabled
                                                 required></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.lastname" label="Last name"
+                                            
+                                            <v-text-field outlined v-model="editedItem.address" label="Address" disabled
                                                 required></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.address" label="Address"
-                                                required></v-text-field>
-                                        </v-col>
-                                        <v-col cols="12" sm="6" md="4">
-                                            <v-text-field outlined v-model="editedItem.contact" type="number"
+                                            <v-text-field outlined v-model="editedItem.contact" type="number" disabled
                                                 label="Contact number" required></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined v-model="editedItem.relocation" label="Relocation site"
-                                                required></v-text-field>
+                                                disabled required></v-text-field>
                                         </v-col>
                                         <!-- <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined v-model="editedItem.relocation"
@@ -81,17 +82,17 @@
                                         </v-col> -->
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined v-model="editedItem.blocklot" label="Block and Lot"
-                                                required></v-text-field>
+                                                disabled required></v-text-field>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined v-model="editedItem.area" hide-details single-line
-                                                type="number" label="Area SQM" required />
+                                                type="number" label="Area SQM" disabled required />
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
 
                                             <div class="form-outline">
                                                 <textarea class="form-control" id="textAreaExample2"
-                                                    v-model="editedItem.note" rows="4"></textarea>
+                                                    v-model="editedItem.note" rows="4" disabled></textarea>
                                                 <label class="form-label" for="textAreaExample2">Remarks</label>
                                             </div>
                                         </v-col>
@@ -124,7 +125,7 @@
                             <v-card-text>
                                 <v-container style="max-width: 100%;">
                                     <v-row>
-                                        
+
                                         <v-col cols="12" sm="6" md="4">
                                             <v-text-field outlined v-model="editedItem.firstname" label="First name"
                                                 required></v-text-field>
@@ -169,11 +170,11 @@
                                             </div>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
-                                                <v-img class="profile-image"
-                                                    src="https://img.freepik.com/premium-vector/happy-young-african-man-with-hand-pocket-waving-hand-say-hello-greeting-gesture_535862-1045.jpg"></v-img>
-                                                "Choose picture"
-                                                <input type="file" id="myFile" name="filename">
-                                            </v-col>
+                                            <v-img class="profile-image"
+                                                src="https://img.freepik.com/premium-vector/happy-young-african-man-with-hand-pocket-waving-hand-say-hello-greeting-gesture_535862-1045.jpg"></v-img>
+                                            "Choose picture"
+                                            <input type="file" id="myFile" name="filename">
+                                        </v-col>
                                     </v-row>
                                 </v-container>
                             </v-card-text>
@@ -247,11 +248,11 @@
                                                         </div>
                                                     </v-col>
                                                     <v-col cols="12" sm="6" md="4">
-                                                <v-img class="profile-image"
-                                                    src="https://img.freepik.com/premium-vector/happy-young-african-man-with-hand-pocket-waving-hand-say-hello-greeting-gesture_535862-1045.jpg"></v-img>
-                                                "Choose picture"
-                                                <input type="file" id="myFile" name="filename">
-                                            </v-col>
+                                                        <v-img class="profile-image"
+                                                            src="https://img.freepik.com/premium-vector/happy-young-african-man-with-hand-pocket-waving-hand-say-hello-greeting-gesture_535862-1045.jpg"></v-img>
+                                                        "Choose picture"
+                                                        <input type="file" id="myFile" name="filename">
+                                                    </v-col>
                                                 </v-row>
                                             </v-card>
                                         </div>
@@ -299,7 +300,7 @@
                     <span>Click to view data</span>
                 </v-tooltip>
 
-                <v-tooltip top color="red" location="start">
+                <!-- <v-tooltip top color="red" location="start">
                     <template v-slot:activator="{ on, }">
                         <v-btn class="ma-2" outlined color="red" @click="deleteItem(item)">
                             <v-icon>
@@ -308,7 +309,7 @@
                         </v-btn>
                     </template>
                     <span>Click to delete data</span>
-                </v-tooltip>
+                </v-tooltip> -->
 
                 <!-- 
                 <v-icon small @click="deleteItem(item)">
@@ -340,12 +341,10 @@
 
 /* eslint-disable */
 
-// import AdminNavbar from '../Navigation/AdminNavbar.vue';
 
 export default {
 
     components: {
-        // AdminNavbar,
     },
     data: () => ({
         samedetails: false,
@@ -422,8 +421,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/03/2023',
-                    dangerzone:'Flood prone',
+                    date: '03/03/2023',
+                    dangerzone: 'Flood prone',
                 },
                 {
                     firstname: 'Ice cream sandwich',
@@ -433,8 +432,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/04/2023',
-                    dangerzone:'Kilid sa sapa',
+                    date: '03/04/2023',
+                    dangerzone: 'Kilid sa sapa',
                 },
                 {
                     firstname: 'Eclair',
@@ -444,8 +443,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/05/2023',
-                    dangerzone:'Flood prone',
+                    date: '03/05/2023',
+                    dangerzone: 'Flood prone',
                 },
                 {
                     firstname: 'Cupcake',
@@ -455,8 +454,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/06/2023',
-                    dangerzone:'NPC line',
+                    date: '03/06/2023',
+                    dangerzone: 'NPC line',
                 },
                 {
                     firstname: 'Gingerbread',
@@ -466,8 +465,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/07/2023',
-                    dangerzone:'Landslide area',
+                    date: '03/07/2023',
+                    dangerzone: 'Landslide area',
                 },
                 {
                     firstname: 'Jelly bean',
@@ -477,8 +476,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/08/2023',
-                    dangerzone:'Flood area',
+                    date: '03/08/2023',
+                    dangerzone: 'Flood area',
                 },
                 {
                     firstname: 'Lollipop',
@@ -490,8 +489,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/09/2023',
-                    dangerzone:'Kilid sa sapa',
+                    date: '03/09/2023',
+                    dangerzone: 'Kilid sa sapa',
                 },
                 {
                     firstname: 'Honeycomb',
@@ -501,8 +500,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/10/2023',
-                    dangerzone:'Others',
+                    date: '03/10/2023',
+                    dangerzone: 'Others',
                 },
                 {
                     firstname: 'Donut',
@@ -512,8 +511,8 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/11/2023',
-                    dangerzone:'Kilid sa sapa',
+                    date: '03/11/2023',
+                    dangerzone: 'Kilid sa sapa',
                 },
                 {
                     firstname: 'KitKat',
@@ -523,9 +522,9 @@ export default {
                     blocklot: 'sample block / lot',
                     area: '123',
                     note: 'sample note',
-                    date:'03/12/2023',
-                    dangerzone:'Others',
-                    
+                    date: '03/12/2023',
+                    dangerzone: 'Others',
+
                 },
             ]
         },

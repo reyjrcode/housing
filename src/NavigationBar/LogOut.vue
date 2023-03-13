@@ -1,10 +1,10 @@
 <template>
-    <div class="div">
+        <div class="log-out">
 
-        <v-btn block elevation="4" color="green" @click="logout">
-            <span>LOG OUT</span>
-            <v-icon right> mdi-exit-to-app</v-icon></v-btn>
-    </div>
+            <v-btn class="center-btn" block elevation="4" color="red" @click="logout">
+                <span>LOG OUT</span>
+                <v-icon right> mdi-exit-to-app</v-icon></v-btn>
+        </div>
 </template>
 <script>
 export default {
@@ -17,3 +17,8 @@ export default {
     }
 }
 </script>
+
+
+<style>
+
+</style>

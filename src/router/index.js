@@ -33,9 +33,9 @@ import ShelterAssistanceDialog from '../views/listing/ShelterAssistanceDialog.vu
 import HousingPrjectForm from '../views/Forms/HousingPrjectForm.vue'
 import WelcomePage from '../views/shelterassistance/WelcomePage.vue'
 import LoginFirebase from '../views/loginandregister/LoginFirebase.vue'
-import TotalRequest from '../views/reports/TotalRequest'
+import TotalRecord from '../views/reports/TotalRecord'
 import TotalWalkin from '../views/reports/TotalWalkin.vue'
-
+import SortByBarrangay from '../views/reports/SortByBarrangay.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -47,7 +47,8 @@ const routes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: Dashboard,
+    // meta: { title: 'About - MyApp' }
   },
   {
     path: '/navigation',
@@ -211,16 +212,20 @@ const routes = [
     component: LoginFirebase
   },
   {
-    path: '/total-request',
-    name: 'TotalRequest',
-    component: TotalRequest
+    path: '/total-record',
+    name: 'TotalRecord',
+    component: TotalRecord
   },
   {
     path: '/total-walk-in',
     name: 'TotalWalkin',
     component: TotalWalkin
   },
-  
+  {
+    path:'/sort-by-baranggay',
+    name:'SortByBarrangay',
+    component: SortByBarrangay
+  }
   
 
 

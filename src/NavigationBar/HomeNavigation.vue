@@ -173,7 +173,7 @@
             </v-list>
         </v-navigation-drawer>
         <v-app-bar color="#388E3C" dark app>
-            <v-app-bar-nav-icon color="#000000" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon class="drawer-button" color="#FFFFFF" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
             <v-toolbar-title class="text-uppercase">
                 <span class="font-weight-light">City Housing and Land Management Office</span>
@@ -240,9 +240,10 @@ export default {
             },
             {
                 icon: "mdi-home-variant",
-                text: "Housing",
+                text: "Sort by baranggay",
                 route: "/total-project",
             },
+
             {
                 icon: "mdi-block-helper",
                 text: "Total blocklisted",
@@ -321,4 +322,10 @@ export default {
     }
 };
 </script>
-<style></style>
+<style>
+.drawer-button {
+    background: #388E3C;
+    border-radius: 5px;
+    border: none;
+}
+</style>

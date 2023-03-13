@@ -1,7 +1,6 @@
 <template>
-
     <div class="to-approved">
-        <HomeNavigation/>
+        <HomeNavigation />
 
         <div>
 
@@ -31,17 +30,20 @@
 
 
                         <template v-slot:activator="{ on, attrs }">
-
-
-                            <button class="btn btn-outline-success" type="button" v-bind="attrs" v-on="on"> <v-icon>
+                            <button class="btn btn-outline-success" type="button" v-bind="attrs" v-on="on">
+                                <v-icon class="btn-baranggay-icon">
                                     mdi-account-plus
                                 </v-icon>
                                 New Item</button>
+                            <button class="btn-baranggay" type="button" @click="$router.push({ name: 'SortByBarrangay' })"> <v-icon>
+                                    mdi-home-assistant
+                                </v-icon>
+                                <span class="baranggay-text">Sort by baranggay</span></button>
                         </template>
 
 
 
-<!-- 
+                        <!-- 
                         <template v-slot:activator="{ on, attrs }">
                         <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on">
                             New Item
@@ -96,8 +98,7 @@
                                                 label="Notes"></v-text-field> -->
 
                                             <div class="form-outline">
-                                                <textarea class="form-control" id="textAreaExample2"
-                                                    rows="4"></textarea>
+                                                <textarea class="form-control" id="textAreaExample2" rows="4"></textarea>
                                                 <label class="form-label" for="textAreaExample2">Message</label>
                                             </div>
 
@@ -226,6 +227,7 @@ export default {
             { text: 'Last name', value: 'lastname' },
             { text: 'Address', value: 'address' },
             { text: 'Contact', value: 'contact' },
+            { text: 'Date Validated', value: 'date' },
             { text: 'Actions', value: 'actions', sortable: false },
         ],
         desserts: [],
@@ -273,7 +275,8 @@ export default {
                     middlename: 159,
                     lastname: 6.0,
                     address: 'Mankilam',
-                    contact: '09123456789'
+                    contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'Ice cream sandwich',
@@ -281,6 +284,7 @@ export default {
                     lastname: 9.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'Eclair',
@@ -288,6 +292,7 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'Cupcake',
@@ -295,6 +300,7 @@ export default {
                     lastname: 3.7,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'Gingerbread',
@@ -302,6 +308,7 @@ export default {
                     lastname: 16.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'Jelly bean',
@@ -309,6 +316,7 @@ export default {
                     lastname: 0.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'Lollipop',
@@ -316,6 +324,7 @@ export default {
                     lastname: 0.2,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'Honeycomb',
@@ -323,6 +332,7 @@ export default {
                     lastname: 3.2,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'Donut',
@@ -330,6 +340,7 @@ export default {
                     lastname: 25.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
                 {
                     firstname: 'KitKat',
@@ -337,6 +348,7 @@ export default {
                     lastname: 26.0,
                     address: 'Mankilam',
                     contact: '09123456789',
+                    date: "03/09/2023",
                 },
             ]
         },
@@ -387,3 +399,32 @@ export default {
 
 
 </script>
+
+<style>
+.btn-baranggay {
+    width: 180px;
+    height: 38px;
+    margin-right: 10px;
+    background-color: orange;
+}
+
+.btn-baranggay:hover {
+    background-color: green;
+}
+
+.btn-baranggay:active {
+    opacity: .5;
+}
+
+.baranggay-text {
+    font-weight: bold;
+    color: black;
+    font-size: 12px;
+    margin-left: 20px;
+}
+.btn-baranggay-icon{
+    color:black;
+    width:20px;
+    height:20px;
+}
+</style>

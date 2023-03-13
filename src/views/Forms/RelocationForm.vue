@@ -346,10 +346,15 @@ export default {
 }
 </script>
 
+
 <style>
 .profile-image {
-    max-width: 100%;
-    height: 200px;
+    max-width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: blue;
+    cursor:pointer;
 }
 </style>
 
